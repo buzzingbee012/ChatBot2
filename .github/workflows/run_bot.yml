@@ -6,6 +6,9 @@ on:
     - cron: '0 18 * * *'
   workflow_dispatch: # Allows manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
@@ -30,6 +33,14 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         HEADLESS: "true"
       run: python main.py --duration 3600
+      
+    - name: Commit and Push Stats
+      run: |
+        git config --global user.name "Stats Bot"
+        git config --global user.email "bot@github-actions"
+        git add stats.json
+        git commit -m "Update daily stats [skip ci]" || exit 0
+        git push
       
     - name: Upload Logs & Stats
       if: always() # Run even if bot fails
