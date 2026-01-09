@@ -399,7 +399,7 @@ class SiteTwoBot:
                                 tokens = getattr(self.ai_handler, 'last_token_count', 0)
                                 error = getattr(self.ai_handler, 'last_error', None)
                                 self.stats_tracker.increment_today(tokens=tokens, error=error)
-                                self.logger.info(f"Replied to {name} (Count: {self.user_reply_counts[name]}, Total: {self.total_messages_sent})")
+                                self.logger.info(f"Replied to {name} (Message: {message_to_send} ,Count: {self.user_reply_counts[name]}, Total: {self.total_messages_sent})")
                                 
                                 # Switch back to main channel to continue monitoring
                                 main_tab = self.page.locator(".kiwi-statebrowser-channel[data-name='#allindiachat.com']").first
