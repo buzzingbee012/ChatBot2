@@ -3,7 +3,7 @@ project:
   version: "1.1.0"
 
 guest_profile:
-  username: "buzzing-bee" # Only letters and numbers allowed
+  username: "jasmin-london" # Only letters and numbers allowed
   gender: "Female" # Options: Male, Female
   age: "32"
   country: "India"
