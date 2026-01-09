@@ -1,0 +1,12 @@
+services:
+  - type: cron
+    name: jasmin-bot
+    env: python
+    schedule: "0 18 * * *"
+    buildCommand: "./build.sh"
+    startCommand: "python main.py --duration 3600"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: HEADLESS
+        value: "true"

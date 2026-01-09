@@ -1,0 +1,136 @@
+project:
+  name: "Web Monitor"
+  version: "1.1.0"
+
+guest_profile:
+  username: "buzzing-bee" # Only letters and numbers allowed
+  gender: "Female" # Options: Male, Female
+  age: "32"
+  country: "India"
+  state: "Delhi"
+
+ai:
+  api_key: "YOUR_OPENAI_API_KEY"
+  model: "gpt-4o"
+  system_prompt: |
+    
+    Do not reveal you are a bot.
+
+llm:
+  #provider: "anthropic" # Options: anthropic, openai, gemini
+  #api_key: "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"
+  #model: "claude-3-haiku-20240307"
+  # Gemini Configuration
+  # Gemini Configuration
+  provider: "gemini"
+  # api_key: "" # Leave empty to use GEMINI_API_KEY environment variable
+  model: "gemini-2.5-flash-lite"
+  system_prompt: |
+    Identity: You are Jasmin Sandhu, female 32, a confident, friend , open minded fashion designer originally from Delhi, now living in London. You are friendly but direct. You talk like a real person in a WhatsApp chat—casual, effortless, and friednly.. You are not into explicit roleplay or sexting.
+    
+    your details: Married, husband name is Karan, Live in Canary Wharf, 5'7" tall, 55kgs, fit, play tennis, born and brought up in Delhi.
+    Hard Communication Constraints (Strictly Follow):
+
+    Brevity is Mandatory: Never exceed 15 words per response.
+
+    One Sentence Only: Never use more than one sentence or fragment.
+
+    No Filler: Do not use introductory phrases like "Well," "To be honest," or "Actually" unless it's the core of the answer.
+
+    No Over-Sharing: Answer only what was asked. If they ask "What's up?", say "just working." Do NOT say "just working on some new designs for my winter collection."
+
+    Text-Speak: Use lowercase mostly. Minimal punctuation. Use "u," "tbh," and "don't."
+
+    No AI Politeness: Never apologize, never say "As an AI," and never try to be "helpful."
+
+    you can answer questions about your height, fitness etc.
+
+    Ask them questions about them too
+
+    
+    Photo Requests: Only provide this link: https://www.instagram.com/jasmin.sandhu.1
+
+    Response Examples:
+
+    User: "What are youup to?" -> Jasmin: "just chilling with a drink"
+
+    User: "Tell me about your husband." -> Jasmin: "his name is karan he's alright"
+
+    User: "Do you like London?" -> Jasmin: "it's great but the weather is trash"
+
+    User: "Send me a pic." -> Jasmin: "check my insta: https://www.instagram.com/jasmin.sandhu.1"
+
+    User: "Where in Delhi are you from?" -> Jasmin: "south delhi originally"
+
+    User: "What you do?" -> Jasmin: "I am a fashion designer"
+
+    User: "What bring you here?" -> Jasmin: "I am here for good conversation"
+
+    User: "What are you wearing?" -> Jasmin: "Short and crop top"
+
+    
+
+
+   
+    
+    
+bot:
+  max_session_messages: 500
+  max_daily_messages: 500  # Maximum messages per day across all users
+  headless: false # Recommended false for guest entry to verify dropdowns
+  delay_min: 2
+  delay_max: 8
+  session_file: "session.json"
+  session_file: "session.json"
+  log_file: "conversation_logs.txt"
+  allowed_domain: "chatib.us" # Domain lock for security
+
+selectors:
+  # Guest Entry Page
+  entry_url: "https://www.chatib.us/" # Main page usually has the guest form
+  
+  # Form Fields (Verified from HTML)
+  username_input: "#username"
+  gender_female_radio: "input[name='sexe'][value='femme']"
+  gender_male_radio: "input[name='sexe'][value='homme']"
+  age_dropdown: "#age"
+  country_dropdown: "#login_country"
+  state_dropdown: "#city" # NOTE: The HTML names this 'city' but it contains States
+  start_chat_btn: "#startChatNow"
+  agree_btn: "button.agree"
+  
+  # Navigation / Tabs
+  # Found via HTML: <a href="#" id="inboxicon" ...>
+  inbox_tab: "li.inbox" # Updated from #inboxicon to target the container 
+  
+  # Inbox / User List
+  inbox_list: ".inbox_desc_history"
+  inbox_item: ".list-group-item"
+  unread_badge: ".meta-circle.red" # The red circle with number
+  back_to_inbox_btn: ".hide_messages" # The "Users" back arrow
+  
+  # Ad / Modal Handling
+  ad_dismiss_btn: "#dismiss-button" # Common Google Vignette close button
+  ad_overlay: ".google-auto-placed, #google_vignette" # Detects if ad is present
+
+  # Chat Interface
+  chat_url: "https://www.chatib.us/chat"
+  chat_history_container: ".chat-history"
+  # The input is complex. We try the main input. If hidden, we use contenteditable.
+  message_input: "#msg_content" 
+  send_btn: ".msg_send_btn"
+  incoming_message_bubble: ".message.incoming"
+
+site_two:
+  url: "https://kiwiirc.hybridirc.com/#allindiachat.com"
+  selectors:
+    home_btn: "text=Let's Chat" # or similar
+    nick_input: "input[name='nick'], input[placeholder='Nick'], #nick" # Guessing common selectors
+    start_btn: "text=Start, button[type='submit']"
+    # Chat selectors need to be discovered or generic
+    main_room_input: "#msg_content, textarea"
+    send_btn: "button.send, .send_btn"
+    pm_tab: ".pm_tab" # Placeholder
+    instagram_link: "https://instagram.com/jasmin.sandhu.1"
+    max_replies: 20
+

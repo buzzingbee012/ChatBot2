@@ -1,0 +1,7 @@
+pyyaml
+playwright
+openai
+anthropic
+python-dotenv
+flask
+google-genai

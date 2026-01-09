@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+session.json
+stats.json
+conversation_logs.txt
+config.secrets.yaml
+# config.yaml is now safe to commit as keys are removed

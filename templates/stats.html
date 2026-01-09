@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Statistics</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: #f0f2f5;
+        }
+
+        .stats-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #0084ff;
+            margin: 0 0 1rem 0;
+        }
+
+        h2 {
+            color: #333;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .total {
+            background: #0084ff;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #0084ff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .error-section {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+
+        .error-item {
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ffe69c;
+        }
+
+        .error-item:last-child {
+            border-bottom: none;
+        }
+
+        .error-time {
+            color: #856404;
+            font-weight: bold;
+        }
+
+        .error-msg {
+            color: #856404;
+            margin-left: 1rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stats-container">
+        <h1>Daily Interaction Statistics</h1>
+
+        <div class="total">
+            Total Interactions: <strong>{{ total }}</strong> |
+            Total Tokens: <strong>{{ total_tokens }}</strong>
+        </div>
+
+        {% if stats %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Interactions</th>
+                    <th>Tokens</th>
+                    <th>Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for date, data in stats.items() %}
+                <tr>
+                    <td>{{ date }}</td>
+                    <td>{{ data.interactions if data is mapping else data }}</td>
+                    <td>{{ data.tokens if data is mapping else 0 }}</td>
+                    <td>{{ data.errors|length if (data is mapping and data.errors) else 0 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Error Log</h2>
+        {% set has_errors = namespace(found=false) %}
+        {% for date, data in stats.items() %}
+        {% if data is mapping and data.errors and data.errors|length > 0 %}
+        {% set has_errors.found = true %}
+        <div class="error-section">
+            <strong>{{ date }}</strong>
+            {% for error in data.errors %}
+            <div class="error-item">
+                <span class="error-time">{{ error.time }}</span>
+                <div class="error-msg">{{ error.message }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% if not has_errors.found %}
+        <div class="empty">No errors recorded</div>
+        {% endif %}
+        {% else %}
+        <div class="empty">No interactions recorded yet.</div>
+        {% endif %}
+
+        <a href="/" class="back-link">← Back to Chat</a>
+    </div>
+</body>
+
+</html>
