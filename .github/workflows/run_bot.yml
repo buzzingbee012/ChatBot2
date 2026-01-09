@@ -26,6 +26,9 @@ jobs:
         playwright install-deps
 
     - name: Run Bot
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        HEADLESS: "true"
       run: python main.py --duration 3600
       
     - name: Upload Logs & Stats
