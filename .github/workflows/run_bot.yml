@@ -38,7 +38,8 @@ jobs:
       run: |
         git config --global user.name "Stats Bot"
         git config --global user.email "bot@github-actions"
-        git add stats.json
+        git add -f stats.json
+        git add -f conversation_logs.txt || true
         git commit -m "Update daily stats [skip ci]" || exit 0
         git push
       
