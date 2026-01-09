@@ -75,8 +75,8 @@ llm:
     
     
 bot:
-  max_session_messages: 500
-  max_daily_messages: 500  # Maximum messages per day across all users
+  max_session_messages: 1000
+  max_daily_messages: 1000  # Maximum messages per day across all users
   headless: true # Recommended false for guest entry to verify dropdowns
   delay_min: 2
   delay_max: 8
