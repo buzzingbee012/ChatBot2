@@ -29,7 +29,10 @@ class SiteTwoBot:
         """
         self.playwright = await async_playwright().start()
         
-        headless = self.config['bot'].get('headless', False)
+        import os
+        env_headless = os.getenv("HEADLESS", "false").lower() == "true"
+        headless = env_headless or self.config['bot'].get('headless', False)
+        
         self.browser = await self.playwright.chromium.launch(
             headless=headless,
             args=["--disable-blink-features=AutomationControlled", "--start-maximized"],
