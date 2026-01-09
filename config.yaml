@@ -133,5 +133,5 @@ site_two:
     send_btn: "button.send, .send_btn"
     pm_tab: ".pm_tab" # Placeholder
     instagram_link: "https://instagram.com/jasmin.sandhu.1"
-    max_replies: 20
+    max_replies: 15
 
