@@ -2,8 +2,8 @@ name: Run Bot Daily
 
 on:
   schedule:
-    # 1 PM EST is 18:00 UTC
-    - cron: '0 18 * * *'
+    # 11 AM EST (16:00 UTC) and 1 PM EST (18:00 UTC)
+    - cron: '0 17,18 * * *'
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -32,7 +32,7 @@ jobs:
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         HEADLESS: "true"
-      run: python main.py --duration 3600
+      run: python main.py --duration 1800
       
     - name: Commit and Push Stats
       run: |

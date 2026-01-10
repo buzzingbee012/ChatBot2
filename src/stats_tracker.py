@@ -16,8 +16,48 @@ class StatsTracker:
             with open("config.yaml", "r") as f:
                 config = yaml.safe_load(f)
                 self.firebase_handler = FirebaseHandler(config)
+                
+            # Sync with Firebase on startup
+            if self.firebase_handler and self.firebase_handler.enabled:
+                remote_stats = self.firebase_handler.get_stats()
+                if remote_stats:
+                    self._merge_stats(remote_stats)
+                    self._save_stats()
+                    
         except Exception as e:
             print(f"StatsTracker: Failed to load config/firebase: {e}")
+            
+    def _merge_stats(self, remote_stats):
+        """Merge remote stats into local stats."""
+        for date, r_data in remote_stats.items():
+            if date not in self.stats:
+                self.stats[date] = r_data
+            else:
+                l_data = self.stats[date]
+                # Ensure structure
+                if isinstance(l_data, int): # Legacy fix
+                    l_data = {"interactions": l_data, "tokens": 0, "errors": []}
+                
+                if isinstance(r_data, int):
+                    r_data = {"interactions": r_data, "tokens": 0, "errors": []}
+                    
+                # Merge values - take max for counters
+                self.stats[date]["interactions"] = max(l_data.get("interactions", 0), r_data.get("interactions", 0))
+                self.stats[date]["tokens"] = max(l_data.get("tokens", 0), r_data.get("tokens", 0))
+                
+                # Merge errors (append unique)
+                l_errors = l_data.get("errors", [])
+                r_errors = r_data.get("errors", [])
+                
+                # Simple dedupe by timestamp + message
+                existing_sigs = {f"{e.get('time')}-{e.get('message')}" for e in l_errors}
+                
+                for err in r_errors:
+                    sig = f"{err.get('time')}-{err.get('message')}"
+                    if sig not in existing_sigs:
+                        l_errors.append(err)
+                
+                self.stats[date]["errors"] = l_errors
     
     def _load_stats(self):
         """Load statistics from JSON file."""

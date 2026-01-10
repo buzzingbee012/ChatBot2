@@ -296,7 +296,7 @@ class SiteTwoBot:
                             max_replies = self.config['site_two'].get('max_replies', 20)
                             
                             if current_count > max_replies:
-                                self.logger.info(f"Ignoring {name} (Max replies sent).")
+                                #self.logger.info(f"Ignoring {name} (Max replies sent).")
                                 continue
                             
                             if self.total_messages_sent >= self.max_session_messages:

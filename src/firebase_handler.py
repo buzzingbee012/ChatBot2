@@ -51,3 +51,17 @@ class FirebaseHandler:
             self.logger.debug("Stats synced to Firebase.")
         except Exception as e:
             self.logger.error(f"Failed to sync stats to Firebase: {e}")
+
+    def get_stats(self):
+        """
+        Fetch stats from Firebase.
+        """
+        if not self.enabled or not self.db_ref:
+            return {}
+        
+        try:
+            data = self.db_ref.get()
+            return data if data else {}
+        except Exception as e:
+            self.logger.error(f"Failed to fetch stats from Firebase: {e}")
+            return {}
