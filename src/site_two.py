@@ -201,9 +201,9 @@ class SiteTwoBot:
                 
                 # 1. Broadcast Check
                 current_time = time.time()
-                if current_time - last_broadcast_time > 300: # 5 mins
+                if current_time - last_broadcast_time > 180: # 3 mins
                     self.logger.info("Sending Broadcast Message...")
-                    Dashboard.outgoing("Broadcast: Hello")
+                    Dashboard.outgoing("Broadcast: hello guys")
                     
                     # Ensure we are on the right tab
                     try:
