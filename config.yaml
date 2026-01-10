@@ -135,7 +135,7 @@ site_two:
     pm_tab: ".pm_tab" # Placeholder
   instagram_link: "https://instagram.com/jasmin.sandhu.1"
   max_replies: 15
-  reply_delay_min: 0
+  reply_delay_min: 0.5
   reply_delay_max: 2
 
 firebase:
