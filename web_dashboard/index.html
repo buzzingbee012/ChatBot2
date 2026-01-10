@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot Monitor | Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1><span class="status-dot pulse"></span>Web Automator Dashboard</h1>
+        <p style="color: var(--text-secondary); margin-top: 10px;">Real-time Performance Metrics</p>
+    </header>
+
+    <div class="stats-grid">
+        <div class="card">
+            <div class="card-title">Interactions Today</div>
+            <div class="card-value" id="today-interactions">0</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Tokens Used Today</div>
+            <div class="card-value" id="today-tokens">0</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Total Interactions</div>
+            <div class="card-value" id="total-interactions">0</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Errors Today</div>
+            <div class="card-value" id="today-errors" style="color: #ff7b72; -webkit-text-fill-color: initial;">0</div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="activityChart"></canvas>
+    </div>
+
+    <div class="recent-activity">
+        <h2 style="color: var(--text-primary); margin-bottom: 20px;">Recent Errors / Logs</h2>
+        <div id="log-container">
+            <!-- Logs will be injected here -->
+            <div class="log-entry" style="justify-content: center; color: var(--text-secondary);">Waiting for data...</div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

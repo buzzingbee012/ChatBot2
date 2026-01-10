@@ -11,6 +11,7 @@ guest_profile:
 
 ai:
   api_key: "YOUR_OPENAI_API_KEY"
+
   model: "gpt-4o"
   system_prompt: |
     
@@ -133,5 +134,12 @@ site_two:
     send_btn: "button.send, .send_btn"
     pm_tab: ".pm_tab" # Placeholder
     instagram_link: "https://instagram.com/jasmin.sandhu.1"
-    max_replies: 15
+  max_replies: 15
+  reply_delay_min: 0
+  reply_delay_max: 2
+
+firebase:
+  enabled: true
+  cred_path: "serviceAccountKey.json"
+  db_url: "https://chatbot-943de-default-rtdb.firebaseio.com/"
 

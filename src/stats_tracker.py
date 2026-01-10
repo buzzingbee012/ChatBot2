@@ -3,10 +3,21 @@ import os
 from datetime import datetime
 from pathlib import Path
 
+import yaml
+from .firebase_handler import FirebaseHandler
+
 class StatsTracker:
     def __init__(self, stats_file="stats.json"):
         self.stats_file = stats_file
         self.stats = self._load_stats()
+        self.firebase_handler = None
+        
+        try:
+            with open("config.yaml", "r") as f:
+                config = yaml.safe_load(f)
+                self.firebase_handler = FirebaseHandler(config)
+        except Exception as e:
+            print(f"StatsTracker: Failed to load config/firebase: {e}")
     
     def _load_stats(self):
         """Load statistics from JSON file."""
@@ -62,6 +73,10 @@ class StatsTracker:
             })
         
         self._save_stats()
+        
+        # Sync to Firebase
+        if self.firebase_handler:
+            self.firebase_handler.update_stats(self.stats)
     
     def get_stats(self):
         """Return all statistics sorted by date."""

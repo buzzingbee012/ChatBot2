@@ -1,0 +1,115 @@
+// Initialize Firebase
+if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API_KEY") {
+    console.error("Firebase Config missing! Please update config.js");
+    document.getElementById('log-container').innerHTML = '<div class="log-entry" style="color: #ff7b72;">Error: Config not set. Please update config.js</div>';
+} else {
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Elements
+    const elTodayInteractions = document.getElementById('today-interactions');
+    const elTodayTokens = document.getElementById('today-tokens');
+    const elTotalInteractions = document.getElementById('total-interactions');
+    const elTodayErrors = document.getElementById('today-errors');
+    const elLogContainer = document.getElementById('log-container');
+
+    // Chart
+    const ctx = document.getElementById('activityChart').getContext('2d');
+    let activityChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Daily Interactions',
+                data: [],
+                borderColor: '#58a6ff',
+                backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: '#8b949e' } }
+            },
+            scales: {
+                y: {
+                    grid: { color: 'rgba(240, 246, 252, 0.1)' },
+                    ticks: { color: '#8b949e' }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { color: '#8b949e' }
+                }
+            }
+        }
+    });
+
+    // Listen to Stats
+    console.log("Listening for stats...");
+    db.ref('stats').on('value', (snapshot) => {
+        const data = snapshot.val();
+        if (!data) return;
+
+        console.log("Data received:", data);
+
+        // Process Data
+        const dates = Object.keys(data).sort(); // Sort dates
+        const today = new Date().toISOString().split('T')[0];
+
+        let total = 0;
+        const chartLabels = [];
+        const chartData = [];
+        let todayStats = { interactions: 0, tokens: 0, errors: [] };
+
+        dates.forEach(date => {
+            let stats = data[date];
+
+            // Handle legacy format (int)
+            let interactions = 0;
+            let tokens = 0;
+            let errors = [];
+
+            if (typeof stats === 'number') {
+                interactions = stats;
+            } else {
+                interactions = stats.interactions || 0;
+                tokens = stats.tokens || 0;
+                errors = stats.errors || [];
+            }
+
+            total += interactions;
+            chartLabels.push(date);
+            chartData.push(interactions);
+
+            if (date === today) {
+                todayStats = { interactions, tokens, errors };
+            }
+        });
+
+        // Update UI
+        elTodayInteractions.innerText = todayStats.interactions;
+        elTodayTokens.innerText = todayStats.tokens;
+        elTotalInteractions.innerText = total;
+        elTodayErrors.innerText = todayStats.errors.length;
+
+        // Update Logs
+        if (todayStats.errors.length > 0) {
+            elLogContainer.innerHTML = todayStats.errors.map(e => `
+                <div class="log-entry">
+                    <span style="color: #ff7b72;">${e.time}</span>
+                    <span>${e.message}</span>
+                </div>
+            `).join('');
+        } else {
+            elLogContainer.innerHTML = '<div class="log-entry" style="justify-content: center; color: var(--text-secondary);">No errors today. System healthy.</div>';
+        }
+
+        // Update Chart
+        activityChart.data.labels = chartLabels;
+        activityChart.data.datasets[0].data = chartData;
+        activityChart.update();
+    });
+}

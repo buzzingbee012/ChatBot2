@@ -318,7 +318,9 @@ class SiteTwoBot:
                             
                             # Random delay 2-10s between messages as requested
                             import random
-                            delay = random.uniform(1, 5)
+                            min_delay = self.config['site_two'].get('reply_delay_min', 0)
+                            max_delay = self.config['site_two'].get('reply_delay_max', 2)
+                            delay = random.uniform(min_delay, max_delay)
                             self.logger.info(f"Waiting {delay:.1f}s before reply...")
                             await asyncio.sleep(delay)
 
@@ -326,7 +328,7 @@ class SiteTwoBot:
                             message_to_send = ""
                             
                             if current_count == max_replies:
-                                message_to_send = "gtg, add me on instagram. lets stay in touch" + self.config['site_two'].get('instagram_link', "")
+                                message_to_send = "gtg, add me on instagram lets stay in touch" + self.config['site_two'].get('instagram_link', "")
                                 self.logger.info(f"Sending Instagram Link to {name}!")
                             else:
                                 # AI Generation Logic
