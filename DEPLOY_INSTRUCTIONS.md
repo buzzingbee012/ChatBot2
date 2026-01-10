@@ -1,28 +1,29 @@
-# How to Deploy Your Dashboard
+# How to Deploy Your Dashboard (Automatic Updates)
 
-## 1. Configure Git (Fix for "Run git config" error)
-To fix the commit error, you need to tell Git who you are. Run these commands in your terminal (replace with your info):
-```bash
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-```
+To automatically deploy changes when you push to GitHub, connect Netlify to your repository.
 
-## 2. Commit and Push
-Once Git is configured, run these commands to push your dashboard:
+## 1. Push Your Code to GitHub
+(If you haven't already)
 ```bash
 git add .
-git commit -m "Add web dashboard and firebase config"
+git commit -m "Update dashboard"
 git push origin main
 ```
 
-## 3. Enable GitHub Pages
-1. Go to your repository on **GitHub.com**.
-2. Click **Settings** (top right tab).
-3. On the left sidebar, click **Pages**.
-4. Under **Build and deployment**:
-   - **Source**: Select `GitHub Actions` (Beta or Standard).
-5. The deployment will start automatically. You can watch it in the **Actions** tab.
+## 2. Connect Netlify to GitHub
+1. Log in to **[app.netlify.com](https://app.netlify.com)**.
+2. Click **"Add new site"** > **"Import from an existing project"**.
+3. Select **GitHub**.
+4. Authorize Netlify and choose your `ChatBot` repository.
 
-## 4. View Your Dashboard
-Once the Action finishes (green checkmark), your dashboard will be live! The URL will usually be:
-`https://<your-username>.github.io/<your-repo-name>/`
+## 3. Configure Build Settings (Critical!)
+Netlify needs to know your website is in a folder.
+- **Base directory**: `web_dashboard`
+- **Publish directory**: `web_dashboard` (or leave empty if Base is set)
+- **Build command**: (Leave empty)
+
+Click **Deploy Site**.
+
+## 4. Done!
+Now, whenever you run `git push`, Netlify will see the change and update your site automatically within seconds.
+

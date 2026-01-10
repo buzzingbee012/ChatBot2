@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
 </head>
+
 <body>
     <header>
         <h1><span class="status-dot pulse"></span>Web Automator Dashboard</h1>
@@ -31,6 +33,10 @@
             <div class="card-value" id="total-interactions">0</div>
         </div>
         <div class="card">
+            <div class="card-title">Total Tokens Used</div>
+            <div class="card-value" id="total-tokens">0</div>
+        </div>
+        <div class="card">
             <div class="card-title">Errors Today</div>
             <div class="card-value" id="today-errors" style="color: #ff7b72; -webkit-text-fill-color: initial;">0</div>
         </div>
@@ -40,15 +46,36 @@
         <canvas id="activityChart"></canvas>
     </div>
 
+    <!-- History Table -->
+    <div class="recent-activity" style="margin-top: 40px; margin-bottom: 40px;">
+        <h2 style="color: var(--text-primary); margin-bottom: 20px;">History</h2>
+        <div style="background: var(--card-bg); border-radius: 12px; border: var(--card-border); overflow: hidden;">
+            <table style="width: 100%; border-collapse: collapse; color: var(--text-primary);">
+                <thead>
+                    <tr style="background: rgba(240, 246, 252, 0.05); text-align: left;">
+                        <th style="padding: 15px; color: var(--text-secondary);">Date</th>
+                        <th style="padding: 15px; color: var(--text-secondary);">Interactions</th>
+                        <th style="padding: 15px; color: var(--text-secondary);">Tokens</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- Rows will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div class="recent-activity">
         <h2 style="color: var(--text-primary); margin-bottom: 20px;">Recent Errors / Logs</h2>
         <div id="log-container">
             <!-- Logs will be injected here -->
-            <div class="log-entry" style="justify-content: center; color: var(--text-secondary);">Waiting for data...</div>
+            <div class="log-entry" style="justify-content: center; color: var(--text-secondary);">Waiting for data...
+            </div>
         </div>
     </div>
 
     <script src="config.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

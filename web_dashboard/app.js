@@ -10,8 +10,10 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
     const elTodayInteractions = document.getElementById('today-interactions');
     const elTodayTokens = document.getElementById('today-tokens');
     const elTotalInteractions = document.getElementById('total-interactions');
+    const elTotalTokens = document.getElementById('total-tokens');
     const elTodayErrors = document.getElementById('today-errors');
     const elLogContainer = document.getElementById('log-container');
+    const elHistoryTableBody = document.getElementById('history-table-body');
 
     // Chart
     const ctx = document.getElementById('activityChart').getContext('2d');
@@ -60,6 +62,7 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
         const today = new Date().toISOString().split('T')[0];
 
         let total = 0;
+        let totalTokens = 0;
         const chartLabels = [];
         const chartData = [];
         let todayStats = { interactions: 0, tokens: 0, errors: [] };
@@ -81,6 +84,7 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
             }
 
             total += interactions;
+            totalTokens += tokens;
             chartLabels.push(date);
             chartData.push(interactions);
 
@@ -89,10 +93,28 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
             }
         });
 
+        // Populate History Table (Reverse Chronological)
+        // We use the already processed `dates` array but reverse it only for display
+        const reversedDates = [...dates].reverse();
+        elHistoryTableBody.innerHTML = reversedDates.map(date => {
+            let stats = data[date];
+            let interactions = (typeof stats === 'number') ? stats : (stats.interactions || 0);
+            let tokens = (typeof stats === 'number') ? 0 : (stats.tokens || 0);
+
+            return `
+                <tr style="border-bottom: 1px solid rgba(240, 246, 252, 0.05);">
+                    <td style="padding: 15px;">${date}</td>
+                    <td style="padding: 15px; font-weight: 500;">${interactions}</td>
+                    <td style="padding: 15px; color: var(--text-secondary);">${tokens}</td>
+                </tr>
+            `;
+        }).join('');
+
         // Update UI
         elTodayInteractions.innerText = todayStats.interactions;
         elTodayTokens.innerText = todayStats.tokens;
         elTotalInteractions.innerText = total;
+        elTotalTokens.innerText = totalTokens;
         elTodayErrors.innerText = todayStats.errors.length;
 
         // Update Logs
