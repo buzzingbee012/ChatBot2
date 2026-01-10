@@ -328,7 +328,7 @@ class SiteTwoBot:
                             message_to_send = ""
                             
                             if current_count == max_replies:
-                                message_to_send = "gtg, add me on instagram lets stay in touch" + self.config['site_two'].get('instagram_link', "")
+                                message_to_send = "gtg, add me on instagram lets stay in touch " + self.config['site_two'].get('instagram_link', "")
                                 self.logger.info(f"Sending Instagram Link to {name}!")
                             else:
                                 # AI Generation Logic

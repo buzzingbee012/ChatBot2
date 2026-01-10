@@ -10,14 +10,21 @@ git commit -m "Update dashboard"
 git push origin main
 ```
 
-## 2. Connect Netlify to GitHub
+## Option A: Create New Site (Easiest)
 1. Log in to **[app.netlify.com](https://app.netlify.com)**.
 2. Click **"Add new site"** > **"Import from an existing project"**.
 3. Select **GitHub**.
 4. Authorize Netlify and choose your `ChatBot` repository.
 
+## Option B: Link Existing Site
+If you already created a site via Drag & Drop:
+1. Go to your **Site Settings**.
+2. Click **Build & deploy** in the sidebar.
+3. Click **Link site to Git**.
+4. Select **GitHub** and choose your repository.
+
 ## 3. Configure Build Settings (Critical!)
-Netlify needs to know your website is in a folder.
+For both options, ensure these settings are correct:
 - **Base directory**: `web_dashboard`
 - **Publish directory**: `web_dashboard` (or leave empty if Base is set)
 - **Build command**: (Leave empty)

@@ -133,7 +133,7 @@ site_two:
     main_room_input: "#msg_content, textarea"
     send_btn: "button.send, .send_btn"
     pm_tab: ".pm_tab" # Placeholder
-    instagram_link: "https://instagram.com/jasmin.sandhu.1"
+  instagram_link: "https://instagram.com/jasmin.sandhu.1"
   max_replies: 15
   reply_delay_min: 0
   reply_delay_max: 2
