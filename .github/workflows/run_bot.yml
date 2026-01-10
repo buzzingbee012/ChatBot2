@@ -32,7 +32,7 @@ jobs:
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         HEADLESS: "true"
-      run: python main.py --duration 3600
+      run: python main.py --duration 7200
       
     - name: Commit and Push Stats
       run: |
