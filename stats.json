@@ -5,8 +5,1554 @@
     "errors": []
   },
   "2026-01-10": {
-    "interactions": 771,
-    "tokens": 498138,
+    "interactions": 852,
+    "tokens": 549323,
     "errors": []
+  },
+  "2026-01-11": {
+    "errors": [
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:36:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:36:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:36:44"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:36:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:36:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:34"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:37:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:00"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:20"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:30"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:46"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:38:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:16"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:39:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:24"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:27"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:49"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:40:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:37"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:46"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:41:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:42:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:00"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:04"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:36"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:40"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:43"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:52"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:55"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:43:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:08"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:11"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:32"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:55"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:44:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:30"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:49"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:52"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:45:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:04"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:16"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:20"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:40"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:43"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:46:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:00"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:20"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:24"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:27"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:30"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:52"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:55"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:47:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:12"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:49"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:52"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:55"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:48:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:24"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:32"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:46"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:49"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:49:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:00"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:16"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:27"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:55"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:50:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:08"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:12"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:18"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:32"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:51:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:16"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:41"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:44"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:57"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:52:59"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:20"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:30"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:43"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:46"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:49"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:52"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:53:57"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:01"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:04"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:34"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:37"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:44"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:54:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:09"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:12"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:38"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:54"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:55:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:01"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:11"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:34"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:56:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:04"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:15"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:29"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:40"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:44"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:57:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:16"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:27"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:35"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:58:58"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:08"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:39"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:42"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:51"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "15:59:57"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:02"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:05"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:08"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:23"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:37"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:41"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:44"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:50"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:00:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:01"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:21"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:24"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:31"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:37"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:40"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:01:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:00"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:06"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:10"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:25"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:33"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:02:48"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:03:01"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:03:22"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:03:40"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:03:47"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:04:17"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:04:19"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:04:28"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:04:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:03"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:13"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:26"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:32"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:37"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:45"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:53"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:05:56"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:01"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:07"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:11"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:14"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:20"
+      },
+      {
+        "message": "1 validation error for ChatResponse\n  JSON input should be string, bytes or bytearray [type=json_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_type",
+        "time": "16:06:24"
+      }
+    ],
+    "interactions": 1000,
+    "tokens": 651768
   }
 }
