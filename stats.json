@@ -1556,7 +1556,8 @@
     "tokens": 651768
   },
   "2026-01-12": {
-    "interactions": 517,
-    "tokens": 337473
+    "interactions": 707,
+    "tokens": 459920,
+    "errors": []
   }
 }
