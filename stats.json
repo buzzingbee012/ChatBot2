@@ -3239,7 +3239,7 @@
         "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}"
       }
     ],
-    "interactions": 460,
-    "tokens": 290959
+    "interactions": 730,
+    "tokens": 466821
   }
 }
