@@ -95,19 +95,46 @@ class StatsTracker:
         except Exception as e:
             print(f"Error saving stats: {e}")
     
-    def increment_today(self, tokens=0, error=None):
+    def increment_today(self, tokens=0, error=None, bot_name="Unknown"):
         """Increment today's interaction count and add tokens if provided."""
         today = datetime.now().strftime("%Y-%m-%d")
         if today not in self.stats:
-            self.stats[today] = {"interactions": 0, "tokens": 0, "errors": []}
+            self.stats[today] = {
+                "interactions": 0, 
+                "tokens": 0, 
+                "errors": [],
+                "bots": {}
+            }
         
+        # Ensure 'bots' dict exists for legacy data
+        if "bots" not in self.stats[today]:
+            self.stats[today]["bots"] = {}
+
+        # 1. Update Global Totals
         self.stats[today]["interactions"] = self.stats[today].get("interactions", 0) + 1
         if tokens > 0:
             self.stats[today]["tokens"] = self.stats[today].get("tokens", 0) + tokens
+            
         if error:
             if "errors" not in self.stats[today]:
                 self.stats[today]["errors"] = []
             self.stats[today]["errors"].append({
+                "time": datetime.now().strftime("%H:%M:%S"),
+                "message": f"[{bot_name}] {error}", # Prefix error
+                "bot": bot_name 
+            })
+
+        # 2. Update Bot-Specific Stats
+        bots_data = self.stats[today]["bots"]
+        if bot_name not in bots_data:
+            bots_data[bot_name] = {"interactions": 0, "tokens": 0, "errors": []}
+            
+        bots_data[bot_name]["interactions"] += 1
+        if tokens > 0:
+            bots_data[bot_name]["tokens"] += tokens
+            
+        if error:
+            bots_data[bot_name]["errors"].append({
                 "time": datetime.now().strftime("%H:%M:%S"),
                 "message": error
             })

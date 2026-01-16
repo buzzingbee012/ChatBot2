@@ -22343,3 +22343,1776 @@ Call log:
 2026-01-15 18:31:34,066 - WebMonitor - INFO - Generating AI response for laddu with history val: 10
 2026-01-15 18:31:34,672 - WebMonitor - INFO - Replied to laddu (Message: its okay just boring sometimes ,Count: 13, Total: 306)
 2026-01-15 18:31:39,209 - WebMonitor - INFO - Duration of 1800s reached. Stopping bot.
+2026-01-16 12:30:07,478 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:30:11,160 - WebMonitor - INFO - Clicked Login Button.
+2026-01-16 12:30:11,883 - WebMonitor - INFO - Submitted Login Form.
+2026-01-16 12:30:11,890 - WebMonitor - INFO - Login submission finished. Assuming success for now.
+2026-01-16 12:30:11,890 - WebMonitor - INFO - Login process completed. Holding session...
+2026-01-16 12:30:56,787 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:30:57,471 - WebMonitor - INFO - Clicked Login Button.
+2026-01-16 12:30:58,169 - WebMonitor - INFO - Submitted Login Form.
+2026-01-16 12:30:58,173 - WebMonitor - INFO - Login submission finished. Assuming success for now.
+2026-01-16 12:30:58,173 - WebMonitor - INFO - Login process completed. Holding session...
+2026-01-16 12:34:42,184 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:34:48,460 - WebMonitor - INFO - Clicked Login Button.
+2026-01-16 12:34:49,491 - WebMonitor - INFO - Submitted Login Form.
+2026-01-16 12:34:49,499 - WebMonitor - INFO - Login submission finished. Assuming success for now.
+2026-01-16 12:34:49,499 - WebMonitor - INFO - Login process completed. Holding session...
+2026-01-16 12:46:04,636 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:46:06,102 - WebMonitor - INFO - Submitted Login.
+2026-01-16 12:46:07,190 - WebMonitor - INFO - Saved wireclub_dump.html for selector analysis.
+2026-01-16 12:46:07,190 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 12:46:07,191 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 12:46:17,205 - WebMonitor - INFO - Navigating to Private Chat Lobby...
+2026-01-16 12:46:41,649 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:46:43,326 - WebMonitor - INFO - Submitted Login.
+2026-01-16 12:46:44,302 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby for dump...
+2026-01-16 12:46:45,524 - WebMonitor - INFO - Saved wireclub_dump.html from INSIDE room.
+2026-01-16 12:46:45,524 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 12:46:45,526 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 12:46:55,528 - WebMonitor - INFO - Navigating to Private Chat Lobby...
+2026-01-16 12:47:03,094 - WebMonitor - INFO - Duration reached.
+2026-01-16 12:47:56,407 - WebMonitor - INFO - Duration reached.
+2026-01-16 12:49:52,867 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:50:23,688 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a.header-link.sign-in")
+
+2026-01-16 12:50:23,688 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 12:53:37,768 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:54:08,422 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a.header-link.sign-in")
+
+2026-01-16 12:54:08,422 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 12:54:55,449 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:54:56,243 - WebMonitor - ERROR - Login Error: 'WireBot' object has no attribute '_check_exists'
+2026-01-16 12:54:57,117 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 12:55:27,403 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:55:31,113 - WebMonitor - ERROR - Login button not found and not logged in.
+2026-01-16 12:55:31,574 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 12:56:14,176 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:56:47,375 - WebMonitor - ERROR - Login Error: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+
+2026-01-16 12:56:47,977 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 12:57:23,507 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 12:57:56,363 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"submit\"]")
+    - locator resolved to 2 elements. Proceeding with the first one: <input value=" " type="submit" id="search-go" aria-labelledby="q"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-01-16 12:57:56,781 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 13:05:06,581 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:05:39,543 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"submit\"]")
+    - locator resolved to 2 elements. Proceeding with the first one: <input value=" " type="submit" id="search-go" aria-labelledby="q"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+
+2026-01-16 13:05:39,974 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 13:10:13,902 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:10:46,825 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"submit\"]")
+    - locator resolved to 2 elements. Proceeding with the first one: <input value=" " type="submit" id="search-go" aria-labelledby="q"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-01-16 13:10:47,266 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 13:12:42,026 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:13:15,120 - WebMonitor - ERROR - Login Error: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"submit\"]")
+    - locator resolved to 2 elements. Proceeding with the first one: <input value=" " type="submit" id="search-go" aria-labelledby="q"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    54 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="dialog" class=" dialog-dynamic">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-01-16 13:13:15,758 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 13:16:19,550 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:16:25,064 - WebMonitor - INFO - Submitted Login.
+2026-01-16 13:16:25,068 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:17:20,823 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:17:24,034 - WebMonitor - INFO - Submitted Login.
+2026-01-16 13:17:24,039 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:17:24,090 - WebMonitor - ERROR - Login Error: Page.goto: net::ERR_ABORTED at https://www.wireclub.com/chat/room/private_chat_lobby
+Call log:
+  - navigating to "https://www.wireclub.com/chat/room/private_chat_lobby", waiting until "load"
+
+2026-01-16 13:17:24,844 - WebMonitor - ERROR - Entry/Login Failed. Stopping.
+2026-01-16 13:19:34,394 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:19:37,111 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:19:37,510 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:19:37,510 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:20:34,520 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:20:37,459 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:21:07,479 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:21:07,497 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:21:08,910 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:21:08,910 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:21:18,947 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:24,017 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:29,051 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:34,090 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:39,117 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:44,156 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:49,203 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:49,211 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:21:54,227 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:54,236 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:21:59,253 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:21:59,262 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:04,263 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:04,308 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:09,330 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:09,337 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:14,353 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:14,359 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:19,372 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:19,383 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:24,395 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:24,404 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:29,407 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:29,420 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:34,435 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:34,460 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:39,472 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:39,477 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:44,478 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:44,487 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:49,494 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:49,497 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:54,507 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:54,540 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:22:59,555 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:22:59,568 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:04,574 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:04,588 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:09,600 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:09,604 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:14,612 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:14,619 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:19,629 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:19,631 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:24,634 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:24,636 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:29,651 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:29,654 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:34,656 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:34,659 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:39,659 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:39,659 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:44,663 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:44,669 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:49,671 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:49,673 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:54,673 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:54,676 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:23:59,689 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:23:59,692 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:04,694 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:04,697 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:09,705 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:09,707 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:14,711 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:14,714 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:19,721 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:19,732 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:24,742 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:24,747 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:29,761 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:29,764 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:34,765 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:34,768 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:39,768 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:39,776 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:44,789 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:44,795 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:49,799 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:49,803 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:54,813 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:54,813 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:24:59,814 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:24:59,819 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:25:04,824 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:04,828 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:25:09,836 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:09,844 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:25:14,858 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:14,863 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:25:19,879 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:19,887 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:25:30,647 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:25:33,604 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:25:34,392 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:25:35,409 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:25:36,505 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:25:36,506 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:25:46,515 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:46,609 - WebMonitor - INFO - Found unread chats: ['private-chat-aReAawAd6lEz3U_A0', 'private-chat-aWmVTgB16IZW0ZMG0']
+2026-01-16 13:25:46,609 - WebMonitor - ERROR - PM Process Error: string indices must be integers, not 'str'
+2026-01-16 13:25:51,636 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:51,688 - WebMonitor - INFO - Found unread chats: ['private-chat-aReAawAd6lEz3U_A0', 'private-chat-aWmVTgB16IZW0ZMG0']
+2026-01-16 13:25:51,688 - WebMonitor - ERROR - PM Process Error: string indices must be integers, not 'str'
+2026-01-16 13:25:56,705 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:25:56,711 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:01,722 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:01,731 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:06,745 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:06,756 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:11,766 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:11,776 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:16,786 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:16,796 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:21,805 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:21,809 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:26:26,823 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'ai'
+2026-01-16 13:26:26,828 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:28:03,294 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:28:06,325 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:28:07,210 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:28:08,216 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:28:09,287 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:28:09,287 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:28:19,288 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:19,461 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:19,496 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-aWmVTgB16IZW0ZMG0', 'id': 'private-chat-aWmVTgB16IZW0ZMG0'}, {'name': 'private-chat-Zzt9vQA85qPw8Nlc0', 'id': 'private-chat-Zzt9vQA85qPw8Nlc0'}]
+2026-01-16 13:28:19,496 - WebMonitor - INFO - Processing PM from private-chat-aWmVTgB16IZW0ZMG0
+2026-01-16 13:28:19,583 - WebMonitor - INFO - Processing PM from private-chat-Zzt9vQA85qPw8Nlc0
+2026-01-16 13:28:24,708 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:24,824 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:29,842 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:30,003 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:35,006 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:35,103 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:40,117 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:40,396 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:45,420 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:45,516 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:50,536 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:50,739 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:28:55,761 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:28:55,879 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:29:00,901 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:29:01,148 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:29:47,842 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:29:50,717 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:30:24,093 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:30:27,015 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:30:27,766 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:30:28,785 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:30:29,859 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:30:29,859 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:30:39,867 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:30:40,017 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:30:40,036 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:30:40,037 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:30:45,153 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:30:45,294 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:30:50,304 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:30:50,438 - WebMonitor - ERROR - Error performing broadcast: 'WireBot' object has no attribute 'stats'
+2026-01-16 13:32:25,412 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:32:28,236 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:32:28,990 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:32:30,020 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:32:31,109 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:32:31,109 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:32:41,130 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:32:41,296 - WebMonitor - ERROR - Error performing broadcast: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:32:46,300 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:32:46,420 - WebMonitor - ERROR - Error performing broadcast: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:34:22,794 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:34:25,659 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:34:55,677 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:34:55,699 - WebMonitor - WARNING - Captcha Detected!
+2026-01-16 13:34:56,191 - WebMonitor - INFO - Captcha saved to 'captcha_challenge.png'. Please view it.
+2026-01-16 13:35:42,713 - WebMonitor - ERROR - Login Error: 
+2026-01-16 13:37:03,470 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:37:06,265 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:37:07,054 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:37:08,073 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:37:09,140 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:37:09,142 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:37:19,159 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:37:19,309 - WebMonitor - ERROR - Error performing broadcast: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:37:19,336 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:37:19,337 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:39:08,696 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:39:11,552 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:39:41,568 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:39:41,596 - WebMonitor - WARNING - Captcha Detected! Killing browser session and waiting 2 minutes...
+2026-01-16 13:41:41,660 - WebMonitor - INFO - Restarting login attempt...
+2026-01-16 13:41:41,867 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:41:44,630 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:42:14,649 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:42:14,681 - WebMonitor - WARNING - Captcha Detected! Killing browser session and waiting 2 minutes...
+2026-01-16 13:43:42,263 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:43:45,109 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:43:51,837 - WebMonitor - WARNING - Login navigation wait check: Target page, context or browser has been closed
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:43:51,851 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:43:51,856 - WebMonitor - WARNING - Lobby navigation warning: Page.goto: Target page, context or browser has been closed
+2026-01-16 13:43:51,857 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:43:51,859 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:44:01,875 - WebMonitor - ERROR - Error performing broadcast: Page.goto: Target page, context or browser has been closed
+2026-01-16 13:44:01,884 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:06,909 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:11,927 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:16,942 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:21,953 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:26,965 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:31,977 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:36,994 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:42,010 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:47,027 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:52,041 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:44:57,047 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:02,072 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:07,088 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:12,088 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:17,109 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:22,127 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:27,141 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:32,159 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:37,171 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:42,178 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:47,192 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:52,217 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:45:57,234 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:02,243 - WebMonitor - ERROR - Error performing broadcast: Page.goto: Target page, context or browser has been closed
+2026-01-16 13:46:02,254 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:07,270 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:12,278 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:17,288 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:22,308 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:27,317 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:32,330 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:37,339 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:42,345 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:47,359 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:52,377 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:46:57,391 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:02,409 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:07,427 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:12,442 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:17,461 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:22,470 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:27,486 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:32,496 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:37,496 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:42,517 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:47,543 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:52,549 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:47:57,559 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:48:02,571 - WebMonitor - ERROR - Error performing broadcast: Page.goto: Target page, context or browser has been closed
+2026-01-16 13:48:02,578 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:48:07,597 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:48:17,069 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:48:19,961 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:48:20,714 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:48:21,718 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:48:23,059 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:48:23,061 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:48:33,078 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:48:33,205 - WebMonitor - ERROR - Error performing broadcast: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:48:33,224 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:48:33,224 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:48:34,514 - WebMonitor - ERROR - Error sending message: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:48:46,659 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:48:46,659 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:48:47,902 - WebMonitor - ERROR - Error sending message: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:48:55,119 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:48:55,119 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:48:57,077 - WebMonitor - ERROR - Error sending message: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:50:34,638 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:50:34,810 - WebMonitor - ERROR - Error performing broadcast: 'StatsTracker' object has no attribute 'increment'
+2026-01-16 13:50:45,368 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:50:48,162 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:50:54,239 - WebMonitor - WARNING - Login navigation wait check: Target page, context or browser has been closed
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 13:50:54,252 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:50:54,256 - WebMonitor - WARNING - Lobby navigation warning: Page.goto: Target page, context or browser has been closed
+2026-01-16 13:50:54,257 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:50:54,259 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:53:10,641 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:53:13,496 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:53:36,415 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:53:37,436 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:53:38,552 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:53:38,552 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:53:48,569 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:53:49,017 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 13:53:49,017 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:53:52,100 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: Hello
+2026-01-16 13:53:54,201 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 13:53:57,509 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: Hello
+2026-01-16 13:54:04,637 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 13:54:04,637 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:54:08,159 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: Hello
+2026-01-16 13:54:15,290 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:20,298 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:25,311 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:30,314 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:35,329 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:40,342 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:54:45,359 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 13:56:18,805 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:56:21,989 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:56:35,566 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:56:36,577 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:56:37,883 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:56:37,887 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:56:47,895 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:56:48,272 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 13:56:48,272 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:56:50,263 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: Hello
+2026-01-16 13:56:52,381 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 13:56:54,078 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: Hello
+2026-01-16 13:59:21,102 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 13:59:24,001 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 13:59:38,424 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 13:59:39,433 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 13:59:40,523 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 13:59:40,523 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 13:59:50,534 - WebMonitor - INFO - Broadcasting: Hello everyone! How is it going?
+2026-01-16 13:59:50,989 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 13:59:50,989 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 13:59:54,422 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: Hello
+2026-01-16 13:59:56,525 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 13:59:59,277 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: Hello
+2026-01-16 14:05:11,262 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:05:14,043 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:05:25,230 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:05:26,249 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:05:27,327 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:05:27,327 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:05:37,525 - WebMonitor - INFO - Broadcasting: Hello everyone!
+2026-01-16 14:05:37,992 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-aIW6ywBaE3iOIgre0', 'id': 'private-chat-aIW6ywBaE3iOIgre0'}, {'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:05:37,992 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 14:05:41,413 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: Hello
+2026-01-16 14:05:43,513 - WebMonitor - INFO - Processing PM from private-chat-aIW6ywBaE3iOIgre0
+2026-01-16 14:05:46,802 - WebMonitor - INFO - Replied to private-chat-aIW6ywBaE3iOIgre0: Hello
+2026-01-16 14:08:19,155 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:08:21,948 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:08:36,377 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:08:37,387 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:08:38,487 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:08:38,487 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:08:48,882 - WebMonitor - INFO - Broadcasting: hey guys whats up
+2026-01-16 14:08:49,503 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-aIW6ywBaE3iOIgre0', 'id': 'private-chat-aIW6ywBaE3iOIgre0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}]
+2026-01-16 14:08:49,503 - WebMonitor - INFO - Processing PM from private-chat-aIW6ywBaE3iOIgre0
+2026-01-16 14:08:52,609 - WebMonitor - INFO - Replied to private-chat-aIW6ywBaE3iOIgre0: hey there! what's up with u?
+2026-01-16 14:08:54,702 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 14:08:57,450 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey, what's up?
+2026-01-16 14:08:59,560 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 14:09:01,822 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: what's up with u?
+2026-01-16 14:09:03,922 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0
+2026-01-16 14:09:07,429 - WebMonitor - INFO - Replied to private-chat-ZNp63wCqnBH4zUmJ0: just sketching some new designs
+2026-01-16 14:09:19,589 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:09:19,589 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0
+2026-01-16 14:09:22,461 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey there, what's happening?
+2026-01-16 14:11:24,817 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:11:24,817 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:11:24,846 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:11:24,846 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:11:26,118 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:11:26,118 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:11:27,993 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:11:27,993 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:11:28,389 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:11:28,389 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:11:30,985 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:11:30,985 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:11:30,986 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:11:30,986 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:11:30,986 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:11:30,986 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:11:41,025 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:11:41,025 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:11:41,787 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:11:41,787 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:11:58,022 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 14:11:58,022 - WebMonitor - WARNING - Login navigation wait check: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================. Proceeding...
+2026-01-16 14:11:58,073 - WebMonitor - WARNING - Captcha Detected! Killing browser session and waiting 2 minutes...
+2026-01-16 14:11:58,073 - WebMonitor - WARNING - Captcha Detected! Killing browser session and waiting 2 minutes...
+2026-01-16 14:12:47,489 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:12:47,489 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:12:52,593 - WebMonitor - INFO - Replied to ayush_: hey there, what's up?
+2026-01-16 14:12:52,593 - WebMonitor - INFO - Replied to ayush_: hey there, what's up?
+2026-01-16 14:13:09,997 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:09,997 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:14,887 - WebMonitor - INFO - Replied to ayush_: all good, u?
+2026-01-16 14:13:14,887 - WebMonitor - INFO - Replied to ayush_: all good, u?
+2026-01-16 14:13:22,237 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:22,237 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:26,995 - WebMonitor - INFO - Replied to ayush_: great, busy day designing
+2026-01-16 14:13:26,995 - WebMonitor - INFO - Replied to ayush_: great, busy day designing
+2026-01-16 14:13:34,363 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:34,363 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:37,838 - WebMonitor - INFO - Replied to ayush_: super busy designing rn
+2026-01-16 14:13:37,838 - WebMonitor - INFO - Replied to ayush_: super busy designing rn
+2026-01-16 14:13:45,459 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:13:45,459 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:13:46,229 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:13:46,229 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:13:46,277 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:46,277 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:13:51,009 - WebMonitor - INFO - Replied to ayush_: clothes for my new label
+2026-01-16 14:13:51,009 - WebMonitor - INFO - Replied to ayush_: clothes for my new label
+2026-01-16 14:13:58,222 - WebMonitor - INFO - Restarting login attempt...
+2026-01-16 14:13:58,222 - WebMonitor - INFO - Restarting login attempt...
+2026-01-16 14:13:58,473 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:13:58,473 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:14:01,166 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:14:01,166 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:14:03,836 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:03,836 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:06,961 - WebMonitor - INFO - Replied to subham: i'm 32, london, fashion designer, u?
+2026-01-16 14:14:06,961 - WebMonitor - INFO - Replied to subham: i'm 32, london, fashion designer, u?
+2026-01-16 14:14:14,200 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:14:14,200 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:14:19,000 - WebMonitor - INFO - Replied to ayush_: love it, wbu?
+2026-01-16 14:14:19,000 - WebMonitor - INFO - Replied to ayush_: love it, wbu?
+2026-01-16 14:14:19,040 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:14:19,040 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:14:20,055 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:14:20,055 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:14:21,288 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:14:21,288 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:14:21,290 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:14:21,290 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:14:31,809 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur having a good day!
+2026-01-16 14:14:31,809 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur having a good day!
+2026-01-16 14:14:32,316 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:32,316 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:32,424 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:14:32,424 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:14:32,425 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640
+2026-01-16 14:14:32,425 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640
+2026-01-16 14:14:34,562 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey! what's up with you?
+2026-01-16 14:14:34,562 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey! what's up with you?
+2026-01-16 14:14:36,526 - WebMonitor - INFO - Replied to subham: nice, i'm from delhi originally, u?
+2026-01-16 14:14:36,526 - WebMonitor - INFO - Replied to subham: nice, i'm from delhi originally, u?
+2026-01-16 14:14:36,650 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0
+2026-01-16 14:14:36,650 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0
+2026-01-16 14:14:39,301 - WebMonitor - INFO - Replied to private-chat-ZNp63wCqnBH4zUmJ0: hey whats up? any plans for the weekend?
+2026-01-16 14:14:39,301 - WebMonitor - INFO - Replied to private-chat-ZNp63wCqnBH4zUmJ0: hey whats up? any plans for the weekend?
+2026-01-16 14:14:41,464 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 14:14:41,464 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40
+2026-01-16 14:14:44,105 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there! what's up with u?
+2026-01-16 14:14:44,105 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there! what's up with u?
+2026-01-16 14:14:44,551 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:14:44,551 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:14:49,174 - WebMonitor - INFO - Replied to ayush_: i'm 32, wbu?
+2026-01-16 14:14:49,174 - WebMonitor - INFO - Replied to ayush_: i'm 32, wbu?
+2026-01-16 14:14:51,190 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:14:51,190 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:14:51,486 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:51,486 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:14:55,592 - WebMonitor - INFO - Replied to subham: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:14:55,592 - WebMonitor - INFO - Replied to subham: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:14:56,213 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:14:56,213 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:01,218 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:01,218 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:02,988 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:15:02,988 - WebMonitor - INFO - Processing PM from ayush_
+2026-01-16 14:15:06,242 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:06,242 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:07,979 - WebMonitor - INFO - Replied to ayush_: nice, still got loads of time then
+2026-01-16 14:15:07,979 - WebMonitor - INFO - Replied to ayush_: nice, still got loads of time then
+2026-01-16 14:15:11,254 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:11,254 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:15,592 - WebMonitor - INFO - Processing PM from kamran29
+2026-01-16 14:15:15,592 - WebMonitor - INFO - Processing PM from kamran29
+2026-01-16 14:15:16,259 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:16,259 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:20,409 - WebMonitor - INFO - Replied to kamran29: hey that's not cool, let's be respectful
+2026-01-16 14:15:20,409 - WebMonitor - INFO - Replied to kamran29: hey that's not cool, let's be respectful
+2026-01-16 14:15:21,263 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:21,263 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:26,264 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:26,264 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:31,259 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:31,259 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:36,261 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:36,261 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:38,016 - WebMonitor - INFO - Processing PM from kamran29
+2026-01-16 14:15:38,016 - WebMonitor - INFO - Processing PM from kamran29
+2026-01-16 14:15:41,269 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:41,269 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:42,526 - WebMonitor - INFO - Replied to kamran29: hey that's not cool, let's be respectful
+2026-01-16 14:15:42,526 - WebMonitor - INFO - Replied to kamran29: hey that's not cool, let's be respectful
+2026-01-16 14:15:46,282 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:46,282 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:49,775 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:15:49,775 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:15:50,603 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:15:50,603 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:15:50,670 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:15:50,670 - WebMonitor - INFO - Processing PM from subham
+2026-01-16 14:15:51,301 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:51,301 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:54,888 - WebMonitor - INFO - Replied to subham: nice, i'm 5'7 and fit, u?
+2026-01-16 14:15:54,888 - WebMonitor - INFO - Replied to subham: nice, i'm 5'7 and fit, u?
+2026-01-16 14:15:56,321 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:15:56,321 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:16:01,346 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:16:01,346 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:16:06,361 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:16:06,361 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:16:07,721 - WebMonitor - INFO - Processing PM from vivekblr
+2026-01-16 14:16:07,721 - WebMonitor - INFO - Processing PM from vivekblr
+2026-01-16 14:16:18,706 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:16:18,706 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:16:18,822 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:16:18,822 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:16:20,021 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:16:20,021 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:16:21,952 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:16:21,952 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:16:22,375 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:16:22,375 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:16:24,869 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:16:24,869 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:16:24,869 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:16:24,869 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:16:24,870 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:16:24,870 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:16:34,889 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:16:34,889 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:16:35,686 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:16:35,686 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:16:37,787 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:16:37,787 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:16:38,816 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:16:38,816 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:16:40,001 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:16:40,001 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:16:40,003 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:16:40,003 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:16:45,965 - WebMonitor - INFO - Processing PM from hunkyhubby (0/15)
+2026-01-16 14:16:45,965 - WebMonitor - INFO - Processing PM from hunkyhubby (0/15)
+2026-01-16 14:16:49,695 - WebMonitor - INFO - Replied to hunkyhubby: i don't discuss such topics
+2026-01-16 14:16:49,695 - WebMonitor - INFO - Replied to hunkyhubby: i don't discuss such topics
+2026-01-16 14:16:50,539 - WebMonitor - INFO - Broadcasting: hey everyone here
+2026-01-16 14:16:50,539 - WebMonitor - INFO - Broadcasting: hey everyone here
+2026-01-16 14:16:50,958 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}]
+2026-01-16 14:16:50,958 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}]
+2026-01-16 14:16:50,959 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/20)
+2026-01-16 14:16:50,959 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/20)
+2026-01-16 14:16:53,898 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there, what's up with u?
+2026-01-16 14:16:53,898 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there, what's up with u?
+2026-01-16 14:16:55,893 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0 (0/20)
+2026-01-16 14:16:55,893 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0 (0/20)
+2026-01-16 14:16:56,979 - WebMonitor - INFO - Processing PM from safedpaani (0/15)
+2026-01-16 14:16:56,979 - WebMonitor - INFO - Processing PM from safedpaani (0/15)
+2026-01-16 14:16:58,034 - WebMonitor - INFO - Replied to private-chat-ZNp63wCqnBH4zUmJ0: i'm good thanks, just busy with work. u?
+2026-01-16 14:16:58,034 - WebMonitor - INFO - Replied to private-chat-ZNp63wCqnBH4zUmJ0: i'm good thanks, just busy with work. u?
+2026-01-16 14:17:00,520 - WebMonitor - INFO - Replied to safedpaani: hey there, what's up?
+2026-01-16 14:17:00,520 - WebMonitor - INFO - Replied to safedpaani: hey there, what's up?
+2026-01-16 14:17:07,864 - WebMonitor - INFO - Processing PM from ____afzal_driver (0/15)
+2026-01-16 14:17:07,864 - WebMonitor - INFO - Processing PM from ____afzal_driver (0/15)
+2026-01-16 14:17:11,239 - WebMonitor - INFO - Replied to ____afzal_driver: salam, how are u?
+2026-01-16 14:17:11,239 - WebMonitor - INFO - Replied to ____afzal_driver: salam, how are u?
+2026-01-16 14:17:18,680 - WebMonitor - INFO - Processing PM from safedpaani (1/15)
+2026-01-16 14:17:18,680 - WebMonitor - INFO - Processing PM from safedpaani (1/15)
+2026-01-16 14:17:22,864 - WebMonitor - INFO - Replied to safedpaani: im 32, london, fashion designer, u?
+2026-01-16 14:17:22,864 - WebMonitor - INFO - Replied to safedpaani: im 32, london, fashion designer, u?
+2026-01-16 14:17:30,327 - WebMonitor - INFO - Processing PM from ____afzal_driver (1/15)
+2026-01-16 14:17:30,327 - WebMonitor - INFO - Processing PM from ____afzal_driver (1/15)
+2026-01-16 14:17:35,313 - WebMonitor - INFO - Replied to ____afzal_driver: i'm 32 too, from delhi originally. what's up?
+2026-01-16 14:17:35,313 - WebMonitor - INFO - Replied to ____afzal_driver: i'm 32 too, from delhi originally. what's up?
+2026-01-16 14:17:42,871 - WebMonitor - INFO - Processing PM from safedpaani (2/15)
+2026-01-16 14:17:42,871 - WebMonitor - INFO - Processing PM from safedpaani (2/15)
+2026-01-16 14:17:47,383 - WebMonitor - INFO - Replied to safedpaani: cool, what part of india?
+2026-01-16 14:17:47,383 - WebMonitor - INFO - Replied to safedpaani: cool, what part of india?
+2026-01-16 14:17:55,547 - WebMonitor - INFO - Processing PM from ____afzal_driver (2/15)
+2026-01-16 14:17:55,547 - WebMonitor - INFO - Processing PM from ____afzal_driver (2/15)
+2026-01-16 14:18:00,279 - WebMonitor - INFO - Replied to ____afzal_driver: i am a fashion designer, nice to meet u
+2026-01-16 14:18:00,279 - WebMonitor - INFO - Replied to ____afzal_driver: i am a fashion designer, nice to meet u
+2026-01-16 14:18:00,409 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}]
+2026-01-16 14:18:00,409 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}]
+2026-01-16 14:18:00,409 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640 (0/20)
+2026-01-16 14:18:00,409 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640 (0/20)
+2026-01-16 14:18:02,923 - WebMonitor - INFO - Processing PM from safedpaani (3/15)
+2026-01-16 14:18:02,923 - WebMonitor - INFO - Processing PM from safedpaani (3/15)
+2026-01-16 14:18:04,219 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey! what's happening with you?
+2026-01-16 14:18:04,219 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey! what's happening with you?
+2026-01-16 14:18:07,910 - WebMonitor - INFO - Replied to safedpaani: south delhi originally, u?
+2026-01-16 14:18:07,910 - WebMonitor - INFO - Replied to safedpaani: south delhi originally, u?
+2026-01-16 14:18:11,347 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}]
+2026-01-16 14:18:11,347 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-ZNp63wCqnBH4zUmJ0', 'id': 'private-chat-ZNp63wCqnBH4zUmJ0'}]
+2026-01-16 14:18:11,348 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/20)
+2026-01-16 14:18:11,348 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/20)
+2026-01-16 14:18:13,478 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey there, what's up?
+2026-01-16 14:18:13,478 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey there, what's up?
+2026-01-16 14:18:15,237 - WebMonitor - INFO - Processing PM from ____afzal_driver (3/15)
+2026-01-16 14:18:15,237 - WebMonitor - INFO - Processing PM from ____afzal_driver (3/15)
+2026-01-16 14:18:15,478 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (1/20)
+2026-01-16 14:18:15,478 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (1/20)
+2026-01-16 14:18:18,621 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there! what are you up to today?
+2026-01-16 14:18:18,621 - WebMonitor - INFO - Replied to private-chat-Zz3zFwA85qPwnUO40: hey there! what are you up to today?
+2026-01-16 14:18:19,520 - WebMonitor - INFO - Replied to ____afzal_driver: im fit and i play tennis, u?
+2026-01-16 14:18:19,520 - WebMonitor - INFO - Replied to ____afzal_driver: im fit and i play tennis, u?
+2026-01-16 14:18:20,616 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0 (1/20)
+2026-01-16 14:18:20,616 - WebMonitor - INFO - Processing PM from private-chat-ZNp63wCqnBH4zUmJ0 (1/20)
+2026-01-16 14:18:21,756 - WebMonitor - INFO - Processing PM from safedpaani (4/15)
+2026-01-16 14:18:21,756 - WebMonitor - INFO - Processing PM from safedpaani (4/15)
+2026-01-16 14:18:22,905 - WebMonitor - ERROR - Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:18:22,905 - WebMonitor - ERROR - Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:18:23,282 - WebMonitor - WARNING - Type failed - element not found: #private-chat-ZNp63wCqnBH4zUmJ0 .chat-input.keeps-focus
+2026-01-16 14:18:23,282 - WebMonitor - WARNING - Type failed - element not found: #private-chat-ZNp63wCqnBH4zUmJ0 .chat-input.keeps-focus
+2026-01-16 14:18:23,285 - WebMonitor - ERROR - Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:18:23,285 - WebMonitor - ERROR - Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:18:26,992 - WebMonitor - INFO - Replied to safedpaani: no way, small world!
+2026-01-16 14:18:26,992 - WebMonitor - INFO - Replied to safedpaani: no way, small world!
+2026-01-16 14:18:30,335 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:30,335 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:34,560 - WebMonitor - INFO - Processing PM from ____afzal_driver (4/15)
+2026-01-16 14:18:34,560 - WebMonitor - INFO - Processing PM from ____afzal_driver (4/15)
+2026-01-16 14:18:35,348 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:35,348 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:38,211 - WebMonitor - INFO - Replied to ____afzal_driver: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:18:38,211 - WebMonitor - INFO - Replied to ____afzal_driver: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:18:40,359 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:40,359 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:40,599 - WebMonitor - INFO - Processing PM from safedpaani (5/15)
+2026-01-16 14:18:40,599 - WebMonitor - INFO - Processing PM from safedpaani (5/15)
+2026-01-16 14:18:44,501 - WebMonitor - INFO - Replied to safedpaani: same here, what u up to?
+2026-01-16 14:18:44,501 - WebMonitor - INFO - Replied to safedpaani: same here, what u up to?
+2026-01-16 14:18:45,369 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:45,369 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:50,791 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur all good?
+2026-01-16 14:18:50,791 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur all good?
+2026-01-16 14:18:50,796 - WebMonitor - WARNING - Broadcast input not found.
+2026-01-16 14:18:50,796 - WebMonitor - WARNING - Broadcast input not found.
+2026-01-16 14:18:50,800 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:50,800 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:51,833 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:18:51,833 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:18:52,732 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:18:52,732 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:18:52,844 - WebMonitor - INFO - Processing PM from safedpaani (6/15)
+2026-01-16 14:18:52,844 - WebMonitor - INFO - Processing PM from safedpaani (6/15)
+2026-01-16 14:18:55,815 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:55,815 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:18:57,072 - WebMonitor - INFO - Replied to safedpaani: cool, what kind of IT?
+2026-01-16 14:18:57,072 - WebMonitor - INFO - Replied to safedpaani: cool, what kind of IT?
+2026-01-16 14:19:00,832 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:00,832 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:04,348 - WebMonitor - INFO - Processing PM from safedpaani (7/15)
+2026-01-16 14:19:04,348 - WebMonitor - INFO - Processing PM from safedpaani (7/15)
+2026-01-16 14:19:05,858 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:05,858 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:09,083 - WebMonitor - INFO - Replied to safedpaani: yep, happily married
+2026-01-16 14:19:09,083 - WebMonitor - INFO - Replied to safedpaani: yep, happily married
+2026-01-16 14:19:10,869 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:10,869 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:15,872 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:15,872 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:16,859 - WebMonitor - INFO - Processing PM from ____afzal_driver (5/15)
+2026-01-16 14:19:16,859 - WebMonitor - INFO - Processing PM from ____afzal_driver (5/15)
+2026-01-16 14:19:20,409 - WebMonitor - INFO - Replied to ____afzal_driver: just good conversation, u?
+2026-01-16 14:19:20,409 - WebMonitor - INFO - Replied to ____afzal_driver: just good conversation, u?
+2026-01-16 14:19:20,849 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:20,849 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:22,846 - WebMonitor - INFO - Processing PM from embrace23 (0/15)
+2026-01-16 14:19:22,846 - WebMonitor - INFO - Processing PM from embrace23 (0/15)
+2026-01-16 14:19:25,877 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:25,877 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:27,369 - WebMonitor - INFO - Replied to embrace23: hey, what's up?
+2026-01-16 14:19:27,369 - WebMonitor - INFO - Replied to embrace23: hey, what's up?
+2026-01-16 14:19:29,553 - WebMonitor - INFO - Processing PM from gymtrainer (0/15)
+2026-01-16 14:19:29,553 - WebMonitor - INFO - Processing PM from gymtrainer (0/15)
+2026-01-16 14:19:30,896 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:30,896 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:33,458 - WebMonitor - INFO - Replied to gymtrainer: i am 32, u?
+2026-01-16 14:19:33,458 - WebMonitor - INFO - Replied to gymtrainer: i am 32, u?
+2026-01-16 14:19:35,836 - WebMonitor - INFO - Processing PM from safedpaani (8/15)
+2026-01-16 14:19:35,836 - WebMonitor - INFO - Processing PM from safedpaani (8/15)
+2026-01-16 14:19:35,905 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:35,905 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:40,122 - WebMonitor - INFO - Replied to safedpaani: congrats! whens the big day?
+2026-01-16 14:19:40,122 - WebMonitor - INFO - Replied to safedpaani: congrats! whens the big day?
+2026-01-16 14:19:40,911 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:40,911 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:45,936 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:45,936 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:47,557 - WebMonitor - INFO - Processing PM from ____afzal_driver (6/15)
+2026-01-16 14:19:47,557 - WebMonitor - INFO - Processing PM from ____afzal_driver (6/15)
+2026-01-16 14:19:51,389 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:51,389 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:51,715 - WebMonitor - INFO - Replied to ____afzal_driver: just good conversation, u?
+2026-01-16 14:19:51,715 - WebMonitor - INFO - Replied to ____afzal_driver: just good conversation, u?
+2026-01-16 14:19:53,883 - WebMonitor - INFO - Processing PM from embrace23 (1/15)
+2026-01-16 14:19:53,883 - WebMonitor - INFO - Processing PM from embrace23 (1/15)
+2026-01-16 14:19:56,404 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:56,404 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:19:57,818 - WebMonitor - INFO - Replied to embrace23: i'm 32, female, from london. u?
+2026-01-16 14:19:57,818 - WebMonitor - INFO - Replied to embrace23: i'm 32, female, from london. u?
+2026-01-16 14:20:00,191 - WebMonitor - INFO - Processing PM from safedpaani (9/15)
+2026-01-16 14:20:00,191 - WebMonitor - INFO - Processing PM from safedpaani (9/15)
+2026-01-16 14:20:01,435 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:01,435 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:04,468 - WebMonitor - INFO - Replied to safedpaani: oh nice one! hope it all goes well
+2026-01-16 14:20:04,468 - WebMonitor - INFO - Replied to safedpaani: oh nice one! hope it all goes well
+2026-01-16 14:20:06,427 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:06,427 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:11,443 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:11,443 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:12,113 - WebMonitor - INFO - Processing PM from ____afzal_driver (7/15)
+2026-01-16 14:20:12,113 - WebMonitor - INFO - Processing PM from ____afzal_driver (7/15)
+2026-01-16 14:20:16,519 - WebMonitor - INFO - Replied to ____afzal_driver: i'm not into that, what else is up?
+2026-01-16 14:20:16,519 - WebMonitor - INFO - Replied to ____afzal_driver: i'm not into that, what else is up?
+2026-01-16 14:20:16,524 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:16,524 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:18,764 - WebMonitor - INFO - Processing PM from gymtrainer (1/15)
+2026-01-16 14:20:18,764 - WebMonitor - INFO - Processing PM from gymtrainer (1/15)
+2026-01-16 14:20:21,627 - WebMonitor - INFO - Replied to gymtrainer: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:20:21,627 - WebMonitor - INFO - Replied to gymtrainer: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:20:21,652 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:21,652 - WebMonitor - ERROR - PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:20:35,468 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:20:35,468 - WebMonitor - INFO - Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:20:35,492 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:20:35,492 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:20:36,643 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:20:36,643 - WebMonitor - INFO - Waiting for Kiwi Login Form...
+2026-01-16 14:20:38,371 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:20:38,371 - WebMonitor - INFO - Submitting Login and waiting for navigation...
+2026-01-16 14:20:38,777 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:20:38,777 - WebMonitor - INFO - Clicked Start.
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Successfully entered chat!
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:20:41,659 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:20:51,681 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:20:51,681 - WebMonitor - INFO - Sending Broadcast Message...
+2026-01-16 14:20:52,608 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:20:52,608 - WebMonitor - INFO - Broadcast sent.
+2026-01-16 14:20:54,754 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:20:54,754 - WebMonitor - INFO - Login navigation finished.
+2026-01-16 14:20:55,774 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:20:55,774 - WebMonitor - INFO - Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:20:56,909 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:20:56,909 - WebMonitor - INFO - Starting Monitor Loop
+2026-01-16 14:20:56,909 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:20:56,909 - WebMonitor - INFO - Waiting 10s before first loop...
+2026-01-16 14:21:02,793 - WebMonitor - INFO - Processing PM from decentdevformarried (0/20)
+2026-01-16 14:21:02,793 - WebMonitor - INFO - Processing PM from decentdevformarried (0/20)
+2026-01-16 14:21:07,423 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur having a good one
+2026-01-16 14:21:07,423 - WebMonitor - INFO - Broadcasting: hey everyone, hope ur having a good one
+2026-01-16 14:21:07,762 - WebMonitor - INFO - Replied to decentdevformarried: lol nice pic. what r u upto?
+2026-01-16 14:21:07,762 - WebMonitor - INFO - Replied to decentdevformarried: lol nice pic. what r u upto?
+2026-01-16 14:21:08,071 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:21:08,071 - WebMonitor - INFO - Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-WkOFPgDWaBagTA640', 'id': 'private-chat-WkOFPgDWaBagTA640'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:21:08,071 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:21:08,071 - WebMonitor - INFO - Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:21:10,192 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey, what's up with you?
+2026-01-16 14:21:10,192 - WebMonitor - INFO - Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey, what's up with you?
+2026-01-16 14:21:10,196 - WebMonitor - INFO - Processing PM from embrace23 (0/20)
+2026-01-16 14:21:10,196 - WebMonitor - INFO - Processing PM from embrace23 (0/20)
+2026-01-16 14:21:12,194 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640 (0/15)
+2026-01-16 14:21:12,194 - WebMonitor - INFO - Processing PM from private-chat-WkOFPgDWaBagTA640 (0/15)
+2026-01-16 14:21:13,633 - WebMonitor - INFO - Replied to embrace23: hey there, no sorry
+2026-01-16 14:21:13,633 - WebMonitor - INFO - Replied to embrace23: hey there, no sorry
+2026-01-16 14:21:15,668 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey there, what's up?
+2026-01-16 14:21:15,668 - WebMonitor - INFO - Replied to private-chat-WkOFPgDWaBagTA640: hey there, what's up?
+2026-01-16 14:21:17,673 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:21:17,673 - WebMonitor - INFO - Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:21:19,497 - WebMonitor - ERROR - Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:21:19,497 - WebMonitor - ERROR - Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:21:20,081 - WebMonitor - WARNING - Type failed - element not found: #private-chat-Zz3zFwA85qPwnUO40 .chat-input.keeps-focus
+2026-01-16 14:21:20,081 - WebMonitor - WARNING - Type failed - element not found: #private-chat-Zz3zFwA85qPwnUO40 .chat-input.keeps-focus
+2026-01-16 14:21:20,084 - WebMonitor - ERROR - Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:21:20,084 - WebMonitor - ERROR - Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:28:36,534 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:28:36,534 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:28:36,567 - WebMonitor - INFO - [SiteTwoBot] Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:28:36,567 - WebMonitor - INFO - [SiteTwoBot] Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:28:37,756 - WebMonitor - INFO - [SiteTwoBot] Waiting for Kiwi Login Form...
+2026-01-16 14:28:37,756 - WebMonitor - INFO - [SiteTwoBot] Waiting for Kiwi Login Form...
+2026-01-16 14:28:39,702 - WebMonitor - INFO - [WireBot] Submitting Login and waiting for navigation...
+2026-01-16 14:28:39,702 - WebMonitor - INFO - [WireBot] Submitting Login and waiting for navigation...
+2026-01-16 14:28:40,067 - WebMonitor - INFO - [SiteTwoBot] Clicked Start.
+2026-01-16 14:28:40,067 - WebMonitor - INFO - [SiteTwoBot] Clicked Start.
+2026-01-16 14:28:42,707 - WebMonitor - INFO - [SiteTwoBot] Successfully entered chat!
+2026-01-16 14:28:42,707 - WebMonitor - INFO - [SiteTwoBot] Successfully entered chat!
+2026-01-16 14:28:42,709 - WebMonitor - INFO - [SiteTwoBot] Starting Monitor Loop
+2026-01-16 14:28:42,709 - WebMonitor - INFO - [SiteTwoBot] Starting Monitor Loop
+2026-01-16 14:28:42,709 - WebMonitor - INFO - [SiteTwoBot] Waiting 10s before first loop...
+2026-01-16 14:28:42,709 - WebMonitor - INFO - [SiteTwoBot] Waiting 10s before first loop...
+2026-01-16 14:28:52,739 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:28:52,739 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:28:53,497 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:28:53,497 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:29:03,643 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ____porn-flakes (0/20)
+2026-01-16 14:29:03,643 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ____porn-flakes (0/20)
+2026-01-16 14:29:03,997 - WebMonitor - INFO - [WireBot] Login navigation finished.
+2026-01-16 14:29:03,997 - WebMonitor - INFO - [WireBot] Login navigation finished.
+2026-01-16 14:29:05,016 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:29:05,016 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:29:06,198 - WebMonitor - INFO - [WireBot] Starting Monitor Loop
+2026-01-16 14:29:06,198 - WebMonitor - INFO - [WireBot] Starting Monitor Loop
+2026-01-16 14:29:06,198 - WebMonitor - INFO - [WireBot] Waiting 10s before first loop...
+2026-01-16 14:29:06,198 - WebMonitor - INFO - [WireBot] Waiting 10s before first loop...
+2026-01-16 14:29:07,661 - WebMonitor - INFO - [SiteTwoBot] Replied to ____porn-flakes: yas that's me fashion designer
+2026-01-16 14:29:07,661 - WebMonitor - INFO - [SiteTwoBot] Replied to ____porn-flakes: yas that's me fashion designer
+2026-01-16 14:29:15,046 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (0/20)
+2026-01-16 14:29:15,046 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (0/20)
+2026-01-16 14:29:16,632 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, how's it going?
+2026-01-16 14:29:16,632 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, how's it going?
+2026-01-16 14:29:17,036 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-WjZrWgDWaBM4rxoh0', 'id': 'private-chat-WjZrWgDWaBM4rxoh0'}]
+2026-01-16 14:29:17,036 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}, {'name': 'private-chat-WjZrWgDWaBM4rxoh0', 'id': 'private-chat-WjZrWgDWaBM4rxoh0'}]
+2026-01-16 14:29:17,038 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:29:17,038 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:29:18,578 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: hey there whats up
+2026-01-16 14:29:18,578 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: hey there whats up
+2026-01-16 14:29:19,935 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-Tz_kEgA8C7rcv0lW0 .conversation-history
+2026-01-16 14:29:19,935 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-Tz_kEgA8C7rcv0lW0 .conversation-history
+2026-01-16 14:29:19,947 - WebMonitor - WARNING - [WireBot] History element NOT FOUND for selector: #private-chat-Tz_kEgA8C7rcv0lW0 .conversation-history
+2026-01-16 14:29:19,947 - WebMonitor - WARNING - [WireBot] History element NOT FOUND for selector: #private-chat-Tz_kEgA8C7rcv0lW0 .conversation-history
+2026-01-16 14:29:20,789 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey whats up?
+2026-01-16 14:29:20,789 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: hey whats up?
+2026-01-16 14:29:20,821 - WebMonitor - INFO - [SiteTwoBot] Processing PM from punjabihubby (0/20)
+2026-01-16 14:29:20,821 - WebMonitor - INFO - [SiteTwoBot] Processing PM from punjabihubby (0/20)
+2026-01-16 14:29:22,784 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:29:22,784 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:29:24,241 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-Zz3zFwA85qPwnUO40 .conversation-history
+2026-01-16 14:29:24,241 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-Zz3zFwA85qPwnUO40 .conversation-history
+2026-01-16 14:29:24,259 - WebMonitor - WARNING - [WireBot] History element NOT FOUND for selector: #private-chat-Zz3zFwA85qPwnUO40 .conversation-history
+2026-01-16 14:29:24,259 - WebMonitor - WARNING - [WireBot] History element NOT FOUND for selector: #private-chat-Zz3zFwA85qPwnUO40 .conversation-history
+2026-01-16 14:29:25,123 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: hey there, what's up?
+2026-01-16 14:29:25,123 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: hey there, what's up?
+2026-01-16 14:29:25,904 - WebMonitor - INFO - [SiteTwoBot] Replied to punjabihubby: hi there! i'm good, u?
+2026-01-16 14:29:25,904 - WebMonitor - INFO - [SiteTwoBot] Replied to punjabihubby: hi there! i'm good, u?
+2026-01-16 14:29:27,141 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-WjZrWgDWaBM4rxoh0 (0/15)
+2026-01-16 14:29:27,141 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-WjZrWgDWaBM4rxoh0 (0/15)
+2026-01-16 14:29:28,713 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-WjZrWgDWaBM4rxoh0 .conversation-history
+2026-01-16 14:29:28,713 - WebMonitor - INFO - [WireBot] debug: getting history using selector: #private-chat-WjZrWgDWaBM4rxoh0 .conversation-history
+2026-01-16 14:29:28,724 - WebMonitor - ERROR - [WireBot] Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:29:28,724 - WebMonitor - ERROR - [WireBot] Failed to get history: Page.query_selector: Target page, context or browser has been closed
+2026-01-16 14:29:29,185 - WebMonitor - WARNING - [WireBot] Type failed - element not found: #private-chat-WjZrWgDWaBM4rxoh0 .chat-input.keeps-focus
+2026-01-16 14:29:29,185 - WebMonitor - WARNING - [WireBot] Type failed - element not found: #private-chat-WjZrWgDWaBM4rxoh0 .chat-input.keeps-focus
+2026-01-16 14:29:29,188 - WebMonitor - ERROR - [WireBot] Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:29:29,188 - WebMonitor - ERROR - [WireBot] Error sending message: Keyboard.press: Target page, context or browser has been closed
+2026-01-16 14:35:02,402 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:35:02,402 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat...
+2026-01-16 14:35:02,501 - WebMonitor - INFO - [SiteTwoBot] Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:35:02,501 - WebMonitor - INFO - [SiteTwoBot] Navigating to https://kiwiirc.hybridirc.com/#allindiachat.com...
+2026-01-16 14:35:03,722 - WebMonitor - INFO - [SiteTwoBot] Waiting for Kiwi Login Form...
+2026-01-16 14:35:03,722 - WebMonitor - INFO - [SiteTwoBot] Waiting for Kiwi Login Form...
+2026-01-16 14:35:05,577 - WebMonitor - INFO - [WireBot] Submitting Login and waiting for navigation...
+2026-01-16 14:35:05,577 - WebMonitor - INFO - [WireBot] Submitting Login and waiting for navigation...
+2026-01-16 14:35:06,056 - WebMonitor - INFO - [SiteTwoBot] Clicked Start.
+2026-01-16 14:35:06,056 - WebMonitor - INFO - [SiteTwoBot] Clicked Start.
+2026-01-16 14:35:08,717 - WebMonitor - INFO - [SiteTwoBot] Successfully entered chat!
+2026-01-16 14:35:08,717 - WebMonitor - INFO - [SiteTwoBot] Successfully entered chat!
+2026-01-16 14:35:08,717 - WebMonitor - INFO - [SiteTwoBot] Starting Monitor Loop
+2026-01-16 14:35:08,717 - WebMonitor - INFO - [SiteTwoBot] Starting Monitor Loop
+2026-01-16 14:35:08,718 - WebMonitor - INFO - [SiteTwoBot] Waiting 10s before first loop...
+2026-01-16 14:35:08,718 - WebMonitor - INFO - [SiteTwoBot] Waiting 10s before first loop...
+2026-01-16 14:35:18,740 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:35:18,740 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:35:19,478 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:35:19,478 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:35:19,542 - WebMonitor - INFO - [SiteTwoBot] Processing PM from bigdforu (0/20)
+2026-01-16 14:35:19,542 - WebMonitor - INFO - [SiteTwoBot] Processing PM from bigdforu (0/20)
+2026-01-16 14:35:23,961 - WebMonitor - INFO - [SiteTwoBot] Replied to bigdforu: sorry, i don't do that stuff
+2026-01-16 14:35:23,961 - WebMonitor - INFO - [SiteTwoBot] Replied to bigdforu: sorry, i don't do that stuff
+2026-01-16 14:35:26,176 - WebMonitor - INFO - [WireBot] Login navigation finished.
+2026-01-16 14:35:26,176 - WebMonitor - INFO - [WireBot] Login navigation finished.
+2026-01-16 14:35:27,194 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:35:27,194 - WebMonitor - INFO - [WireBot] Navigating to https://www.wireclub.com/chat/room/private_chat_lobby...
+2026-01-16 14:35:28,399 - WebMonitor - INFO - [WireBot] Starting Monitor Loop
+2026-01-16 14:35:28,399 - WebMonitor - INFO - [WireBot] Starting Monitor Loop
+2026-01-16 14:35:28,399 - WebMonitor - INFO - [WireBot] Waiting 10s before first loop...
+2026-01-16 14:35:28,399 - WebMonitor - INFO - [WireBot] Waiting 10s before first loop...
+2026-01-16 14:35:39,062 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur having a good one!
+2026-01-16 14:35:39,062 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur having a good one!
+2026-01-16 14:35:39,455 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:35:39,455 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}, {'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:35:39,456 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:35:39,456 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (0/15)
+2026-01-16 14:35:42,536 - WebMonitor - INFO - [WireBot] Found 19 structured messages in .chat-body .content
+2026-01-16 14:35:42,536 - WebMonitor - INFO - [WireBot] Found 19 structured messages in .chat-body .content
+2026-01-16 14:35:43,947 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: omg same lol
+2026-01-16 14:35:43,947 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: omg same lol
+2026-01-16 14:35:45,931 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:35:45,931 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (0/15)
+2026-01-16 14:35:49,053 - WebMonitor - INFO - [WireBot] Found 7 structured messages in .chat-body .content
+2026-01-16 14:35:49,053 - WebMonitor - INFO - [WireBot] Found 7 structured messages in .chat-body .content
+2026-01-16 14:35:50,102 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: thanks babe what are u upto
+2026-01-16 14:35:50,102 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: thanks babe what are u upto
+2026-01-16 14:35:57,124 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:35:57,124 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:35:57,125 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (1/15)
+2026-01-16 14:35:57,125 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (1/15)
+2026-01-16 14:35:58,765 - WebMonitor - INFO - [WireBot] Found 21 structured messages in .chat-body .content
+2026-01-16 14:35:58,765 - WebMonitor - INFO - [WireBot] Found 21 structured messages in .chat-body .content
+2026-01-16 14:36:00,365 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: lol same here girl
+2026-01-16 14:36:00,365 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: lol same here girl
+2026-01-16 14:36:32,444 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:36:32,444 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Zz3zFwA85qPwnUO40', 'id': 'private-chat-Zz3zFwA85qPwnUO40'}]
+2026-01-16 14:36:32,445 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (1/15)
+2026-01-16 14:36:32,445 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Zz3zFwA85qPwnUO40 (1/15)
+2026-01-16 14:36:33,762 - WebMonitor - INFO - [WireBot] Found 9 structured messages in .chat-body .content
+2026-01-16 14:36:33,762 - WebMonitor - INFO - [WireBot] Found 9 structured messages in .chat-body .content
+2026-01-16 14:36:34,969 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: lol stop it what are u upto
+2026-01-16 14:36:34,969 - WebMonitor - INFO - [WireBot] Replied to private-chat-Zz3zFwA85qPwnUO40: lol stop it what are u upto
+2026-01-16 14:37:12,849 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (0/20)
+2026-01-16 14:37:12,849 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (0/20)
+2026-01-16 14:37:16,277 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:37:16,277 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:37:23,604 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:37:23,604 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:37:24,527 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:37:24,527 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:37:24,707 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (0/20)
+2026-01-16 14:37:24,707 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (0/20)
+2026-01-16 14:37:29,660 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: hey! what's up?
+2026-01-16 14:37:29,660 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: hey! what's up?
+2026-01-16 14:37:42,810 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur all having a good one!
+2026-01-16 14:37:42,810 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur all having a good one!
+2026-01-16 14:37:42,864 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (0/20)
+2026-01-16 14:37:42,864 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (0/20)
+2026-01-16 14:37:48,000 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: kuch nahi, u?
+2026-01-16 14:37:48,000 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: kuch nahi, u?
+2026-01-16 14:37:50,291 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (1/20)
+2026-01-16 14:37:50,291 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (1/20)
+2026-01-16 14:37:54,855 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: let's keep it friendly and chat normally
+2026-01-16 14:37:54,855 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: let's keep it friendly and chat normally
+2026-01-16 14:37:57,124 - WebMonitor - INFO - [SiteTwoBot] Processing PM from matureguy51 (0/20)
+2026-01-16 14:37:57,124 - WebMonitor - INFO - [SiteTwoBot] Processing PM from matureguy51 (0/20)
+2026-01-16 14:38:00,579 - WebMonitor - INFO - [SiteTwoBot] Replied to matureguy51: hey there, i'm up for a chat, what's up with u?
+2026-01-16 14:38:00,579 - WebMonitor - INFO - [SiteTwoBot] Replied to matureguy51: hey there, i'm up for a chat, what's up with u?
+2026-01-16 14:38:08,067 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (1/20)
+2026-01-16 14:38:08,067 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (1/20)
+2026-01-16 14:38:11,624 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:38:11,624 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:38:13,817 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (1/20)
+2026-01-16 14:38:13,817 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (1/20)
+2026-01-16 14:38:17,362 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: sab theek hai, u?
+2026-01-16 14:38:17,362 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: sab theek hai, u?
+2026-01-16 14:38:23,431 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:38:23,431 - WebMonitor - INFO - [WireBot] Found unread chats: [{'name': 'private-chat-Tz_kEgA8C7rcv0lW0', 'id': 'private-chat-Tz_kEgA8C7rcv0lW0'}]
+2026-01-16 14:38:23,433 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (2/15)
+2026-01-16 14:38:23,433 - WebMonitor - INFO - [WireBot] Processing PM from private-chat-Tz_kEgA8C7rcv0lW0 (2/15)
+2026-01-16 14:38:26,251 - WebMonitor - INFO - [WireBot] Found 25 structured messages in .chat-body .content
+2026-01-16 14:38:26,251 - WebMonitor - INFO - [WireBot] Found 25 structured messages in .chat-body .content
+2026-01-16 14:38:27,936 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: hahaha same tbh
+2026-01-16 14:38:27,936 - WebMonitor - INFO - [WireBot] Replied to private-chat-Tz_kEgA8C7rcv0lW0: hahaha same tbh
+2026-01-16 14:38:35,402 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (2/20)
+2026-01-16 14:38:35,402 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (2/20)
+2026-01-16 14:38:39,386 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: same here
+2026-01-16 14:38:39,386 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: same here
+2026-01-16 14:38:50,033 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:38:50,033 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:38:55,047 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:38:55,047 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:38:57,134 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (2/20)
+2026-01-16 14:38:57,134 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (2/20)
+2026-01-16 14:39:00,059 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:00,059 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:01,338 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: pretty good, just finished a run. u?
+2026-01-16 14:39:01,338 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: pretty good, just finished a run. u?
+2026-01-16 14:39:05,079 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:05,079 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:08,811 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (2/20)
+2026-01-16 14:39:08,811 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (2/20)
+2026-01-16 14:39:10,095 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:10,095 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:12,723 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:12,723 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:15,100 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:15,100 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:20,097 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:20,097 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:20,134 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (3/20)
+2026-01-16 14:39:20,134 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (3/20)
+2026-01-16 14:39:24,583 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just working on some new designs, u?
+2026-01-16 14:39:24,583 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just working on some new designs, u?
+2026-01-16 14:39:25,106 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:25,106 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:30,129 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:30,129 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:32,108 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:39:32,108 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:39:32,852 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:39:32,852 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:39:35,127 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:35,127 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:38,033 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (3/20)
+2026-01-16 14:39:38,033 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (3/20)
+2026-01-16 14:39:40,156 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:40,156 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:42,745 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:42,745 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:45,691 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone! hope ur having a good day
+2026-01-16 14:39:45,691 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone! hope ur having a good day
+2026-01-16 14:39:45,701 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:39:45,701 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:39:45,714 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:45,714 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:50,304 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (4/20)
+2026-01-16 14:39:50,304 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (4/20)
+2026-01-16 14:39:50,726 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:50,726 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:53,843 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:53,843 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:39:55,736 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:55,736 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:39:56,140 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (4/20)
+2026-01-16 14:39:56,140 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (4/20)
+2026-01-16 14:39:59,421 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just working on some new designs, u?
+2026-01-16 14:39:59,421 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just working on some new designs, u?
+2026-01-16 14:40:00,759 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:00,759 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:05,758 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:05,758 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:10,760 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:10,760 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:15,762 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:15,762 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:17,254 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (5/20)
+2026-01-16 14:40:17,254 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (5/20)
+2026-01-16 14:40:21,027 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:21,027 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:21,291 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: i design clothes, u?
+2026-01-16 14:40:21,291 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: i design clothes, u?
+2026-01-16 14:40:26,055 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:26,055 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:28,884 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (5/20)
+2026-01-16 14:40:28,884 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (5/20)
+2026-01-16 14:40:31,075 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:31,075 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:32,325 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:40:32,325 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:40:36,092 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:36,092 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:39,897 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (6/20)
+2026-01-16 14:40:39,897 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (6/20)
+2026-01-16 14:40:41,107 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:41,107 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:43,582 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:40:43,582 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol what? let's just chat here
+2026-01-16 14:40:46,125 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:46,125 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:51,137 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:51,137 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:56,138 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:56,138 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:40:56,185 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (7/20)
+2026-01-16 14:40:56,185 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (7/20)
+2026-01-16 14:40:59,973 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: wow that's a stunning pic what's up with u?
+2026-01-16 14:40:59,973 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: wow that's a stunning pic what's up with u?
+2026-01-16 14:41:01,135 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:01,135 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:02,151 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (6/20)
+2026-01-16 14:41:02,151 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (6/20)
+2026-01-16 14:41:06,127 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:06,127 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:06,954 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: oh cool, fashion and hr, different worlds haha
+2026-01-16 14:41:06,954 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: oh cool, fashion and hr, different worlds haha
+2026-01-16 14:41:11,153 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:11,153 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:16,168 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:16,168 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:19,697 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (7/20)
+2026-01-16 14:41:19,697 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (7/20)
+2026-01-16 14:41:21,206 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:21,206 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:24,261 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: nice, i love fashion
+2026-01-16 14:41:24,261 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: nice, i love fashion
+2026-01-16 14:41:26,240 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:26,240 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:31,257 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:31,257 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:31,939 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (8/20)
+2026-01-16 14:41:31,939 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (8/20)
+2026-01-16 14:41:36,354 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:36,354 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:36,633 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: haha i design clothes, what about u?
+2026-01-16 14:41:36,633 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: haha i design clothes, what about u?
+2026-01-16 14:41:41,355 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:41,355 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:43,925 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:41:43,925 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:41:44,775 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:41:44,775 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:41:44,845 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (9/20)
+2026-01-16 14:41:44,845 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (9/20)
+2026-01-16 14:41:46,893 - WebMonitor - INFO - [WireBot] Broadcasting: hey all, hope u're having a good day!
+2026-01-16 14:41:46,893 - WebMonitor - INFO - [WireBot] Broadcasting: hey all, hope u're having a good day!
+2026-01-16 14:41:46,903 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:41:46,903 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:41:46,913 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:46,913 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:50,052 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: haha career designer, interesting
+2026-01-16 14:41:50,052 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: haha career designer, interesting
+2026-01-16 14:41:51,936 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:51,936 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:56,962 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:56,962 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:41:57,354 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (8/20)
+2026-01-16 14:41:57,354 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (8/20)
+2026-01-16 14:42:02,408 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: just working on designs btw what do u do?
+2026-01-16 14:42:02,408 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: just working on designs btw what do u do?
+2026-01-16 14:42:02,433 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:02,433 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:07,431 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:07,431 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:10,125 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (10/20)
+2026-01-16 14:42:10,125 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (10/20)
+2026-01-16 14:42:12,454 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:12,454 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:15,231 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: lol no, i'm jasmin
+2026-01-16 14:42:15,231 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: lol no, i'm jasmin
+2026-01-16 14:42:17,467 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:17,467 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:17,603 - WebMonitor - INFO - [SiteTwoBot] Processing PM from kinkyoldman (0/20)
+2026-01-16 14:42:17,603 - WebMonitor - INFO - [SiteTwoBot] Processing PM from kinkyoldman (0/20)
+2026-01-16 14:42:20,918 - WebMonitor - INFO - [SiteTwoBot] Replied to kinkyoldman: i'm not into older guys sorry
+2026-01-16 14:42:20,918 - WebMonitor - INFO - [SiteTwoBot] Replied to kinkyoldman: i'm not into older guys sorry
+2026-01-16 14:42:22,488 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:22,488 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:27,503 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:27,503 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:28,334 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (9/20)
+2026-01-16 14:42:28,334 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (9/20)
+2026-01-16 14:42:32,189 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: new collection inspired by delhi street style
+2026-01-16 14:42:32,189 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: new collection inspired by delhi street style
+2026-01-16 14:42:32,520 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:32,520 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:34,629 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (11/20)
+2026-01-16 14:42:34,629 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (11/20)
+2026-01-16 14:42:37,544 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:37,544 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:39,147 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: i'm 32
+2026-01-16 14:42:39,147 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: i'm 32
+2026-01-16 14:42:42,567 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:42,567 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:46,494 - WebMonitor - INFO - [SiteTwoBot] Processing PM from kinkyoldman (1/20)
+2026-01-16 14:42:46,494 - WebMonitor - INFO - [SiteTwoBot] Processing PM from kinkyoldman (1/20)
+2026-01-16 14:42:47,572 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:47,572 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:50,694 - WebMonitor - INFO - [SiteTwoBot] Replied to kinkyoldman: night night
+2026-01-16 14:42:50,694 - WebMonitor - INFO - [SiteTwoBot] Replied to kinkyoldman: night night
+2026-01-16 14:42:52,578 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:52,578 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:57,590 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:42:57,590 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:02,622 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:02,622 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:07,648 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:07,648 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:12,671 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:12,671 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:17,684 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:17,684 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:22,685 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:22,685 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:27,696 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:27,696 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:32,701 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:32,701 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:34,107 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (10/20)
+2026-01-16 14:43:34,107 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (10/20)
+2026-01-16 14:43:37,719 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:37,719 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:38,788 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol no just fashion designs what about u?
+2026-01-16 14:43:38,788 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol no just fashion designs what about u?
+2026-01-16 14:43:42,731 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:42,731 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:46,123 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:43:46,123 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:43:47,202 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:43:47,202 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:43:48,209 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:43:48,209 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:43:48,214 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:48,214 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:53,220 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:53,220 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:57,788 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (0/20)
+2026-01-16 14:43:57,788 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (0/20)
+2026-01-16 14:43:58,244 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:43:58,244 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:01,880 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: hey there! what's up?
+2026-01-16 14:44:01,880 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: hey there! what's up?
+2026-01-16 14:44:03,253 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:03,253 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:08,274 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:08,274 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:09,446 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (1/20)
+2026-01-16 14:44:09,446 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (1/20)
+2026-01-16 14:44:13,259 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:13,259 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:13,993 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: can we talk about something else?
+2026-01-16 14:44:13,993 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: can we talk about something else?
+2026-01-16 14:44:18,270 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:18,270 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:21,628 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (11/20)
+2026-01-16 14:44:21,628 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (11/20)
+2026-01-16 14:44:23,260 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:23,260 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:25,760 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: cool business what do u sell?
+2026-01-16 14:44:25,760 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: cool business what do u sell?
+2026-01-16 14:44:28,268 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:28,268 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:33,243 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (12/20)
+2026-01-16 14:44:33,243 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (12/20)
+2026-01-16 14:44:33,279 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:33,279 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:38,054 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: thanks babe. check my insta: @jasmin.sandhu.1
+2026-01-16 14:44:38,054 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: thanks babe. check my insta: @jasmin.sandhu.1
+2026-01-16 14:44:38,292 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:38,292 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:40,356 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (2/20)
+2026-01-16 14:44:40,356 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (2/20)
+2026-01-16 14:44:43,416 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:43,416 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:43,725 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: we can talk about something else
+2026-01-16 14:44:43,725 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: we can talk about something else
+2026-01-16 14:44:48,422 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:48,422 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:53,443 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:53,443 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:58,452 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:44:58,452 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:03,473 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:03,473 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:06,577 - WebMonitor - INFO - [SiteTwoBot] Processing PM from hornydhirendramature (0/20)
+2026-01-16 14:45:06,577 - WebMonitor - INFO - [SiteTwoBot] Processing PM from hornydhirendramature (0/20)
+2026-01-16 14:45:08,480 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:08,480 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:10,593 - WebMonitor - INFO - [SiteTwoBot] Replied to hornydhirendramature: i'm 32, female, from london, u?
+2026-01-16 14:45:10,593 - WebMonitor - INFO - [SiteTwoBot] Replied to hornydhirendramature: i'm 32, female, from london, u?
+2026-01-16 14:45:13,500 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:13,500 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:18,096 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (13/20)
+2026-01-16 14:45:18,096 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (13/20)
+2026-01-16 14:45:18,523 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:18,523 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:23,001 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol let's keep this chat about fashion babe. what about u?
+2026-01-16 14:45:23,001 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol let's keep this chat about fashion babe. what about u?
+2026-01-16 14:45:23,509 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:23,509 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:25,265 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (3/20)
+2026-01-16 14:45:25,265 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (3/20)
+2026-01-16 14:45:28,510 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:28,510 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:29,739 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: what do u do?
+2026-01-16 14:45:29,739 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: what do u do?
+2026-01-16 14:45:33,518 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:33,518 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:37,088 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (3/20)
+2026-01-16 14:45:37,088 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (3/20)
+2026-01-16 14:45:38,538 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:38,538 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:41,214 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: lol what's funny?
+2026-01-16 14:45:41,214 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: lol what's funny?
+2026-01-16 14:45:43,548 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:43,548 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:49,254 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, what's up?
+2026-01-16 14:45:49,254 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, what's up?
+2026-01-16 14:45:49,261 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:45:49,261 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:45:49,264 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:49,264 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:49,321 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:45:49,321 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:45:50,160 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:45:50,160 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:45:50,291 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (4/20)
+2026-01-16 14:45:50,291 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (4/20)
+2026-01-16 14:45:54,360 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:54,360 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:54,659 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: i'm a fashion designer, u?
+2026-01-16 14:45:54,659 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: i'm a fashion designer, u?
+2026-01-16 14:45:56,874 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (4/20)
+2026-01-16 14:45:56,874 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (4/20)
+2026-01-16 14:45:59,351 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:45:59,351 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:00,052 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i love tennis and running
+2026-01-16 14:46:00,052 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i love tennis and running
+2026-01-16 14:46:04,369 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:04,369 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:07,530 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (0/20)
+2026-01-16 14:46:07,530 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (0/20)
+2026-01-16 14:46:09,360 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:09,360 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:10,732 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: wow what a great pic
+2026-01-16 14:46:10,732 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: wow what a great pic
+2026-01-16 14:46:13,024 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (0/20)
+2026-01-16 14:46:13,024 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (0/20)
+2026-01-16 14:46:14,377 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:14,377 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:17,347 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: i'm 32, female, and from delhi. u?
+2026-01-16 14:46:17,347 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: i'm 32, female, and from delhi. u?
+2026-01-16 14:46:19,397 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:19,397 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:24,409 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:24,409 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:24,877 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (1/20)
+2026-01-16 14:46:24,877 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (1/20)
+2026-01-16 14:46:29,420 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:29,420 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:29,866 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:46:29,866 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:46:32,097 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (0/20)
+2026-01-16 14:46:32,097 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (0/20)
+2026-01-16 14:46:34,447 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:34,447 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:36,631 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: cool pic, what is it?
+2026-01-16 14:46:36,631 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: cool pic, what is it?
+2026-01-16 14:46:39,459 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:39,459 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:44,052 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (12/20)
+2026-01-16 14:46:44,052 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (12/20)
+2026-01-16 14:46:44,460 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:44,460 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:48,363 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just chilling with karan
+2026-01-16 14:46:48,363 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just chilling with karan
+2026-01-16 14:46:49,475 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:49,475 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:50,762 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (5/20)
+2026-01-16 14:46:50,762 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (5/20)
+2026-01-16 14:46:54,491 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:54,491 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:55,841 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: thanks! i work out regularly
+2026-01-16 14:46:55,841 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: thanks! i work out regularly
+2026-01-16 14:46:59,501 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:46:59,501 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:03,396 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (14/20)
+2026-01-16 14:47:03,396 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (14/20)
+2026-01-16 14:47:04,528 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:04,528 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:07,941 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: what u do
+2026-01-16 14:47:07,941 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: what u do
+2026-01-16 14:47:09,504 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:09,504 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:10,271 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (5/20)
+2026-01-16 14:47:10,271 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (5/20)
+2026-01-16 14:47:14,525 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:14,525 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:14,879 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: cool, what kind of engineering?
+2026-01-16 14:47:14,879 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: cool, what kind of engineering?
+2026-01-16 14:47:17,151 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (13/20)
+2026-01-16 14:47:17,151 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (13/20)
+2026-01-16 14:47:19,558 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:19,558 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:20,498 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: my husband
+2026-01-16 14:47:20,498 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: my husband
+2026-01-16 14:47:22,841 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (1/20)
+2026-01-16 14:47:22,841 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (1/20)
+2026-01-16 14:47:24,558 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:24,558 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:27,085 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:47:27,085 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: check my insta: https://www.instagram.com/jasmin.sandhu.1
+2026-01-16 14:47:29,313 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (1/20)
+2026-01-16 14:47:29,313 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (1/20)
+2026-01-16 14:47:29,563 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:29,563 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:33,794 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: i'm 32, how old are u?
+2026-01-16 14:47:33,794 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: i'm 32, how old are u?
+2026-01-16 14:47:34,593 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:34,593 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:39,605 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:39,605 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:41,267 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (6/20)
+2026-01-16 14:47:41,267 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (6/20)
+2026-01-16 14:47:44,921 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:44,921 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:45,218 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: wow that's intense, i design clothes
+2026-01-16 14:47:45,218 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: wow that's intense, i design clothes
+2026-01-16 14:47:47,471 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (14/20)
+2026-01-16 14:47:47,471 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (14/20)
+2026-01-16 14:47:50,488 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone whats up
+2026-01-16 14:47:50,488 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone whats up
+2026-01-16 14:47:50,506 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:47:50,506 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:47:50,517 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:50,517 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:51,538 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: he's just watching tv wbu
+2026-01-16 14:47:51,538 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: he's just watching tv wbu
+2026-01-16 14:47:53,874 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (6/20)
+2026-01-16 14:47:53,874 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (6/20)
+2026-01-16 14:47:55,525 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:55,525 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:47:59,163 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: karan is lucky tbh, he's my hubby
+2026-01-16 14:47:59,163 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: karan is lucky tbh, he's my hubby
+2026-01-16 14:48:00,531 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:00,531 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:01,408 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (2/20)
+2026-01-16 14:48:01,408 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (2/20)
+2026-01-16 14:48:04,828 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: lol yes that's me
+2026-01-16 14:48:04,828 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: lol yes that's me
+2026-01-16 14:48:05,547 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:05,547 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:10,571 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:10,571 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:12,177 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:48:12,177 - WebMonitor - INFO - [SiteTwoBot] Sending Broadcast Message...
+2026-01-16 14:48:12,928 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:48:12,928 - WebMonitor - INFO - [SiteTwoBot] Broadcast sent.
+2026-01-16 14:48:13,152 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (15/20)
+2026-01-16 14:48:13,152 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (15/20)
+2026-01-16 14:48:15,569 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:15,569 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:18,045 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol i don't understand hindi. what u do tho?
+2026-01-16 14:48:18,045 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: lol i don't understand hindi. what u do tho?
+2026-01-16 14:48:20,605 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:20,605 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:20,826 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (15/20)
+2026-01-16 14:48:20,826 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (15/20)
+2026-01-16 14:48:25,803 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: don't be creepy mate
+2026-01-16 14:48:25,803 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: don't be creepy mate
+2026-01-16 14:48:25,819 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:25,819 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:28,176 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (2/20)
+2026-01-16 14:48:28,176 - WebMonitor - INFO - [SiteTwoBot] Processing PM from desi_mard59 (2/20)
+2026-01-16 14:48:30,827 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:30,827 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:32,408 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: lol ok bye
+2026-01-16 14:48:32,408 - WebMonitor - INFO - [SiteTwoBot] Replied to desi_mard59: lol ok bye
+2026-01-16 14:48:34,901 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (2/20)
+2026-01-16 14:48:34,901 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (2/20)
+2026-01-16 14:48:35,838 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:35,838 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:40,840 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:40,840 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:45,846 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:45,846 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:45,977 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (7/20)
+2026-01-16 14:48:45,977 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (7/20)
+2026-01-16 14:48:49,112 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: nice what do u like about it?
+2026-01-16 14:48:49,112 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: nice what do u like about it?
+2026-01-16 14:48:50,858 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:50,858 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:51,577 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (16/20)
+2026-01-16 14:48:51,577 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (16/20)
+2026-01-16 14:48:55,849 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:55,849 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:48:56,596 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: ok cool what are u up to?
+2026-01-16 14:48:56,596 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: ok cool what are u up to?
+2026-01-16 14:48:58,917 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (7/20)
+2026-01-16 14:48:58,917 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (7/20)
+2026-01-16 14:49:00,858 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:00,858 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:03,449 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i am married tho
+2026-01-16 14:49:03,449 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i am married tho
+2026-01-16 14:49:05,688 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (3/20)
+2026-01-16 14:49:05,688 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (3/20)
+2026-01-16 14:49:05,865 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:05,865 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:09,432 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: thanks love you too
+2026-01-16 14:49:09,432 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: thanks love you too
+2026-01-16 14:49:10,894 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:10,894 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:11,952 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (0/20)
+2026-01-16 14:49:11,952 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (0/20)
+2026-01-16 14:49:15,913 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:15,913 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:17,186 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: hey sorry i missed your messages will check insta now x
+2026-01-16 14:49:17,186 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: hey sorry i missed your messages will check insta now x
+2026-01-16 14:49:20,930 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:20,930 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:25,218 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (16/20)
+2026-01-16 14:49:25,218 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (16/20)
+2026-01-16 14:49:25,931 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:25,931 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:29,959 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: smoke shops babe?
+2026-01-16 14:49:29,959 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: smoke shops babe?
+2026-01-16 14:49:30,937 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:30,937 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:32,326 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (17/20)
+2026-01-16 14:49:32,326 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (17/20)
+2026-01-16 14:49:36,354 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:36,354 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:36,693 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just chilling wbu
+2026-01-16 14:49:36,693 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: just chilling wbu
+2026-01-16 14:49:38,896 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (8/20)
+2026-01-16 14:49:38,896 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (8/20)
+2026-01-16 14:49:41,363 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:41,363 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:42,458 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: he's the lucky one, i am married tho
+2026-01-16 14:49:42,458 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: he's the lucky one, i am married tho
+2026-01-16 14:49:44,650 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (4/20)
+2026-01-16 14:49:44,650 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (4/20)
+2026-01-16 14:49:46,373 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:46,373 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:49,144 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: i'm straight but appreciate the compliment
+2026-01-16 14:49:49,144 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: i'm straight but appreciate the compliment
+2026-01-16 14:49:51,909 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur having a good one!
+2026-01-16 14:49:51,909 - WebMonitor - INFO - [WireBot] Broadcasting: hey everyone, hope ur having a good one!
+2026-01-16 14:49:51,909 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (3/20)
+2026-01-16 14:49:51,909 - WebMonitor - INFO - [SiteTwoBot] Processing PM from m-27-rp-jerking (3/20)
+2026-01-16 14:49:51,909 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:49:51,909 - WebMonitor - WARNING - [WireBot] Broadcast input not found.
+2026-01-16 14:49:51,909 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:51,909 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:56,553 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: wow that's a big one
+2026-01-16 14:49:56,553 - WebMonitor - INFO - [SiteTwoBot] Replied to m-27-rp-jerking: wow that's a big one
+2026-01-16 14:49:56,927 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:56,927 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:49:58,745 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (1/20)
+2026-01-16 14:49:58,745 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (1/20)
+2026-01-16 14:50:01,950 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:01,950 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:02,228 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: ok cool what's up with u?
+2026-01-16 14:50:02,228 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: ok cool what's up with u?
+2026-01-16 14:50:06,949 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:06,949 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:09,783 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (17/20)
+2026-01-16 14:50:09,783 - WebMonitor - INFO - [SiteTwoBot] Processing PM from ______slutmaker4rp (17/20)
+2026-01-16 14:50:11,957 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:11,957 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:14,387 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: wow owning smoke shops sounds intense. i'm a fashion designer btw.
+2026-01-16 14:50:14,387 - WebMonitor - INFO - [SiteTwoBot] Replied to ______slutmaker4rp: wow owning smoke shops sounds intense. i'm a fashion designer btw.
+2026-01-16 14:50:16,721 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (8/20)
+2026-01-16 14:50:16,721 - WebMonitor - INFO - [SiteTwoBot] Processing PM from aer_m21 (8/20)
+2026-01-16 14:50:16,971 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:16,971 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:20,502 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: cool, what u like about fashion?
+2026-01-16 14:50:20,502 - WebMonitor - INFO - [SiteTwoBot] Replied to aer_m21: cool, what u like about fashion?
+2026-01-16 14:50:21,995 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:21,995 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:22,958 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (18/20)
+2026-01-16 14:50:22,958 - WebMonitor - INFO - [SiteTwoBot] Processing PM from amank25 (18/20)
+2026-01-16 14:50:27,110 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:27,110 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:27,407 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: yeah love canary wharf
+2026-01-16 14:50:27,407 - WebMonitor - INFO - [SiteTwoBot] Replied to amank25: yeah love canary wharf
+2026-01-16 14:50:29,594 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (9/20)
+2026-01-16 14:50:29,594 - WebMonitor - INFO - [SiteTwoBot] Processing PM from cobra (9/20)
+2026-01-16 14:50:32,103 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:32,103 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:32,933 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i am married tho
+2026-01-16 14:50:32,933 - WebMonitor - INFO - [SiteTwoBot] Replied to cobra: i am married tho
+2026-01-16 14:50:35,166 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (5/20)
+2026-01-16 14:50:35,166 - WebMonitor - INFO - [SiteTwoBot] Processing PM from decentdevformarried (5/20)
+2026-01-16 14:50:37,119 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:37,119 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:39,785 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: just here for a good chat
+2026-01-16 14:50:39,785 - WebMonitor - INFO - [SiteTwoBot] Replied to decentdevformarried: just here for a good chat
+2026-01-16 14:50:41,933 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (2/20)
+2026-01-16 14:50:41,933 - WebMonitor - INFO - [SiteTwoBot] Processing PM from photographer_blr (2/20)
+2026-01-16 14:50:42,133 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:42,133 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:45,925 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: just working on some designs, u?
+2026-01-16 14:50:45,925 - WebMonitor - INFO - [SiteTwoBot] Replied to photographer_blr: just working on some designs, u?
+2026-01-16 14:50:47,139 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed
+2026-01-16 14:50:47,139 - WebMonitor - ERROR - [WireBot] PM Process Error: Page.query_selector_all: Target page, context or browser has been closed

@@ -1,35 +1,40 @@
-# Web Monitor Setup Instructions
+# AI ChatBot Monitor
 
-## 1. Installation
-1.  Open your terminal in `C:\Users\sgurp\.gemini\antigravity\scratch\web_monitor`.
-2.  Install dependencies:
+A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like sites, powered by Gemini AI.
+
+## 1. Setup
+1.  **Install Dependencies**:
     ```bash
     pip install -r requirements.txt
     playwright install
     ```
 
-## 2. Configuration (`config.yaml`)
-Open `config.yaml` and update the following:
-*   **credentials**: Add your `username` and `password`.
-*   **ai**: Add your `api_key`.
-*   **selectors**:
-    *   **CRITICAL**: You must manually inspect the chat page to find the correct CSS selectors for:
-        *   `chat_history_container`: The main div holding messages.
-        *   `incoming_message_bubble`: The specific class for messages from others.
-        *   `message_input`: The text input field.
-        *   `send_btn`: The send button.
+2.  **Secrets Configuration**:
+    *   This project separates code from secrets.
+    *   Copy `config.secrets.example.yaml` to `config.secrets.yaml`.
+    *   **Edit `config.secrets.yaml`** and enter your:
+        *   Gemini API Key
+        *   Wireclub Credentials
+        *   Firebase Credentials path (if using Firebase)
 
-## 3. Running
-Run the bot with:
+3.  **Firebase (Optional)**:
+    *   Place your `serviceAccountKey.json` in the root directory.
+    *   **Note**: This file is git-ignored for security.
+
+## 2. Running
 ```bash
 python main.py
 ```
+*   **Parallel Mode**: By default, it runs both `WireBot` and `SiteTwoBot`.
+*   **Single Bot**: Use `python main.py --bot wirebot` to run only one.
 
-## 4. First Run
-*   The first time, the bot will attempt to log in.
-*   If `headless: false` is set in config (recommended for first run), you can watch it working.
-*   Once logged in, it saves `session.json` so next time it skips login.
+## 3. Features
+*   **Per-Bot Stats**: View detailed stats in `templates/stats.html`.
+*   **Auto-Reply**: Uses Gemini AI to reply intelligently.
+*   **Context Aware**: Parses chat HTML to distinguish user vs assistant messages.
+*   **Robust**: Auto-recovers from login failures and CAPTCHAs.
 
-## 5. Troubleshooting
-*   Check `conversation_logs.txt` for errors.
-*   If elements aren't found, update the selectors in `config.yaml`.
+## 4. Troubleshooting
+*   Check `conversation_logs.txt` for detailed logs.
+*   If `WireBot` history is blank, the bot now automatically tries 6 different selectors. Check logs for "Scraped History with..."
+

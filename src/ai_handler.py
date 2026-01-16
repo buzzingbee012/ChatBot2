@@ -21,8 +21,9 @@ class AIHandler:
         
         self.api_key = env_key or config.get('llm', {}).get('api_key')
         
-        if not self.api_key:
-            logging.warning(f"No API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var.")
+        if not self.api_key or "PASTE_YOUR" in self.api_key:
+            logging.warning(f"No valid API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var or update config.")
+            self.api_key = None # Treat as missing
         
         self.client = None
         if self.provider == 'anthropic':
@@ -31,7 +32,12 @@ class AIHandler:
         elif self.provider in ['gemini', 'google']:
             self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
             print(f"DEBUG: Initialized Gemini with model: {self.model}")
-            self.client = genai.Client(api_key=self.api_key)
+            if self.api_key:
+                masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
+                print(f"DEBUG: Using API Key: {masked_key} (Length: {len(self.api_key)})")
+                self.client = genai.Client(api_key=self.api_key)
+            else:
+                 logging.error("Gemini API Key missing. AI features will be disabled.")
         else:
             self.client = OpenAI(api_key=self.api_key)
             self.model = config.get('ai', {}).get('model', 'gpt-4o')
@@ -66,34 +72,53 @@ class AIHandler:
             elif self.provider in ['gemini', 'google']:
                  # Gemini Format with Pydantic structured output
                  # Build conversation context
+                 print(f"DEBUG: Generating Gemini response for history: {chat_history}")
                  conversation = f"{self.system_prompt}\n\n"
-                 for msg in chat_history:
-                     if msg['role'] == 'user':
-                         conversation += f"User: {msg['content']}\n"
-                     else:
-                         conversation += f"Assistant: {msg['content']}\n"
+                 
+                 # Robust handling of history (dict vs string vs list)
+                 if isinstance(chat_history, str):
+                     # If still a string for some reason, treat as user message
+                     conversation += f"User: {chat_history}\n"
+                 elif isinstance(chat_history, list):
+                     for msg in chat_history:
+                         if isinstance(msg, dict):
+                            role = msg.get('role', 'user')
+                            content = msg.get('content', '')
+                            if role == 'user':
+                                conversation += f"User: {content}\n"
+                            else:
+                                conversation += f"Assistant: {content}\n"
+                         else:
+                             # Handle odd cases where msg might be just string in list
+                             conversation += f"User: {str(msg)}\n"
+                             
                  conversation += "Assistant:"
+                 # print(f"DEBUG: Input Prompt to Gemini:\n{conversation}") # REMOVED as requested
                  
                  # Generate with structured JSON output
-                 response = self.client.models.generate_content(
-                     model=self.model,
-                     contents=conversation,
-                     config=genai.types.GenerateContentConfig(
-                         response_mime_type='application/json',
-                         response_schema=ChatResponse
+                 try:
+                     response = self.client.models.generate_content(
+                         model=self.model,
+                         contents=conversation,
+                         config=genai.types.GenerateContentConfig(
+                             response_mime_type='application/json',
+                             response_schema=ChatResponse
+                         )
                      )
-                 )
+                 except Exception as api_e: # Log error concisely
+                     print(f"DEBUG: Gemini API Call Failed: {api_e}")
+                     raise api_e
                  
                  # Extract token usage
                  tokens_used = 0
                  if hasattr(response, 'usage_metadata') and response.usage_metadata:
                      tokens_used = response.usage_metadata.total_token_count
                  self.last_token_count = tokens_used
-                 print(f"DEBUG: Tokens used in this request: {tokens_used}")
                  
                  # Parse JSON response into Pydantic model
                  import json
                  parsed = ChatResponse.model_validate_json(response.text)
+                 print(f"DEBUG: AI Output: {parsed.message}")
                  return parsed.message
                 
             else:
@@ -122,3 +147,12 @@ class AIHandler:
             
             # Return None - bot will skip sending message entirely
             return None
+
+    def get_next_message(self, context=None):
+        """Generates a generic broadcast message."""
+        if not self.client:
+            return "Hello everyone! How is it going?"
+        
+        # Simple prompt for broadcast
+        history = [{"role": "user", "content": "Generate a short, friendly greeting for a chat room. Keep it under 50 characters."}]
+        return self.generate_response(history) or "Hello everyone!"

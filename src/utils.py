@@ -5,9 +5,10 @@ import asyncio
 from datetime import datetime
 
 class Logger:
-    def __init__(self, log_file="conversation_logs.txt"):
+    def __init__(self, name=None, log_file="conversation_logs.txt"):
         self.logger = logging.getLogger("WebMonitor")
         self.logger.setLevel(logging.INFO)
+        self.name = name
         
         # File handler
         fh = logging.FileHandler(log_file)
@@ -20,11 +21,10 @@ class Logger:
         self.logger.addHandler(ch)
 
     def info(self, message):
-        self.logger.info(message)
+        self._log("INFO", message)
 
     def error(self, message):
-        self.logger.error(message)
-        print(f"ERROR: {message}")
+        self._log("ERROR", message)
 
     def warning(self, message):
         self._log("WARNING", message)
@@ -34,6 +34,9 @@ class Logger:
         self.logger.debug(message)
 
     def _log(self, level, message):
+        if self.name:
+            message = f"[{self.name}] {message}"
+            
         if level == "INFO":
             self.logger.info(message)
         elif level == "WARNING":

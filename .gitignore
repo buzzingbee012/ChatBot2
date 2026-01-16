@@ -4,4 +4,16 @@ session.json
 stats.json
 conversation_logs.txt
 config.secrets.yaml
-# config.yaml is now safe to commit as keys are removed
+serviceAccountKey.json
+# Debug Dumps
+*.png
+*.html
+*.log
+debug_*.py
+debug_*.html
+# Session Data
+session.json
+stats.json
+conversation_logs.txt
+# Config
+# config.yaml is safe to commit (structure only)

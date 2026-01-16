@@ -81,14 +81,17 @@ llm:
     
     
 bot:
-  max_session_messages: 1000
-  max_daily_messages: 1000  # Maximum messages per day across all users
-  headless: true # Recommended false for guest entry to verify dropdowns
+  max_session_messages: 2000
+  max_daily_messages: 2000  # Maximum messages per day across all users
+  max_replies_per_user: 15 # Consistent limit for all bots
+  headless: false # Recommended false for guest entry to verify dropdowns
   delay_min: 2
   delay_max: 8
   session_file: "session.json"
   session_file: "session.json"
+  session_file: "session.json"
   log_file: "conversation_logs.txt"
+  broadcast_interval: 120
   allowed_domain: "chatib.us" # Domain lock for security
 
 selectors:
@@ -127,6 +130,29 @@ selectors:
   send_btn: ".msg_send_btn"
   incoming_message_bubble: ".message.incoming"
 
+wireclub:
+  url: "https://www.wireclub.com/chat"
+  selectors:
+    entry_url: "https://www.wireclub.com/"
+    login_btn: 'a[href="/login"]'
+    username_input: '#Data_Username'
+    password_input: '#Data_Password'
+    submit_btn: 'input.submit.button.feature-buttons'
+    
+    # Chat Monitoring
+    room_url: 'https://www.wireclub.com/chat/room/private_chat_lobby'
+    
+    # Broadcast
+    room_input: 'input.chat-input.keeps-focus'
+    room_send: 'input.chat-send-button.button'
+    
+    # Private Messages
+    pm_session: '.private-chat-session'
+    pm_notification: '.notification'
+    pm_input: '.chat-input.keeps-focus'
+    pm_send: '.chat-input-send.button'
+    pm_history: '.conversation-history'
+
 site_two:
   url: "https://kiwiirc.hybridirc.com/#allindiachat.com"
   selectors:
@@ -138,7 +164,7 @@ site_two:
     send_btn: "button.send, .send_btn"
     pm_tab: ".pm_tab" # Placeholder
   instagram_link: "https://instagram.com/jasmin.sandhu.1"
-  max_replies: 15
+  # max_replies: 15 # Now using global bot default
   reply_delay_min: 0.5
   reply_delay_max: 2
 

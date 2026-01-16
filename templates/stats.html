@@ -110,15 +110,27 @@
 
 <body>
     <div class="stats-container">
-        <h1>Daily Interaction Statistics</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>Daily Interaction Statistics</h1>
+            <select id="botFilter" onchange="filterStats()" style="padding: 5px; font-size: 1rem;">
+                <option value="all">All Bots</option>
+                <option value="WireBot">WireBot</option>
+                <option value="SiteTwoBot">SiteTwoBot</option>
+            </select>
+        </div>
 
         <div class="total">
-            Total Interactions: <strong>{{ total }}</strong> |
-            Total Tokens: <strong>{{ total_tokens }}</strong>
+            Total Interactions: <strong id="totalInteractions">{{ total }}</strong> |
+            Total Tokens: <strong id="totalTokens">{{ total_tokens }}</strong>
         </div>
 
         {% if stats %}
-        <table>
+        <!-- Pass full stats to JS -->
+        <script>
+            const allStats = {{ stats | tojson | safe }};
+        </script>
+
+        <table id="statsTable">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -129,41 +141,106 @@
             </thead>
             <tbody>
                 {% for date, data in stats.items() %}
-                <tr>
+                <tr data-date="{{ date }}">
                     <td>{{ date }}</td>
-                    <td>{{ data.interactions if data is mapping else data }}</td>
-                    <td>{{ data.tokens if data is mapping else 0 }}</td>
-                    <td>{{ data.errors|length if (data is mapping and data.errors) else 0 }}</td>
+                    <td class="count">{{ data.interactions if data is mapping else data }}</td>
+                    <td class="tokens">{{ data.tokens if data is mapping else 0 }}</td>
+                    <td class="errors">{{ data.errors|length if (data is mapping and data.errors) else 0 }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
 
         <h2>Error Log</h2>
-        {% set has_errors = namespace(found=false) %}
-        {% for date, data in stats.items() %}
-        {% if data is mapping and data.errors and data.errors|length > 0 %}
-        {% set has_errors.found = true %}
-        <div class="error-section">
-            <strong>{{ date }}</strong>
-            {% for error in data.errors %}
-            <div class="error-item">
-                <span class="error-time">{{ error.time }}</span>
-                <div class="error-msg">{{ error.message }}</div>
+        <div id="errorLogContainer">
+             {% set has_errors = namespace(found=false) %}
+            {% for date, data in stats.items() %}
+            {% if data is mapping and data.errors and data.errors|length > 0 %}
+            {% set has_errors.found = true %}
+            <div class="error-section" data-date="{{ date }}">
+                <strong>{{ date }}</strong>
+                {% for error in data.errors %}
+                <div class="error-item" data-bot="{{ error.bot }}">
+                    <span class="error-time">{{ error.time }}</span>
+                    <div class="error-msg">{{ error.message }}</div>
+                </div>
+                {% endfor %}
             </div>
+            {% endif %}
             {% endfor %}
+            {% if not has_errors.found %}
+            <div class="empty">No errors recorded</div>
+            {% endif %}
         </div>
-        {% endif %}
-        {% endfor %}
-        {% if not has_errors.found %}
-        <div class="empty">No errors recorded</div>
-        {% endif %}
+       
         {% else %}
         <div class="empty">No interactions recorded yet.</div>
         {% endif %}
 
         <a href="/" class="back-link">← Back to Chat</a>
     </div>
+
+    <script>
+        function filterStats() {
+            const filter = document.getElementById('botFilter').value;
+            const rows = document.querySelectorAll('#statsTable tbody tr');
+            let grandTotalInt = 0;
+            let grandTotalTok = 0;
+
+            rows.forEach(row => {
+                const date = row.getAttribute('data-date');
+                const dayData = allStats[date];
+
+                if (!dayData) return;
+
+                let intCount = 0;
+                let tokCount = 0;
+                let errCount = 0;
+
+                if (filter === 'all') {
+                    // Use top-level aggregated stats
+                    // Handle legacy int format if exists
+                    if (typeof dayData === 'number') {
+                        intCount = dayData;
+                    } else {
+                        intCount = dayData.interactions || 0;
+                        tokCount = dayData.tokens || 0;
+                        errCount = dayData.errors ? dayData.errors.length : 0;
+                    }
+                } else {
+                    // Look for specific bot data
+                    if (dayData.bots && dayData.bots[filter]) {
+                         intCount = dayData.bots[filter].interactions || 0;
+                         tokCount = dayData.bots[filter].tokens || 0;
+                         errCount = dayData.bots[filter].errors ? dayData.bots[filter].errors.length : 0;
+                    }
+                }
+
+                // Update row
+                row.querySelector('.count').textContent = intCount;
+                row.querySelector('.tokens').textContent = tokCount;
+                row.querySelector('.errors').textContent = errCount;
+                
+                grandTotalInt += intCount;
+                grandTotalTok += tokCount;
+            });
+
+            // Update Totals
+            document.getElementById('totalInteractions').textContent = grandTotalInt;
+            document.getElementById('totalTokens').textContent = grandTotalTok;
+            
+            // Filter Errors
+            const errorItems = document.querySelectorAll('.error-item');
+            errorItems.forEach(item => {
+                 const bot = item.getAttribute('data-bot');
+                 if (filter === 'all' || !bot || bot === 'None' || bot === filter) {
+                     item.style.display = 'block';
+                 } else {
+                     item.style.display = 'none';
+                 }
+            });
+        }
+    </script>
 </body>
 
 </html>
