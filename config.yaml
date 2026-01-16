@@ -84,7 +84,7 @@ bot:
   max_session_messages: 2000
   max_daily_messages: 2000  # Maximum messages per day across all users
   max_replies_per_user: 15 # Consistent limit for all bots
-  headless: false # Recommended false for guest entry to verify dropdowns
+  headless: true # Recommended false for guest entry to verify dropdowns
   delay_min: 2
   delay_max: 8
   session_file: "session.json"
