@@ -31,6 +31,11 @@ jobs:
     - name: Run Bot
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        WIRECLUB_EMAIL: ${{ secrets.WIRECLUB_EMAIL }}
+        WIRECLUB_PASSWORD: ${{ secrets.WIRECLUB_PASSWORD }}
+        WIRECLUB_USERNAME: ${{ secrets.WIRECLUB_USERNAME }}
+        SITE_TWO_USERNAME: ${{ secrets.SITE_TWO_USERNAME }}
+        FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         HEADLESS: "true"
       run: python main.py --duration 1800
       

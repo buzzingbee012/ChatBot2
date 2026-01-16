@@ -165,7 +165,7 @@ class BaseBot(ABC):
                 if current_count > self.max_replies_per_user:
                     continue
                 
-                self.logger.info(f"Processing PM from {name} ({current_count}/{self.max_replies_per_user})")
+                # self.logger.info(f"Processing PM from {name} ({current_count}/{self.max_replies_per_user})")
                 
                 # Step 2: Open Chat
                 if not await self.open_chat(chat):

@@ -10,15 +10,17 @@ class Logger:
         self.logger.setLevel(logging.INFO)
         self.name = name
         
-        # File handler
-        fh = logging.FileHandler(log_file)
-        fh.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
-        self.logger.addHandler(fh)
-        
-        # Console handler
-        ch = logging.StreamHandler()
-        ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-        self.logger.addHandler(ch)
+        # Only add handlers if they haven't been added yet
+        if not self.logger.handlers:
+            # File handler
+            fh = logging.FileHandler(log_file)
+            fh.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+            self.logger.addHandler(fh)
+            
+            # Console handler
+            ch = logging.StreamHandler()
+            ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+            self.logger.addHandler(ch)
 
     def info(self, message):
         self._log("INFO", message)
