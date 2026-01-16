@@ -18,10 +18,28 @@ def load_config(path="config.yaml"):
             with open(secrets_path, 'r') as sf:
                 secrets = yaml.safe_load(sf)
                 # Simple merge: update llm and wireclub if present
-                for key in ['llm', 'wireclub', 'site_two']:
+                for key in ['llm', 'wireclub', 'site_two', 'ai', 'firebase']:
                     if secrets and key in secrets:
                         if key not in config: config[key] = {}
                         config[key].update(secrets[key])
+
+        # Environment Variable Override (for GitHub Secrets / CI)
+        # Prioritized over files
+        env_map = {
+            'GEMINI_API_KEY': ('ai', 'api_key'),
+            'WIRECLUB_EMAIL': ('wireclub', 'email'),
+            'WIRECLUB_PASSWORD': ('wireclub', 'password'),
+            'WIRECLUB_USERNAME': ('wireclub', 'username'),
+            'SITE_TWO_USERNAME': ('site_two', 'username'),
+            'FIREBASE_CREDENTIALS': ('firebase', 'cred_path') # Could be path or raw json, but usually path
+        }
+        
+        for env_var, (section, key) in env_map.items():
+            val = os.getenv(env_var)
+            if val:
+                if section not in config: config[section] = {}
+                config[section][key] = val
+                print(f"Config: Loaded {env_var} from environment.")
         
         return config
     except Exception as e:

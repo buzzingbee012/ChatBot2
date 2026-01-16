@@ -21,6 +21,14 @@ A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like
     *   Place your `serviceAccountKey.json` in the root directory.
     *   **Note**: This file is git-ignored for security.
 
+4.  **GitHub Secrets / Environment Variables (CI/CD)**:
+    *   If deploying to a cloud environment (like GitHub Actions, Render, Heroku), you can set these Environment Variables instead of using `config.secrets.yaml`:
+        *   `GEMINI_API_KEY`
+        *   `WIRECLUB_EMAIL`
+        *   `WIRECLUB_PASSWORD`
+        *   `WIRECLUB_USERNAME`
+        *   `SITE_TWO_USERNAME`
+
 ## 2. Running
 ```bash
 python main.py
