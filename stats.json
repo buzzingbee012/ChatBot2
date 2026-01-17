@@ -5053,5 +5053,17 @@
     ],
     "interactions": 1160,
     "tokens": 739484
+  },
+  "2026-01-17": {
+    "interactions": 509,
+    "tokens": 330605,
+    "errors": [],
+    "bots": {
+      "SiteTwoBot": {
+        "interactions": 270,
+        "tokens": 175373,
+        "errors": []
+      }
+    }
   }
 }
