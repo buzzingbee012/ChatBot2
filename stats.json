@@ -8200,13 +8200,25 @@
     }
   },
   "2026-01-24": {
-    "interactions": 530,
-    "tokens": 348868,
+    "interactions": 768,
+    "tokens": 504191,
     "errors": [],
     "bots": {
       "SiteTwoBot": {
         "interactions": 421,
         "tokens": 278845,
+        "errors": []
+      }
+    }
+  },
+  "2026-01-25": {
+    "interactions": 283,
+    "tokens": 184447,
+    "errors": [],
+    "bots": {
+      "SiteTwoBot": {
+        "interactions": 204,
+        "tokens": 133723,
         "errors": []
       }
     }
