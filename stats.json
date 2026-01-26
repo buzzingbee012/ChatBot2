@@ -8212,13 +8212,25 @@
     }
   },
   "2026-01-25": {
-    "interactions": 393,
-    "tokens": 257386,
+    "interactions": 494,
+    "tokens": 323320,
     "errors": [],
     "bots": {
       "SiteTwoBot": {
         "interactions": 314,
         "tokens": 206662,
+        "errors": []
+      }
+    }
+  },
+  "2026-01-26": {
+    "interactions": 219,
+    "tokens": 142157,
+    "errors": [],
+    "bots": {
+      "SiteTwoBot": {
+        "interactions": 145,
+        "tokens": 94359,
         "errors": []
       }
     }
