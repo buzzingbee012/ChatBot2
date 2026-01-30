@@ -9078,13 +9078,162 @@
     }
   },
   "2026-01-29": {
-    "interactions": 384,
-    "tokens": 250865,
-    "errors": [],
+    "interactions": 479,
+    "tokens": 307118,
+    "errors": [
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:06:53"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:06:56"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:07:01"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:07:24"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:07:29"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:07:43"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:04"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:14"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:23"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:32"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:39"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:08:50"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:09:09"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:09:35"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:09:56"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:10:29"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:10:35"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:10:42"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:10:58"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:12:05"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:12:10"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:14:33"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:17:40"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:17:47"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:20:44"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:20:56"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:21:14"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:22:26"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:22:45"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:23:13"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:24:16"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:24:30"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:25:24"
+      },
+      {
+        "message": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "time": "20:25:40"
+      }
+    ],
     "bots": {
       "SiteTwoBot": {
         "interactions": 161,
         "tokens": 106718,
+        "errors": []
+      }
+    }
+  },
+  "2026-01-30": {
+    "interactions": 307,
+    "tokens": 200786,
+    "errors": [],
+    "bots": {
+      "SiteTwoBot": {
+        "interactions": 174,
+        "tokens": 115767,
         "errors": []
       }
     }
