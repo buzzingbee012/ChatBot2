@@ -3,7 +3,7 @@ name: Run Bot Daily
 on:
   schedule:
     # 11 AM EST (16:00 UTC) and 1 PM EST (18:00 UTC)
-    - cron: '0 17,18 * * *'
+    - cron: '0 17,22 * * *'
   workflow_dispatch: # Allows manual trigger
 
 permissions:
