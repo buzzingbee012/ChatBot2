@@ -165,7 +165,7 @@ class AIHandler:
         if not self.client:
             return fallback
 
-        prompt = "Generate a single Indian/Desi female first name. Return only the name, no punctuation, only letters. The name should be common and easy to read."
+        prompt = "Generate a single Indian/Desi female chat name. Not actual name but should reflect an Indian female. Don't go for obvious names. Return only the name, no punctuation, only letters. The name should be common and easy to read."
         
         try:
             if self.provider in ['gemini', 'google']:

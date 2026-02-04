@@ -11,13 +11,15 @@ class Logger:
         self.name = name
         
         # Only add handlers if they haven't been added yet
-        if not self.logger.handlers:
-            self.logger.propagate = False
+        self.logger.propagate = False
+        
+        if not any(isinstance(h, logging.FileHandler) for h in self.logger.handlers):
             # File handler
             fh = logging.FileHandler(log_file)
             fh.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
             self.logger.addHandler(fh)
             
+        if not any(isinstance(h, logging.StreamHandler) for h in self.logger.handlers):
             # Console handler
             ch = logging.StreamHandler()
             ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
@@ -44,10 +46,8 @@ class Logger:
             self.logger.info(message)
         elif level == "WARNING":
             self.logger.warning(message)
-            print(f"WARNING: {message}")
         elif level == "ERROR":
             self.logger.error(message)
-            print(f"ERROR: {message}")
         elif level == "DEBUG":
             self.logger.debug(message)
 
