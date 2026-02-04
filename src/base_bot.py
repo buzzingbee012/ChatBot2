@@ -171,10 +171,14 @@ class BaseBot(ABC):
                 if not await self.open_chat(chat):
                     continue
                 
-                await asyncio.sleep(random.uniform(1.0, 3.0))
+                # Step 2.5: Wait for chat to load and verify context
+                if not await self.wait_for_chat_load(name):
+                    self.logger.warning(f"Failed to verify chat context for {name}")
+                    continue
+                
+                await asyncio.sleep(random.uniform(0.25, 0.5))
 
                 # Step 3: Get History & Generate Reply
-                # Decision: Should we extract history? Yes.
                 history = await self.get_chat_history()
                 
                 # Generate
@@ -236,6 +240,11 @@ class BaseBot(ABC):
     @abstractmethod
     async def open_chat(self, chat_obj):
         """Switch context to this chat."""
+        pass
+
+    @abstractmethod
+    async def wait_for_chat_load(self, name):
+        """Verify chat header matches expected name."""
         pass
 
     @abstractmethod

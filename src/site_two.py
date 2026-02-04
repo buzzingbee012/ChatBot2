@@ -141,8 +141,20 @@ class SiteTwoBot(BaseBot):
         """Clicks the tab."""
         try:
             await chat_obj['element'].click()
-            await self.page.wait_for_timeout(1000)
             return True
+        except: return False
+
+    async def wait_for_chat_load(self, name):
+        """Verify chat header matches expected name."""
+        try:
+            # Wait for header to update to the new name
+            header_sel = ".kiwi-header-name, .kiwi-statebrowser-channel--active[data-name]"
+            for _ in range(10): # 5 seconds max
+                header_text = await self.page.locator(header_sel).first.inner_text()
+                if name.lower() in header_text.lower():
+                    return True
+                await asyncio.sleep(0.5)
+            return False
         except: return False
 
     async def get_chat_history(self):
@@ -151,7 +163,7 @@ class SiteTwoBot(BaseBot):
         try:
             history_elements = self.page.locator(".kiwi-messagelist-message")
             count = await history_elements.count()
-            start_idx = max(0, count - 10)
+            start_idx = max(0, count - 20)
             for i in range(start_idx, count):
                 msg_el = history_elements.nth(i)
                 body_el = msg_el.locator(".kiwi-messagelist-body")

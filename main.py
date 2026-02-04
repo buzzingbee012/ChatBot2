@@ -5,6 +5,7 @@ import logging
 # from src.bot_core import ChatBot
 from src.site_two import SiteTwoBot
 from src.wirebot import WireBot
+from src.ib_bot import IBBot
 from src.ai_handler import AIHandler
 import os
 
@@ -72,6 +73,9 @@ async def main():
     
     if args.bot in ['site2', 'all']:
         bots.append(SiteTwoBot(config))
+    
+    if args.bot in ['ib', 'all']:
+        bots.append(IBBot(config))
     
     if not bots:
         print("No bots selected to run.")

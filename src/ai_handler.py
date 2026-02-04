@@ -61,80 +61,69 @@ class AIHandler:
             return None
 
         try:
-            if self.provider == 'anthropic':
-                # Map specific history format for Anthropic if needed, 
-                # but 'role'/'content' matches generally. 
-                # System prompt is separate in new API.
-                
-                response = self.client.messages.create(
-                    model=self.model,
-                    max_tokens=150,
-                    system=self.system_prompt,
-                    messages=chat_history
-                )
-                return response.content[0].text.strip()
+            # Extract previous assistant messages to avoid repetitions
+            previous_responses = []
+            if isinstance(chat_history, list):
+                previous_responses = [m.get('content', '') for m in chat_history if m.get('role') == 'assistant' and m.get('content')]
+            
+            avoid_list_str = "\n".join([f"- {r}" for r in previous_responses[-10:]])
+            avoid_prompt = f"\n\nSTRICT REPETITION AVOIDANCE:\nDo NOT repeat any of these previous messages you sent to this user:\n{avoid_list_str}\n\nGenerate a fresh, unique response." if previous_responses else ""
 
-            elif self.provider in ['gemini', 'google']:
-                 # Gemini Format with Pydantic structured output
-                 # Build conversation context
-                 conversation = f"{self.system_prompt}\n\n"
-                 
-                 # Robust handling of history (dict vs string vs list)
-                 if isinstance(chat_history, str):
-                     # If still a string for some reason, treat as user message
-                     conversation += f"User: {chat_history}\n"
-                 elif isinstance(chat_history, list):
-                     for msg in chat_history:
-                         if isinstance(msg, dict):
+            for attempt in range(3): # Try up to 3 times to get a unique response
+                if self.provider == 'anthropic':
+                    response = self.client.messages.create(
+                        model=self.model,
+                        max_tokens=150,
+                        system=self.system_prompt + avoid_prompt,
+                        messages=chat_history
+                    )
+                    generated_text = response.content[0].text.strip()
+
+                elif self.provider in ['gemini', 'google']:
+                    conversation = f"{self.system_prompt}{avoid_prompt}\n\n"
+                    if isinstance(chat_history, list):
+                        for msg in chat_history:
                             role = msg.get('role', 'user')
                             content = msg.get('content', '')
-                            if role == 'user':
-                                conversation += f"User: {content}\n"
-                            else:
-                                conversation += f"Assistant: {content}\n"
-                         else:
-                             # Handle odd cases where msg might be just string in list
-                             conversation += f"User: {str(msg)}\n"
-                             
-                 conversation += "Assistant:"
-                 # print(f"DEBUG: Input Prompt to Gemini:\n{conversation}") # REMOVED as requested
-                 
-                 # Generate with structured JSON output
-                 try:
-                     response = self.client.models.generate_content(
-                         model=self.model,
-                         contents=conversation,
-                         config=genai.types.GenerateContentConfig(
-                             response_mime_type='application/json',
-                             response_schema=ChatResponse
-                         )
-                     )
-                 except Exception as api_e: # Log error concisely
-                     self.logger.error(f"Gemini API Call Failed: {api_e}")
-                     raise api_e
-                 
-                 # Extract token usage
-                 tokens_used = 0
-                 if hasattr(response, 'usage_metadata') and response.usage_metadata:
-                     tokens_used = response.usage_metadata.total_token_count
-                 self.last_token_count = tokens_used
-                 
-                 # Parse JSON response into Pydantic model
-                 import json
-                 parsed = ChatResponse.model_validate_json(response.text)
-                 return parsed.message
+                            conversation += f"{'User' if role == 'user' else 'Assistant'}: {content}\n"
+                    conversation += "Assistant:"
+                    
+                    response = self.client.models.generate_content(
+                        model=self.model,
+                        contents=conversation,
+                        config=genai.types.GenerateContentConfig(
+                            response_mime_type='application/json',
+                            response_schema=ChatResponse
+                        )
+                    )
+                    
+                    tokens_used = getattr(response.usage_metadata, 'total_token_count', 0) if hasattr(response, 'usage_metadata') else 0
+                    self.last_token_count = tokens_used
+                    
+                    import json
+                    parsed = ChatResponse.model_validate_json(response.text)
+                    generated_text = parsed.message
+                    
+                else:
+                    # OpenAI Fallback
+                    messages = [{"role": "system", "content": self.system_prompt + avoid_prompt}]
+                    messages.extend(chat_history)
+                    
+                    response = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=messages,
+                        max_tokens=150
+                    )
+                    generated_text = response.choices[0].message.content.strip()
+
+                # Check for exact duplication
+                if generated_text not in previous_responses:
+                    return generated_text
                 
-            else:
-                # OpenAI Fallback
-                messages = [{"role": "system", "content": self.system_prompt}]
-                messages.extend(chat_history)
-                
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    max_tokens=150
-                )
-                return response.choices[0].message.content.strip()
+                self.logger.warning(f"AI repeated a message. Retrying ({attempt+1}/3)...")
+            
+            # If all retries fail, return the last one anyway or None
+            return generated_text
                 
         except Exception as e:
             error_msg = str(e)
@@ -154,7 +143,7 @@ class AIHandler:
 
     def generate_username(self):
         """Generates a random desi female name and appends _32f."""
-        fallback = "jasmin_32f"
+        fallback = "jasmin32f"
         if not self.client:
             return fallback
 
@@ -220,7 +209,7 @@ class AIHandler:
                         with open(recent_names_file, 'w') as f:
                             json.dump(recent_names, f)
                     except: pass
-                    return f"{clean_name}_32f"
+                    return f"{clean_name}32f"
             
             return fallback
         except Exception as e:

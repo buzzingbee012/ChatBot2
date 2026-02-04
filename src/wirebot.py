@@ -130,7 +130,8 @@ class WireBot(BaseBot):
                 chat_ids.append({'name': uid, 'id': uid})
         
         if chat_ids:
-            self.logger.info(f"Found unread chats: {chat_ids}")
+            # self.logger.debug(f"Found unread chats: {chat_ids}")
+            pass
         return chat_ids
 
     async def open_chat(self, chat_obj):
@@ -139,12 +140,16 @@ class WireBot(BaseBot):
         self.current_chat_id = chat_id
         # Click to focus
         await self.safe_click(f"#{chat_id}")
-        # Wait for body to be visible
+        return True
+
+    async def wait_for_chat_load(self, name):
+        """Verify session container is visible."""
+        if not self.current_chat_id: return False
         try:
-            await self.page.wait_for_selector(f"#{chat_id} .chat-body", state='visible', timeout=2000)
+            # Wait for body to be visible
+            await self.page.wait_for_selector(f"#{self.current_chat_id} .chat-body", state='visible', timeout=5000)
             return True
         except:
-            self.logger.warning(f"Timed out waiting for chat body of {chat_id}")
             return False
 
     async def get_chat_history(self):
@@ -184,7 +189,7 @@ class WireBot(BaseBot):
                 msg_elements = await container.query_selector_all(".message")
                 
                 if msg_elements:
-                    self.logger.info(f"Found {len(msg_elements)} structured messages in {selector}")
+                    # self.logger.debug(f"Found {len(msg_elements)} structured messages in {selector}")
                     for el in msg_elements:
                         try:
                             # Text is usually in .message-body
