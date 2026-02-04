@@ -76,7 +76,7 @@ class AIHandler:
             elif self.provider in ['gemini', 'google']:
                  # Gemini Format with Pydantic structured output
                  # Build conversation context
-                 print(f"DEBUG: Generating Gemini response for history: {chat_history}")
+                 #print(f"DEBUG: Generating Gemini response for history: {chat_history}")
                  conversation = f"{self.system_prompt}\n\n"
                  
                  # Robust handling of history (dict vs string vs list)
