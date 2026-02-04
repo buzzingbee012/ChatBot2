@@ -5,6 +5,8 @@ import logging
 # from src.bot_core import ChatBot
 from src.site_two import SiteTwoBot
 from src.wirebot import WireBot
+from src.ai_handler import AIHandler
+import os
 
 def load_config(path="config.yaml"):
     try:
@@ -55,6 +57,13 @@ async def main():
     args = parser.parse_args()
 
     config = load_config()
+    
+    # Randomize Username
+    ai = AIHandler(config)
+    new_username = ai.generate_username()
+    if new_username:
+        print(f"DEBUG: Randomizing username to: {new_username}")
+        config['guest_profile']['username'] = new_username
     
     bots = []
     

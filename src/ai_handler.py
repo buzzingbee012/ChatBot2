@@ -9,6 +9,10 @@ class ChatResponse(BaseModel):
     """Structured response model for chat completions"""
     message: str
 
+class NameResponse(BaseModel):
+    """Structured response model for name generation"""
+    name: str
+
 class AIHandler:
     def __init__(self, config):
         self.config = config
@@ -156,3 +160,48 @@ class AIHandler:
         # Simple prompt for broadcast
         history = [{"role": "user", "content": "Generate a short, friendly greeting for a chat room. Keep it under 50 characters."}]
         return self.generate_response(history) or "Hello everyone!"
+
+    def generate_username(self):
+        """Generates a random desi female name and appends _32f."""
+        fallback = "jasmin_32f"
+        if not self.client:
+            return fallback
+
+        prompt = "Generate a single Indian/Desi female first name. Return only the name, no punctuation, only letters. The name should be common and easy to read."
+        
+        try:
+            if self.provider in ['gemini', 'google']:
+                response = self.client.models.generate_content(
+                    model=self.model,
+                    contents=prompt,
+                    config=genai.types.GenerateContentConfig(
+                        response_mime_type='application/json',
+                        response_schema=NameResponse
+                    )
+                )
+                import json
+                parsed = NameResponse.model_validate_json(response.text)
+                name = parsed.name.strip().lower()
+                # Ensure only letters and numbers
+                import re
+                name = re.sub(r'[^a-zA-Z0-9]', '', name)
+                if not name:
+                    return fallback
+                return f"{name}_32f"
+            else:
+                # Fallback for other providers if needed
+                messages = [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": prompt}]
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=20
+                )
+                name = response.choices[0].message.content.strip().lower()
+                import re
+                name = re.sub(r'[^a-zA-Z0-9]', '', name)
+                if not name:
+                    return fallback
+                return f"{name}_32f"
+        except Exception as e:
+            logging.error(f"Error generating username: {e}")
+            return fallback
