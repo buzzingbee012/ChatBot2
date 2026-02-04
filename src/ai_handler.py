@@ -143,7 +143,21 @@ class AIHandler:
 
     def generate_username(self):
         """Generates a random desi female name and appends _32f."""
-        fallback = "jasmin32f"
+        import random
+        import string
+        
+        # Robust Fallback if AI is down
+        def get_fallback():
+             # Simple syllable-based generator
+             vowels = "aeiou"
+             consonants = "bcdfghjklmnpqrstvwxyz"
+             # Generate 2-3 syllables
+             name = ""
+             for _ in range(random.randint(2,3)):
+                 name += random.choice(consonants) + random.choice(vowels)
+             return f"{name}{random.randint(10,99)}32f"
+
+        fallback = get_fallback()
         if not self.client:
             return fallback
 

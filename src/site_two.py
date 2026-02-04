@@ -147,15 +147,34 @@ class SiteTwoBot(BaseBot):
     async def wait_for_chat_load(self, name):
         """Verify chat header matches expected name."""
         try:
-            # Wait for header to update to the new name
-            header_sel = ".kiwi-header-name, .kiwi-statebrowser-channel--active[data-name]"
-            for _ in range(10): # 5 seconds max
-                header_text = await self.page.locator(header_sel).first.inner_text()
-                if name.lower() in header_text.lower():
-                    return True
+            # Check 1: Active Tab Data Attribute (Most reliable in Kiwi)
+            active_tab = self.page.locator(".kiwi-statebrowser-channel.kiwi-statebrowser-channel--active")
+            
+            for i in range(20): # Increased to 10 seconds
+                # Try getting data-name from active tab
+                if await active_tab.count() > 0:
+                    active_name = await active_tab.get_attribute("data-name")
+                    if active_name and (name.lower() == active_name.lower() or name.lower() in active_name.lower()):
+                         return True
+                
+                # Check Header as fallback
+                header = self.page.locator(".kiwi-header-name").first
+                if await header.is_visible():
+                     h_text = await header.inner_text()
+                     if name.lower() in h_text.lower():
+                         return True
+
                 await asyncio.sleep(0.5)
+            
+            # Debug log what we see
+            curr_active = "None"
+            if await active_tab.count() > 0:
+                curr_active = await active_tab.get_attribute("data-name")
+            self.logger.warning(f"Context Verification Failed. Expected: {name}, Current Active Tab: {curr_active}")
             return False
-        except: return False
+        except Exception as e:
+            self.logger.error(f"Wait load error: {e}")
+            return False
 
     async def get_chat_history(self):
         """Scrape messages."""

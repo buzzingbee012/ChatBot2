@@ -47,6 +47,11 @@ class BaseBot(ABC):
         )
         
         self.page = await self.context.new_page()
+        self.page.set_default_timeout(5000) # Prevents 30s hangs
+        
+        # Global Popup Handler: Close any new pages/tabs immediately
+        self.context.on("page", self._handle_popup)
+        
         self.running = True
         
         try:
@@ -58,13 +63,25 @@ class BaseBot(ABC):
             self.logger.error(f"Bot Crashed: {e}")
             import traceback
             traceback.print_exc()
-        finally:
-            await self.stop()
+
+    async def _handle_popup(self, popup):
+        """Automatically closes unwanted popups."""
+        try:
+            target_url = popup.url
+            self.logger.warning(f"Popup detected: {target_url}. Closing...")
+            await popup.close()
+            self.logger.info("Popup closed successfully.")
+        except Exception as e:
+            self.logger.error(f"Failed to close popup: {e}")
 
     async def stop(self):
         self.running = False
-        if self.context: await self.context.close()
-        if self.playwright: await self.playwright.stop()
+        if self.context: 
+            await self.context.close()
+        if self.browser:
+            await self.browser.close()
+        if self.playwright: 
+            await self.playwright.stop()
 
     # --- Helper Methods ---
     async def _check_exists(self, selector, timeout=1000):
@@ -109,8 +126,8 @@ class BaseBot(ABC):
         Dashboard.status("Monitoring Chat...")
         
         # Initial wait
-        self.logger.info("Waiting 10s before first loop...")
-        await asyncio.sleep(10)
+        self.logger.info("Waiting 3s before first loop...")
+        await asyncio.sleep(3)
 
         import time
         start_time = time.time()
@@ -135,11 +152,11 @@ class BaseBot(ABC):
                 # 2. PM Checking
                 await self.process_pms()
                 
-                await asyncio.sleep(5) # Poll interval
+                await asyncio.sleep(0.25) # Poll interval
                 
             except Exception as e:
                 self.logger.error(f"Loop Error: {e}")
-                await asyncio.sleep(5)
+                await asyncio.sleep(0.25)
 
     async def process_pms(self):
         """Check for PMs and reply."""
@@ -176,7 +193,7 @@ class BaseBot(ABC):
                     self.logger.warning(f"Failed to verify chat context for {name}")
                     continue
                 
-                await asyncio.sleep(random.uniform(0.25, 0.5))
+                # Removed pre-generation sleep for speed
 
                 # Step 3: Get History & Generate Reply
                 history = await self.get_chat_history()
@@ -210,7 +227,7 @@ class BaseBot(ABC):
                 # Step 5: Post-Reply Navigation (if needed, e.g. go back to lobby)
                 await self.return_to_lobby()
                 
-                await asyncio.sleep(2)
+                # Removed post-reply sleep for speed
                 
         except Exception as e:
             self.logger.error(f"PM Process Error: {e}")

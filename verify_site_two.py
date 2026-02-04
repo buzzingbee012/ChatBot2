@@ -12,17 +12,13 @@ async def verify():
     
     bot = SiteTwoBot(config)
     try:
-        print("Starting Bot verification...")
-        await bot.start()
-        # The start method calls guest_entry internally
-        # If it returns, it means entry was successful and it started monitoring (or failed)
-        # But wait, start() runs monitor_loop forever if successful.
-        # So we should modify how we call it or just run guest_entry directly if possible, 
-        # but guest_entry needs setup (browser launch).
-        # SiteTwoBot.start() launches browser.
+    try:
+        print("Starting Bot verification (running for 60 seconds)...")
+        # Run the bot for 60 seconds then it will exit efficiently
+        await bot.start(duration=60)
         
-        # Let's run it for a bit then stop
-        await asyncio.sleep(60) 
+    except KeyboardInterrupt:
+        pass 
         
     except KeyboardInterrupt:
         pass

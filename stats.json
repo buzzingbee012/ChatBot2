@@ -9291,10 +9291,15 @@
       "SiteTwoBot": {
         "interactions": 946,
         "tokens": 617220
+      },
+      "IBBot": {
+        "interactions": 83,
+        "tokens": 57265,
+        "errors": []
       }
     },
-    "interactions": 1517,
-    "tokens": 991517,
+    "interactions": 2041,
+    "tokens": 1397772,
     "errors": []
   }
 }

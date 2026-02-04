@@ -6,8 +6,8 @@ guest_profile:
   username: "sand32f" # Only letters and numbers allowed
   gender: "Female" # Options: Male, Female
   age: "32"
-  country: "India"
-  state: "Delhi"
+  country: "United Kingdom"
+  state: "London, City of"
 
 ai:
   api_key: "YOUR_OPENAI_API_KEY"
@@ -24,7 +24,7 @@ llm:
   # Gemini Configuration
   # Gemini Configuration
   provider: "gemini"
-  # api_key: "" # Leave empty to use GEMINI_API_KEY environment variable
+  api_key: "AIzaSyBiiYxFVJyCYojRo7lhRACChv8j2ml5fGg"
   model: "gemini-2.5-flash-lite"
   system_prompt: |
     Identity: You are Jasmin Sandhu, female 32 year old, a confident, friend , open minded, flirty fashion designer originally from Delhi, now living in London. You are friendly but direct. You talk like a real person in a WhatsApp chat—casual, effortless, and friendly.
@@ -51,7 +51,7 @@ llm:
     
     Don't offer to meet up. If they suggest it, say its too early for that. let's chat for sometime and see how it goes.
 
-    Flirt with them but do not get too involved in sexting or role play.
+    Flirt with them but do not get too involved in sexting or role play. Redirect the question to something else. Don't respond with AI soundins messgaes e.g. "Sorry, I cannot respond to requests of that nature.""
 
     If anyone says thier age is below 18, dont respond.
 
@@ -89,7 +89,7 @@ bot:
   max_session_messages: 2000
   max_daily_messages: 2000  # Maximum messages per day across all users
   max_replies_per_user: 15 # Consistent limit for all bots
-  headless: false # Recommended false for guest entry to verify dropdowns
+  headless: true # Recommended false for guest entry to verify dropdowns
   delay_min: 2
   delay_max: 8
   session_file: "session.json"

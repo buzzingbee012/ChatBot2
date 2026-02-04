@@ -58,10 +58,55 @@ class IBBot(BaseBot):
             age = str(self.config['guest_profile'].get('age', '32'))
             await self.page.select_option(self.selectors['age_dropdown'], age)
 
+            # Randomize Country & State
+            locations = [
+                {"country": "India", "state": "Delhi"},
+                {"country": "United Kingdom", "state": "London, City of"},
+                {"country": "United States", "state": "New Jersey"}
+            ]
+            loc = random.choice(locations)
+            self.logger.info(f"Selected Location: {loc['country']}, {loc['state']}")
+
             # Country & State
-            await self.page.select_option(self.selectors['country_dropdown'], self.config['guest_profile'].get('country', 'India'))
+            await self.page.select_option(self.selectors['country_dropdown'], loc['country'])
             await self.page.wait_for_timeout(2000) # Wait for states to load
-            await self.page.select_option(self.selectors['state_dropdown'], self.config['guest_profile'].get('state', 'Delhi'))
+            await self.page.select_option(self.selectors['state_dropdown'], loc['state'])
+
+            # Check button state before click
+            btn_sel = self.selectors['start_chat_btn']
+            is_disabled = await self.page.is_disabled(btn_sel)
+            if is_disabled:
+                 self.logger.warning(f"Start Chat button is DISABLED. Triggering events...")
+                 # Try to force trigger events
+                 await self.page.dispatch_event(self.selectors['username_input'], 'blur')
+                 await self.page.dispatch_event(self.selectors['age_dropdown'], 'change')
+                 await self.page.wait_for_timeout(1000)
+                 
+                 # Check again
+                 if await self.page.is_disabled(btn_sel):
+                     self.logger.error("Button still disabled. Capturing state...")
+                     await self.page.screenshot(path="ib_entry_disabled.png")
+
+            # Check for Username availablity / Error
+            for retry in range(3):
+                # Check for error text adjacent to input
+                is_error = await self.page.locator(".username_check_msg:has-text('taken'), .text-danger:has-text('taken')").count() > 0
+                
+                # Also check validation state
+                btn_disabled = await self.page.is_disabled(self.selectors['start_chat_btn'])
+                
+                if is_error or btn_disabled:
+                     # Check if it's specifically a username issue
+                     error_text = await self.page.locator(".username_check_msg, .text-danger").first.inner_text() if await self.page.locator(".username_check_msg, .text-danger").count() > 0 else ""
+                     
+                     if "taken" in error_text.lower() or btn_disabled:
+                         self.logger.warning(f"Username '{username}' might be taken (Error: {error_text}). Retrying...")
+                         username = self.ai_handler.generate_username()
+                         await self.safe_type(self.selectors['username_input'], username)
+                         await self.page.dispatch_event(self.selectors['username_input'], 'blur')
+                         await self.page.wait_for_timeout(1000)
+                         continue
+                break
 
             # Submit
             await self.page.click(self.selectors['start_chat_btn'])
@@ -88,6 +133,9 @@ class IBBot(BaseBot):
 
         except Exception as e:
             self.logger.error(f"Entry Failed: {e}")
+            try:
+                await self.page.screenshot(path="ib_entry_error.png")
+            except: pass
             return False
 
     async def handle_ads_and_popups(self):
@@ -118,7 +166,9 @@ class IBBot(BaseBot):
             # 4. Click specific dismiss buttons
             dismiss_sel = self.selectors.get('ad_dismiss_btn', '#dismiss-button')
             if await self._check_exists(dismiss_sel):
-                await self.page.click(dismiss_sel)
+                try:
+                    await self.page.click(dismiss_sel, timeout=1000)
+                except: pass
 
         except: pass
 
@@ -155,71 +205,176 @@ class IBBot(BaseBot):
 
     async def wait_for_chat_load(self, name):
         """Verify chat header or history container text matches."""
+        # print(f"DEBUG: Checking context for {name}") 
         try:
-            for _ in range(10): # 5 seconds
-                # Check for the name in the active chat area
-                # .chat-history often includes the name or it shows up in the 'write to...' area
-                content = await self.page.evaluate("""
-                    () => {
-                        const h = document.querySelector('.chat-history') || document.querySelector('.msg_history');
-                        return h ? h.innerText : '';
-                    }
-                """)
-                if name.lower() in content.lower():
-                    # Also wait for messages to settle
-                    await asyncio.sleep(1)
+            selectors = [
+                 ".msg_head", # Likely header container
+                 ".card-header",
+                 ".user_name",
+                 ".chat-history", 
+                 ".msg_history", 
+                 ".panel-heading", 
+                 ".top_spac", 
+                 "h4", 
+                 ".media-heading", 
+                 ".active-chat-title",
+                 "#msg_history"
+            ]
+
+            msg_history_content = ""
+
+            for i in range(5): # 2.5 seconds max
+                # Check for the name in likely header elements
+                msg_history_content = "" # Reset for this iteration
+                for sel in selectors:
+                     try:
+                         element = await self.page.query_selector(sel)
+                         if element:
+                             text = await element.inner_text()
+                             # Save content for fallback check
+                             if "msg_history" in sel or "chat-history" in sel: 
+                                 msg_history_content = text
+                             
+                             if name.lower() in text.lower():
+                                 return True
+                     except: pass
+                
+                # Check page title
+                title = await self.page.title()
+                if name.lower() in title.lower():
                     return True
+
+                # FAST FALLBACK: If chat history is loaded, proceed immediately
+                if len(msg_history_content) > 10:
+                    self.logger.warning(f"Context Verification: Name '{name}' not found, but chat appears loaded. Proceeding.")
+                    return True
+
                 await asyncio.sleep(0.5)
+
+            # Debug: Log what we found to help fix it
+            debug_info = []
+            for sel in selectors:
+                try:
+                    el = await self.page.query_selector(sel)
+                    if el: debug_info.append(f"{sel}: '{await el.inner_text()}'")
+                except: pass
+            
+            # Failed to verify context within timeout
+            msg = f"Context Verification Failed for '{name}'. Found headers: {debug_info}"
+            self.logger.warning(msg)
             return False
-        except: return False
+        except Exception as e:
+             self.logger.error(f"Wait load error: {e}")
+             print(f"DEBUG ERROR: {e}")
+             return False
 
     async def get_chat_history(self):
         """Scrapes history from the chat window."""
         history = []
         try:
-            # Chatib uses bubbles with 'incoming' or 'outgoing' classes usually
-            # Note: Selectors might need refinement based on exact DOM
-            bubbles = await self.page.query_selector_all(".message")
-            count = len(bubbles)
+            # Chatib uses specific classes for messages
+            # Incoming: .incoming_msg -> .received_msg -> .received_withd_msg -> p
+            # Outgoing: .outgoing_msg -> .sent_msg -> p (assumed based on standard template)
+            
+            # Select both types
+            all_msgs = await self.page.query_selector_all(".incoming_msg, .outgoing_msg")
+            
+            # Limit history to last 20 messages
+            count = len(all_msgs)
             start_idx = max(0, count - 20)
+            
+            # Select both types
+            all_msgs = await self.page.query_selector_all(".incoming_msg, .outgoing_msg")
+            
+            # Limit history to last 20 messages
+            count = len(all_msgs)
+            start_idx = max(0, count - 20)
+            
             for i in range(start_idx, count):
-                bubble = bubbles[i]
+                msg_el = all_msgs[i]
                 try:
-                    text = await bubble.inner_text()
-                    classes = await bubble.get_attribute("class") or ""
-                    role = "user" if "incoming" in classes else "assistant"
-                    if text.strip():
-                        history.append({"role": role, "content": text.strip()})
+                    # Check class to determine role
+                    classes = await msg_el.get_attribute("class") or ""
+                    role = "user" if "incoming_msg" in classes else "assistant"
+                    
+                    # Extract text from paragraph
+                    p_tag = await msg_el.query_selector("p")
+                    if p_tag:
+                         text = await p_tag.inner_text()
+                         if text and text.strip():
+                             history.append({"role": role, "content": text.strip()})
                 except: continue
-        except: pass
+        except Exception as e:
+            self.logger.error(f"History scrape error: {e}")
         
+        # DEBUG LOGGING to verify context
+        if history:
+            self.logger.info(f"Scraped History ({len(history)} msgs): {[h['content'][:20] for h in history]}")
+        else:
+             self.logger.warning("Scraped History is EMPTY. Using fallback.")
+
         if not history: 
             history.append({"role": "user", "content": "hello"}) # Fallback
         return history
 
     async def send_message(self, text):
-        """Types and sends message."""
+        """Sends message by typing into contenteditable div and clicking send."""
         try:
-            input_sel = self.selectors.get('message_input', "#msg_content")
-            if await self._check_exists(input_sel):
-                await self.page.fill(input_sel, "") # Clear
-                await self.page.type(input_sel, text, delay=50)
-                await self.page.keyboard.press("Enter")
+            # Target the visible contenteditable div, NOT the hidden input
+            input_sel = "#contenteditablediv"
+            hidden_input = "#msg_content"
+            
+            self.logger.info(f"Typing message to contenteditable: '{text}'")
+            
+            # Focus and clear
+            await self.page.click(input_sel)
+            await self.page.evaluate(f"document.querySelector('{input_sel}').innerText = ''")
+            
+            # Type visibly (Instant)
+            await self.page.type(input_sel, text, delay=0)
+            
+            # Small delay for sync to hidden input
+            await self.page.wait_for_timeout(200)
+            
+            self.logger.info(f"Text typed, clicking Send button")
+            
+            # Click the send button 
+            await self.page.click('.msg_send_btn', force=True)
+            
+            # Wait for send
+            await self.page.wait_for_timeout(1000)
+            
+            # Verify input was cleared (check hidden input value)
+            verification = await self.page.evaluate("""
+                () => {
+                    const hiddenVal = $('#msg_content').val();
+                    const divText = document.querySelector('#contenteditablediv').innerText;
+                    return {
+                        hiddenInputCleared: !hiddenVal || hiddenVal === '',
+                        divCleared: !divText || divText.trim() === '',
+                        hiddenVal: hiddenVal,
+                        divText: divText
+                    };
+                }
+            """)
+            
+            self.logger.info(f"Verification: {verification}")
+            
+            if verification.get('divCleared'):
+                self.logger.info(f"[OK] Message sent - input cleared")
+            else:
+                self.logger.warning(f"[WARN] Input not cleared")
+            
+            return True
                 
-                # Check if still there (sometimes Enter doesn't work)
-                await self.page.wait_for_timeout(500)
-                val = await self.page.input_value(input_sel)
-                if val:
-                    await self.page.click(self.selectors.get('send_btn', ".msg_send_btn"))
-                
-                return True
-        except: pass
-        return False
+        except Exception as e:
+            self.logger.error(f"Send Message Error: {e}")
+            return False
 
     async def return_to_lobby(self):
         """Clicks the back to inbox button."""
         try:
             back_btn = self.selectors.get('back_to_inbox_btn', ".hide_messages")
-            await self.page.click(back_btn)
-            await self.page.wait_for_timeout(1000)
+            await self.page.click(back_btn, timeout=1000)
+            await self.page.wait_for_timeout(100)
         except: pass
