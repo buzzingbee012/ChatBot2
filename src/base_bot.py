@@ -196,7 +196,10 @@ class BaseBot(ABC):
                         # Track Stats
                         tokens = getattr(self.ai_handler, 'last_token_count', 0)
                         self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
-                        self.logger.info(f"Replied to {name}: {reply_text}")
+                        
+                        # Get last user message for clean logging
+                        last_user_msg = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "N/A")
+                        self.logger.info(f"Replied to {name}: User: \"{last_user_msg}\" | AI: \"{reply_text}\"")
                 else:
                      self.logger.warning(f"Skipping reply to {name} - AI generation failed/empty.")
                 

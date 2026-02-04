@@ -35,10 +35,10 @@ class AIHandler:
             self.model = config.get('llm', {}).get('model', 'claude-3-haiku-20240307')
         elif self.provider in ['gemini', 'google']:
             self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
-            print(f"DEBUG: Initialized Gemini with model: {self.model}")
+            self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
             if self.api_key:
                 masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
-                print(f"DEBUG: Using API Key: {masked_key} (Length: {len(self.api_key)})")
+                masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
                 self.client = genai.Client(api_key=self.api_key)
             else:
                  logging.error("Gemini API Key missing. AI features will be disabled.")
@@ -76,7 +76,6 @@ class AIHandler:
             elif self.provider in ['gemini', 'google']:
                  # Gemini Format with Pydantic structured output
                  # Build conversation context
-                 #print(f"DEBUG: Generating Gemini response for history: {chat_history}")
                  conversation = f"{self.system_prompt}\n\n"
                  
                  # Robust handling of history (dict vs string vs list)
@@ -110,7 +109,7 @@ class AIHandler:
                          )
                      )
                  except Exception as api_e: # Log error concisely
-                     print(f"DEBUG: Gemini API Call Failed: {api_e}")
+                     logging.error(f"Gemini API Call Failed: {api_e}")
                      raise api_e
                  
                  # Extract token usage
@@ -122,7 +121,6 @@ class AIHandler:
                  # Parse JSON response into Pydantic model
                  import json
                  parsed = ChatResponse.model_validate_json(response.text)
-                 print(f"DEBUG: AI Output: {parsed.message}")
                  return parsed.message
                 
             else:
