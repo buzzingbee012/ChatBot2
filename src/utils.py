@@ -13,15 +13,16 @@ class Logger:
         # Only add handlers if they haven't been added yet
         self.logger.propagate = False
         
-        if not any(isinstance(h, logging.FileHandler) for h in self.logger.handlers):
+        if not any(type(h) is logging.FileHandler for h in self.logger.handlers):
             # File handler
             fh = logging.FileHandler(log_file)
             fh.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
             self.logger.addHandler(fh)
             
-        if not any(isinstance(h, logging.StreamHandler) for h in self.logger.handlers):
+        if not any(type(h) is logging.StreamHandler for h in self.logger.handlers):
             # Console handler
-            ch = logging.StreamHandler()
+            import sys
+            ch = logging.StreamHandler(sys.stdout)
             ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
             self.logger.addHandler(ch)
 

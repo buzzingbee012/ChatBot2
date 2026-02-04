@@ -15,6 +15,7 @@ class NameResponse(BaseModel):
 
 class AIHandler:
     def __init__(self, config):
+        self.logger = logging.getLogger("WebMonitor")
         self.config = config
         self.provider = config.get('llm', {}).get('provider', 'openai')
         
@@ -26,7 +27,7 @@ class AIHandler:
         self.api_key = env_key or config.get('llm', {}).get('api_key')
         
         if not self.api_key or "PASTE_YOUR" in self.api_key:
-            logging.warning(f"No valid API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var or update config.")
+            self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var or update config.")
             self.api_key = None # Treat as missing
         
         self.client = None
@@ -41,7 +42,7 @@ class AIHandler:
                 masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
                 self.client = genai.Client(api_key=self.api_key)
             else:
-                 logging.error("Gemini API Key missing. AI features will be disabled.")
+                 self.logger.error("Gemini API Key missing. AI features will be disabled.")
         else:
             self.client = OpenAI(api_key=self.api_key)
             self.model = config.get('ai', {}).get('model', 'gpt-4o')
@@ -56,7 +57,7 @@ class AIHandler:
         chat_history: list of dicts [{'role': 'user', 'content': '...'}, ...]
         """
         if not self.client:
-            logging.error("AI Client not initialized.")
+            self.logger.error("AI Client not initialized.")
             return None
 
         try:
@@ -109,7 +110,7 @@ class AIHandler:
                          )
                      )
                  except Exception as api_e: # Log error concisely
-                     logging.error(f"Gemini API Call Failed: {api_e}")
+                     self.logger.error(f"Gemini API Call Failed: {api_e}")
                      raise api_e
                  
                  # Extract token usage
@@ -138,14 +139,6 @@ class AIHandler:
         except Exception as e:
             error_msg = str(e)
             logging.error(f"AI Generation Error ({self.provider}): {e}")
-            
-            # Track error internally
-            self.last_error = error_msg
-            self.last_token_count = 0
-            
-            # Log rate limit specifically if it occurs
-            if "429" in error_msg or "quota" in error_msg.lower():
-                 logging.warning(f"Rate Limit: {e}")
             
             # Return None - bot will skip sending message entirely
             return None
@@ -231,5 +224,5 @@ class AIHandler:
             
             return fallback
         except Exception as e:
-            logging.error(f"Error generating username: {e}")
+            self.logger.error(f"Error generating username: {e}")
             return fallback
