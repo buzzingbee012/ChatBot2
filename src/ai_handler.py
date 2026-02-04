@@ -165,9 +165,33 @@ class AIHandler:
         if not self.client:
             return fallback
 
-        prompt = "Generate a single Indian/Desi female chat name. Not actual name but should reflect an Indian female. Don't go for obvious names. Return only the name, no punctuation, only letters. The name should be common and easy to read."
+        # Load recent names to avoid repeats
+        recent_names_file = "recent_names.json"
+        recent_names = []
+        if os.path.exists(recent_names_file):
+            try:
+                with open(recent_names_file, 'r') as f:
+                    recent_names = json.load(f)
+            except: pass
+            
+        recent_names_str = ", ".join(recent_names) if recent_names else "None yet"
+        
+        # Randomize by picking a random letter and region to force variety
+        import random
+        import string
+        letter = random.choice(string.ascii_uppercase)
+        regions = ["North Indian", "South Indian", "Punjabi", "Bengali", "Gujarati", "Modern Indian"]
+        region = random.choice(regions)
+        
+        prompt = (
+            f"Generate a single {region} female chat name starting with the letter '{letter}'. "
+            "Not actual name but should reflect an Indian female. Don't go for obvious names like Priya or Anjali. "
+            f"AVOID these recently used names: {recent_names_str}. "
+            "Return only the name, no punctuation, only letters. The name should be common and easy to read."
+        )
         
         try:
+            generated_name = None
             if self.provider in ['gemini', 'google']:
                 response = self.client.models.generate_content(
                     model=self.model,
@@ -179,13 +203,7 @@ class AIHandler:
                 )
                 import json
                 parsed = NameResponse.model_validate_json(response.text)
-                name = parsed.name.strip().lower()
-                # Ensure only letters and numbers
-                import re
-                name = re.sub(r'[^a-zA-Z0-9]', '', name)
-                if not name:
-                    return fallback
-                return f"{name}_32f"
+                generated_name = parsed.name.strip().lower()
             else:
                 # Fallback for other providers if needed
                 messages = [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": prompt}]
@@ -194,12 +212,24 @@ class AIHandler:
                     messages=messages,
                     max_tokens=20
                 )
-                name = response.choices[0].message.content.strip().lower()
+                generated_name = response.choices[0].message.content.strip().lower()
+
+            if generated_name:
+                # Ensure only letters and numbers
                 import re
-                name = re.sub(r'[^a-zA-Z0-9]', '', name)
-                if not name:
-                    return fallback
-                return f"{name}_32f"
+                clean_name = re.sub(r'[^a-zA-Z0-9]', '', generated_name)
+                if clean_name:
+                    # Update history
+                    recent_names.append(clean_name)
+                    if len(recent_names) > 10:
+                        recent_names = recent_names[-10:]
+                    try:
+                        with open(recent_names_file, 'w') as f:
+                            json.dump(recent_names, f)
+                    except: pass
+                    return f"{clean_name}_32f"
+            
+            return fallback
         except Exception as e:
             logging.error(f"Error generating username: {e}")
             return fallback
