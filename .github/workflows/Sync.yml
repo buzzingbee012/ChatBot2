@@ -1,21 +1,25 @@
-- name: Checkout
-  uses: actions/checkout@v4
-  with:
-    # This prevents Account A's credentials from overriding your PAT
-    persist-credentials: false 
-    fetch-depth: 0
+name: Sync to Secondary Account
 
-- name: Push to Account B
-  env:
-    SEC_TOKEN: ${{ secrets.SECONDARY_ACCOUNT_TOKEN }}
-  run: |
-    # 1. Configure a dummy user so Git doesn't complain
-    git config user.name "GitHub Action"
-    git config user.email "action@github.com"
+on:
+  push:
+    branches:
+      - main  # or master, depending on your default branch name
 
-    # 2. Add the remote using the full token-authenticated URL
-    # Format: https://<token>@github.com/<user>/<repo>.git
-    git remote add second https://${SEC_TOKEN}@github.com/AIBots012/ChatBot.git
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
-    # 3. Push the 'main' branch to the 'second' remote
-    git push second main --force
+      - name: Push to Account B
+        env:
+          SEC_TOKEN: ${{ secrets.SECONDARY_ACCOUNT_TOKEN }}
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git remote add second https://${SEC_TOKEN}@github.com/AIBots012/ChatBot.git
+          git push second main --force
