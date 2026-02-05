@@ -27,6 +27,9 @@ jobs:
 
 workflows:
   version: 2
+  test-manual-run:
+    jobs:
+      - run-bot
   scheduled-bot-run:
     triggers:
       - schedule:
