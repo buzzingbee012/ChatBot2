@@ -155,7 +155,7 @@ class AIHandler:
              name = ""
              for _ in range(random.randint(2,3)):
                  name += random.choice(consonants) + random.choice(vowels)
-             return f"{name}{random.randint(10,99)}32f"
+             return f"{name}{random.randint(10,99)}"
 
         fallback = get_fallback()
         if not self.client:
@@ -223,7 +223,7 @@ class AIHandler:
                         with open(recent_names_file, 'w') as f:
                             json.dump(recent_names, f)
                     except: pass
-                    return f"{clean_name}32f"
+                    return f"{clean_name}"
             
             return fallback
         except Exception as e:
