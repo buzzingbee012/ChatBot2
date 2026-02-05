@@ -9298,8 +9298,19 @@
         "errors": []
       }
     },
-    "interactions": 2041,
-    "tokens": 1397772,
+    "interactions": 2895,
+    "tokens": 2150206,
+    "errors": []
+  },
+  "2026-02-05": {
+    "bots": {
+      "SiteTwoBot": {
+        "interactions": 273,
+        "tokens": 232093
+      }
+    },
+    "interactions": 273,
+    "tokens": 232093,
     "errors": []
   }
 }

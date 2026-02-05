@@ -18421,3 +18421,6 @@ Call log:
 2026-02-04 21:45:55,530 - WebMonitor - INFO - [SiteTwoBot] Replied to yashveera: User: "Uploaded file: https://kiwiirc.hybridirc.com/files/1c8e1879575b8bfba5e694d391751167/love2.gif" | AI: "just chilling with a drink"
 2026-02-04 21:46:02,641 - WebMonitor - INFO - [SiteTwoBot] Duration reached.
 >>>>>>> 34a25afd5adc51ab255d7aa4eb5c4ee9650a59ef
+2026-02-05 12:07:22,029 - WebMonitor - WARNING - No valid API Key found for provider openai. Please set GEMINI_API_KEY env var or update config.
+2026-02-05 12:07:53,632 - WebMonitor - INFO - [Bot] Waiting 0.73s before sending...
+2026-02-05 12:07:54,374 - WebMonitor - ERROR - [Bot] PM Process Error: '>' not supported between instances of 'MagicMock' and 'int'
