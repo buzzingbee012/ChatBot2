@@ -9,5 +9,5 @@ jobs:
           fetch-depth: 0
       - name: Push to Account B
         run: |
-          git remote add second https://${{ secrets.SECONDARY_ACCOUNT_TOKEN }}@github.com/AccountB/repo-name.git
+          git remote add second https://${{ secrets.SECONDARY_ACCOUNT_TOKEN }}@github.com/AIBots012/ChatBot
           git push second main --force
