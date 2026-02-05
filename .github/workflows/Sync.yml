@@ -15,21 +15,27 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Push to Account B (Excluding Workflows)
+      - name: Sync and Merge (Preserving Repo B Workflows)
         env:
           SEC_TOKEN: ${{ secrets.SECONDARY_ACCOUNT_TOKEN }}
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-         
-          # Commit that deletion locally (check if there are changes to commit first)
-          if git diff-index --quiet HEAD --; then
-            echo "No changes to workflows to exclude."
-          else
-            git commit -m "Exclude workflows from sync1"
-          fi
-
-          # Add the remote and push
+          # 1. Add Repo B as a remote and fetch its content
           git remote add second https://${SEC_TOKEN}@github.com/AIBots012/ChatBot.git
-          git push second main --force
+          git fetch second main
+
+          # 2. Checkout the 'main' branch of Repo B locally
+          git checkout -b repo-b-branch second/main
+
+          # 3. Merge Repo A's code into Repo B's code
+          # 'allow-unrelated-histories' is used if the repos were created separately
+          git merge origin/main --allow-unrelated-histories -m "Sync from Repo A"
+
+          # 4. RESTORE Repo B's workflows from the fetch we just did
+          # This overwrites any incoming workflows with what was already in Repo B
+          git checkout second/main -- .github/workflows
+
+          # 5. Push the combined result back to Repo B
+          git push second repo-b-branch:main
