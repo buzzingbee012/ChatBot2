@@ -1,4 +1,4 @@
-name: Sync to Secondary Account
+name: Sync to Multiple Accounts
 
 on:
   push:
@@ -9,59 +9,54 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Source (Repo A)
         uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Sync and Merge (Preserving Repo B Workflows)
+      # --- SYNC TO REPO B ---
+      - name: Sync to Repo B
         env:
           SEC_TOKEN: ${{ secrets.SECONDARY_ACCOUNT_TOKEN }}
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-          # 1. Add Repo B as a remote and fetch its content
+          # CLEANUP: Remove 'second' if it exists from a previous run or step
+          git remote remove second || true 
+
           git remote add second https://${SEC_TOKEN}@github.com/AIBots012/ChatBot.git
           git fetch second main
-
-          # 2. Checkout the 'main' branch of Repo B locally
           git checkout -b repo-b-branch second/main
-
-          # 3. Merge Repo A's code into Repo B's code
-          # 'allow-unrelated-histories' is used if the repos were created separately
-          git merge origin/main --allow-unrelated-histories -m "Sync from Repo A"
-
-          # 4. RESTORE Repo B's workflows from the fetch we just did
-          # This overwrites any incoming workflows with what was already in Repo B
+          
+          # Merge Repo A into B, favoring Repo A's files in conflicts
+          git merge origin/main --allow-unrelated-histories -X theirs -m "Sync from Repo A"
+          
+          # RESTORE Repo B's unique workflows
           git checkout second/main -- .github/workflows
-
-          # 5. Push the combined result back to Repo B
+          
           git push second repo-b-branch:main
 
-      - name: Sync and Merge (Preserving Repo C Workflows)
+      # --- SYNC TO REPO C ---
+      - name: Sync to Repo C
         env:
           SEC_TOKEN: ${{ secrets.THIRD_ACCOUNT_TOKEN }}
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-          # 1. Add Repo B as a remote and fetch its content
+          # CLEANUP: Remove 'second' so we can reuse the name for Repo C
+          git remote remove second || true 
+
           git remote add second https://${SEC_TOKEN}@github.com/AIBots1/ChatBot.git
           git fetch second main
-
-          # 2. Checkout the 'main' branch of Repo B locally
-          git checkout -b repo-b-branch second/main
-
-          # 3. Merge Repo A's code into Repo B's code
-          # 'allow-unrelated-histories' is used if the repos were created separately
-          git merge origin/main --allow-unrelated-histories -m "Sync from Repo A"
-
-          # 4. RESTORE Repo B's workflows from the fetch we just did
-          # This overwrites any incoming workflows with what was already in Repo C
+          git checkout -b repo-c-branch second/main
+          
+          # Merge Repo A into C
+          git merge origin/main --allow-unrelated-histories -X theirs -m "Sync from Repo A"
+          
+          # RESTORE Repo C's unique workflows
           git checkout second/main -- .github/workflows
-
-          # 5. Push the combined result back to Repo C
-          git push second repo-b-branch:main
-
+          
+          git push second repo-c-branch:main
