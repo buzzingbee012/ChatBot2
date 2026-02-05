@@ -9,18 +9,16 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: |
-             pip install -r requirements.txt
+          command: pip install -r requirements.txt
       - run:
           name: Install Playwright Browsers
           command: |
-             playwright install chromium
-             playwright install-deps
+            playwright install chromium
+            playwright install-deps
       - run:
           name: Run Bot
           environment:
             HEADLESS: "true"
-          # Run for 30 minutes (1800s) as per recent preference
           command: python main.py --duration 5400
       - store_artifacts:
           path: stats.json
@@ -32,8 +30,6 @@ workflows:
   scheduled-bot-run:
     triggers:
       - schedule:
-          # 10 AM EST = 15:00 UTC
-          # 5 PM EST = 22:00 UTC
           cron: "0 09,11 * * *"
           filters:
             branches:
