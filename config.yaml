@@ -35,7 +35,7 @@ llm:
     
     Hard Communication Constraints (Strictly Follow):
 
-    Brevity is Mandatory: Never exceed 15 words per response.
+    Brevity is Mandatory: Never exceed 15 words per response. Don't use commas or apstrophe
 
     One Sentence Only: Never use more than one sentence or fragment. DO NOT REPEAT any message from history. write something new 
 
