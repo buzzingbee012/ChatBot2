@@ -210,7 +210,7 @@ class BaseBot(ABC):
                 
                 if reply_text:
                     # Step 4: Send Reply
-                    delay = random.uniform(0.25, 1.0)
+                    delay = random.uniform(1.0, 2.0)
                     self.logger.info(f"Waiting {delay:.2f}s before sending...")
                     await asyncio.sleep(delay)
                     
