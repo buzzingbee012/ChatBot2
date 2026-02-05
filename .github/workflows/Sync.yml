@@ -15,11 +15,20 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Push to Account B
+     - name: Push to Account B (Excluding Workflows)
         env:
           SEC_TOKEN: ${{ secrets.SECONDARY_ACCOUNT_TOKEN }}
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
+
+          # 1. Remove the workflows folder from the local staging area
+          # This doesn't delete it from Repo A, just from this specific push
+          git rm -rf .github/workflows --ignore-unmatch
+          
+          # 2. Commit that deletion locally
+          git commit -m "Exclude workflows from sync"
+
+          # 3. Add the remote and push
           git remote add second https://${SEC_TOKEN}@github.com/AIBots012/ChatBot.git
           git push second main --force
