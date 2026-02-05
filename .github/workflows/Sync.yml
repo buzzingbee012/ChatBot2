@@ -22,14 +22,12 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-          # Remove the workflows folder from the local staging area
-          git rm -rf .github/workflows --ignore-unmatch
-          
+         
           # Commit that deletion locally (check if there are changes to commit first)
           if git diff-index --quiet HEAD --; then
             echo "No changes to workflows to exclude."
           else
-            git commit -m "Exclude workflows from sync"
+            git commit -m "Exclude workflows from sync1"
           fi
 
           # Add the remote and push
