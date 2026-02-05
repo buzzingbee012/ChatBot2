@@ -34,7 +34,7 @@ workflows:
       - schedule:
           # 10 AM EST = 15:00 UTC
           # 5 PM EST = 22:00 UTC
-        #  cron: "0 09,11 * * *"
+         cron: "0 09,11 * * *"
           filters:
             branches:
               only:
