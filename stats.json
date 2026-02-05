@@ -9307,10 +9307,15 @@
       "SiteTwoBot": {
         "interactions": 273,
         "tokens": 232093
+      },
+      "IBBot": {
+        "interactions": 306,
+        "tokens": 271547,
+        "errors": []
       }
     },
-    "interactions": 273,
-    "tokens": 232093,
+    "interactions": 1314,
+    "tokens": 1129433,
     "errors": []
   }
 }
