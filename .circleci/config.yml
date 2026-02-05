@@ -21,7 +21,7 @@ jobs:
           environment:
             HEADLESS: "true"
           # Run for 30 minutes (1800s) as per recent preference
-          command: python main.py --duration 3600
+          command: python main.py --duration 5400
       - store_artifacts:
           path: stats.json
       - store_artifacts:
@@ -34,7 +34,7 @@ workflows:
       - schedule:
           # 10 AM EST = 15:00 UTC
           # 5 PM EST = 22:00 UTC
-          cron: "0 15,22 * * *"
+          cron: "0 09,11 * * *"
           filters:
             branches:
               only:
