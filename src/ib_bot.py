@@ -61,7 +61,8 @@ class IBBot(BaseBot):
             # Randomize Country & State
             locations = [
                 {"country": "India", "state": "Delhi"},
-                {"country": "United Kingdom", "state": "London, City of"}
+                {"country": "India", "state": "Maharashtra"},
+                {"country": "India", "state": "Karnataka"}
             ]
             loc = random.choice(locations)
             self.logger.info(f"Selected Location: {loc['country']}, {loc['state']}")
