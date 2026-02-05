@@ -202,7 +202,7 @@ class BaseBot(ABC):
                 # Generate
                 reply_text = None
                 if current_count == self.max_replies_per_user:
-                     reply_text = "gtg, add me on instagram " + self.config.get('instagram_link', "")
+                     reply_text = "gtg, add me on instagram " + self.config.get('instagram_link', "https://instagram.com/jasmin.sandhu.1")
                 else:
                     generated = self.ai_handler.generate_response(history)
                     if generated: 
