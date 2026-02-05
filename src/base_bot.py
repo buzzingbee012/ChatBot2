@@ -210,6 +210,10 @@ class BaseBot(ABC):
                 
                 if reply_text:
                     # Step 4: Send Reply
+                    delay = random.uniform(0.25, 1.0)
+                    self.logger.info(f"Waiting {delay:.2f}s before sending...")
+                    await asyncio.sleep(delay)
+                    
                     if await self.send_message(reply_text):
                         self.user_reply_counts[name] = current_count + 1
                         self.total_messages_sent += 1
