@@ -1,0 +1,13 @@
+name: Sync to Secondary Account
+on: [push]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push to Account B
+        run: |
+          git remote add second https://${{ secrets.SECONDARY_ACCOUNT_TOKEN }}@github.com/AccountB/repo-name.git
+          git push second main --force
