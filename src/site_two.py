@@ -150,7 +150,7 @@ class SiteTwoBot(BaseBot):
             # Check 1: Active Tab Data Attribute (Most reliable in Kiwi)
             active_tab = self.page.locator(".kiwi-statebrowser-channel.kiwi-statebrowser-channel--active")
             
-            for i in range(20): # Increased to 10 seconds
+            for i in range(10): # Optimized: 2 seconds max (10 × 0.2s)
                 # Try getting data-name from active tab
                 if await active_tab.count() > 0:
                     active_name = await active_tab.get_attribute("data-name")
@@ -164,7 +164,7 @@ class SiteTwoBot(BaseBot):
                      if name.lower() in h_text.lower():
                          return True
 
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.2)  # Reduced from 0.5s for faster verification
             
             # Debug log what we see
             curr_active = "None"

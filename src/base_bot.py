@@ -126,8 +126,8 @@ class BaseBot(ABC):
         Dashboard.status("Monitoring Chat...")
         
         # Initial wait
-        self.logger.info("Waiting 3s before first loop...")
-        await asyncio.sleep(3)
+        self.logger.info("Waiting 0.5s before first loop...")
+        await asyncio.sleep(0.5)  # Reduced from 3s for faster initial response
 
         import time
         start_time = time.time()
@@ -152,82 +152,113 @@ class BaseBot(ABC):
                 # 2. PM Checking
                 await self.process_pms()
                 
-                await asyncio.sleep(0.25) # Poll interval
+                await asyncio.sleep(0.1)  # Poll interval - reduced from 0.25s for faster detection
                 
             except Exception as e:
                 self.logger.error(f"Loop Error: {e}")
-                await asyncio.sleep(0.25)
+                await asyncio.sleep(0.1)  # Reduced from 0.25s
+
+    async def _generate_reply(self, name, history, current_count):
+        """Generate AI reply for a single user (can run in parallel)."""
+        try:
+            if current_count == self.max_replies_per_user:
+                return "gtg, add me on instagram " + self.config.get('instagram_link', "https://instagram.com/jasmin.sandhu.1")
+            else:
+                generated = self.ai_handler.generate_response(history)
+                return generated if generated else None
+        except Exception as e:
+            self.logger.error(f"AI generation error for {name}: {e}")
+            return None
 
     async def process_pms(self):
-        """Check for PMs and reply."""
+        """Check for PMs and reply with parallel AI generation."""
         try:
             # Step 1: Get list of unread conversations/users
-            # This should return list of objects/dicts: { 'name': 'User1', 'element': locator/handle }
             unreads = await self.get_unread_chats()
             
+            if not unreads:
+                return
+            
+            # Step 2: Collect all chat histories (must be sequential - UI limitation)
+            chat_data = []
             for chat in unreads:
                 name = chat['name']
                 
                 # Check Global Limits
                 if self.total_messages_sent >= self.max_session_messages:
-                    return
-
-                # Check Daily Limits
-                # (Reading stats tracking)
-                # ... [Skipping detailed stats check implementaiton for brevity, relying on user_reply_counts logic mostly]
+                    break
                 
                 # Check Per-User Limit
                 current_count = self.user_reply_counts.get(name, 0)
-                
                 if current_count > self.max_replies_per_user:
                     continue
                 
-                # self.logger.info(f"Processing PM from {name} ({current_count}/{self.max_replies_per_user})")
-                
-                # Step 2: Open Chat
+                # Open chat and verify context
                 if not await self.open_chat(chat):
                     continue
                 
-                # Step 2.5: Wait for chat to load and verify context
                 if not await self.wait_for_chat_load(name):
                     self.logger.warning(f"Failed to verify chat context for {name}")
                     continue
                 
-                # Removed pre-generation sleep for speed
-
-                # Step 3: Get History & Generate Reply
+                # Get chat history
                 history = await self.get_chat_history()
                 
-                # Generate
-                # Generate
-                reply_text = None
-                if current_count == self.max_replies_per_user:
-                     reply_text = "gtg, add me on instagram " + self.config.get('instagram_link', "https://instagram.com/jasmin.sandhu.1")
-                else:
-                    generated = self.ai_handler.generate_response(history)
-                    if generated: 
-                        reply_text = generated
+                chat_data.append({
+                    'name': name,
+                    'chat': chat,
+                    'history': history,
+                    'current_count': current_count
+                })
                 
-                if reply_text:
-                    # Step 4: Send Reply
-                    if await self.send_message(reply_text):
-                        self.user_reply_counts[name] = current_count + 1
-                        self.total_messages_sent += 1
-                        
-                        # Track Stats
-                        tokens = getattr(self.ai_handler, 'last_token_count', 0)
-                        self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
-                        
-                        # Get last user message for clean logging
-                        last_user_msg = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "N/A")
-                        self.logger.info(f"Replied to {name}: User: \"{last_user_msg}\" | AI: \"{reply_text}\"")
-                else:
-                     self.logger.warning(f"Skipping reply to {name} - AI generation failed/empty.")
-                
-                # Step 5: Post-Reply Navigation (if needed, e.g. go back to lobby)
+                # Return to lobby for next chat
                 await self.return_to_lobby()
+            
+            if not chat_data:
+                return
+            
+            # Step 3: Generate ALL AI responses in parallel (FAST!)
+            self.logger.info(f"Generating {len(chat_data)} AI responses in parallel...")
+            tasks = [
+                self._generate_reply(data['name'], data['history'], data['current_count'])
+                for data in chat_data
+            ]
+            responses = await asyncio.gather(*tasks)
+            
+            # Step 4: Send messages (must be sequential - UI limitation)
+            for data, reply_text in zip(chat_data, responses):
+                name = data['name']
+                current_count = data['current_count']
+                history = data['history']
+                chat = data['chat']
                 
-                # Removed post-reply sleep for speed
+                if not reply_text:
+                    self.logger.warning(f"Skipping reply to {name} - AI generation failed/empty.")
+                    continue
+                
+                # Open chat again
+                if not await self.open_chat(chat):
+                    continue
+                
+                if not await self.wait_for_chat_load(name):
+                    self.logger.warning(f"Failed to verify chat context for {name} during send")
+                    continue
+                
+                # Send the pre-generated reply
+                if await self.send_message(reply_text):
+                    self.user_reply_counts[name] = current_count + 1
+                    self.total_messages_sent += 1
+                    
+                    # Track Stats
+                    tokens = getattr(self.ai_handler, 'last_token_count', 0)
+                    self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
+                    
+                    # Get last user message for clean logging
+                    last_user_msg = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "N/A")
+                    self.logger.info(f"Replied to {name}: User: \"{last_user_msg}\" | AI: \"{reply_text}\"")
+                
+                # Return to lobby for next send
+                await self.return_to_lobby()
                 
         except Exception as e:
             self.logger.error(f"PM Process Error: {e}")
