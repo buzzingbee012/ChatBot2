@@ -196,12 +196,35 @@ class SiteTwoBot(BaseBot):
         if not chat_history: chat_history.append({"role": "user", "content": "Hello"})
         return chat_history
 
+    async def _type_naturally(self, locator, text):
+        """
+        Type text character by character at natural human speed.
+        Simulates realistic typing patterns with variable delays.
+        """
+        await locator.click()
+        await locator.fill("")  # Clear any existing text
+        
+        for i, char in enumerate(text):
+            await locator.type(char)
+            
+            # Variable typing speed: 40-120ms per character (mimics 10-25 chars/second)
+            base_delay = random.uniform(0.04, 0.12)
+            
+            # Add occasional longer pauses after punctuation (thinking/reading)
+            if char in '.!?,;':
+                base_delay += random.uniform(0.2, 0.5)
+            # Small pause after spaces (more natural)
+            elif char == ' ':
+                base_delay += random.uniform(0.02, 0.05)
+            
+            await asyncio.sleep(base_delay)
+
     async def send_message(self, text):
         try:
             pm_input = self.page.locator(".kiwi-ircinput-editor").first
             if await pm_input.is_visible():
-                await pm_input.click()
-                await pm_input.fill(text)
+                # Use natural typing instead of instant fill
+                await self._type_naturally(pm_input, text)
                 await pm_input.press("Enter")
                 return True
         except: pass
