@@ -6,7 +6,7 @@ from .utils import Dashboard
 class SiteTwoBot(BaseBot):
     def __init__(self, config):
         super().__init__(config, bot_name="SiteTwoBot")
-        self.username = config['guest_profile']['username']
+        self.username = config['guest_profile']['username'] + "_f"  # Add _f suffix for SiteTwo
         # Site specific config
         self.site_config = config['site_two']
         self.max_replies_per_user = self.site_config.get('max_replies', 20)
