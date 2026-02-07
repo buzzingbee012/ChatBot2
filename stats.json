@@ -9332,5 +9332,21 @@
     "interactions": 1745,
     "tokens": 1560440,
     "errors": []
+  },
+  "2026-02-07": {
+    "bots": {
+      "IBBot": {
+        "interactions": 851,
+        "tokens": 745880
+      },
+      "SiteTwoBot": {
+        "interactions": 723,
+        "tokens": 662968,
+        "errors": []
+      }
+    },
+    "interactions": 1574,
+    "tokens": 1408848,
+    "errors": []
   }
 }
