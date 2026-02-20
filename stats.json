@@ -9508,6 +9508,22 @@
       }
     },
     "interactions": 1243,
-    "tokens": 1268684
+    "tokens": 1268684,
+    "errors": []
+  },
+  "2026-02-20": {
+    "bots": {
+      "IBBot": {
+        "interactions": 323,
+        "tokens": 311850
+      },
+      "SiteTwoBot": {
+        "interactions": 1289,
+        "tokens": 1312224
+      }
+    },
+    "interactions": 1612,
+    "tokens": 1624074,
+    "errors": []
   }
 }
