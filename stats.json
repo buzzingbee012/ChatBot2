@@ -9525,5 +9525,20 @@
     "interactions": 1612,
     "tokens": 1624074,
     "errors": []
+  },
+  "2026-02-21": {
+    "bots": {
+      "IBBot": {
+        "interactions": 486,
+        "tokens": 502352
+      },
+      "SiteTwoBot": {
+        "interactions": 1296,
+        "tokens": 1317346
+      }
+    },
+    "interactions": 1782,
+    "tokens": 1819698,
+    "errors": []
   }
 }
