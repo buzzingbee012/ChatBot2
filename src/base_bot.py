@@ -179,7 +179,12 @@ class BaseBot(ABC):
             if not unreads:
                 return
             
-            # Step 2: Collect all chat histories (must be sequential - UI limitation)
+            # Step 2: Prioritize unreads based on reply count
+            # We want to finish conversations that are closer to the max_replies_per_user limit first.
+            # New users (0 replies) should be processed last.
+            unreads.sort(key=lambda x: self.user_reply_counts.get(x['name'], 0), reverse=True)
+            
+            # Step 3: Collect all chat histories (must be sequential - UI limitation)
             chat_data = []
             for chat in unreads:
                 name = chat['name']
@@ -217,7 +222,7 @@ class BaseBot(ABC):
             if not chat_data:
                 return
             
-            # Step 3: Generate ALL AI responses in parallel (FAST!)
+            # Step 4: Generate ALL AI responses in parallel (FAST!)
             self.logger.info(f"Generating {len(chat_data)} AI responses in parallel...")
             tasks = [
                 self._generate_reply(data['name'], data['history'], data['current_count'])
@@ -225,7 +230,7 @@ class BaseBot(ABC):
             ]
             responses = await asyncio.gather(*tasks)
             
-            # Step 4: Send messages (must be sequential - UI limitation)
+            # Step 5: Send messages (must be sequential - UI limitation)
             for data, reply_text in zip(chat_data, responses):
                 name = data['name']
                 current_count = data['current_count']

@@ -207,15 +207,15 @@ class SiteTwoBot(BaseBot):
         for i, char in enumerate(text):
             await locator.type(char)
             
-            # Variable typing speed: 40-120ms per character (mimics 10-25 chars/second)
-            base_delay = random.uniform(0.04, 0.12)
+            # Optimized typing speed: 30-70ms per character (mimics ~15-30 chars/second)
+            base_delay = random.uniform(0.03, 0.07)
             
-            # Add occasional longer pauses after punctuation (thinking/reading)
+            # Add occasional pauses after punctuation (thinking/reading)
             if char in '.!?,;':
-                base_delay += random.uniform(0.2, 0.5)
+                base_delay += random.uniform(0.15, 0.3)
             # Small pause after spaces (more natural)
             elif char == ' ':
-                base_delay += random.uniform(0.02, 0.05)
+                base_delay += random.uniform(0.02, 0.04)
             
             await asyncio.sleep(base_delay)
 
