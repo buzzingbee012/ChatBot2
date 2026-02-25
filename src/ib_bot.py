@@ -96,16 +96,19 @@ class IBBot(BaseBot):
                 btn_disabled = await self.page.is_disabled(self.selectors['start_chat_btn'])
                 
                 if is_error or btn_disabled:
-                     # Check if it's specifically a username issue
-                     error_text = await self.page.locator(".username_check_msg, .text-danger").first.inner_text() if await self.page.locator(".username_check_msg, .text-danger").count() > 0 else ""
+                     # Specifically for Chatib: If button is disabled or error shows, try a different name
+                     self.logger.warning(f"Username '{username}' might be taken (Error: {error_text}). Retrying...")
                      
-                     if "taken" in error_text.lower() or btn_disabled:
-                         self.logger.warning(f"Username '{username}' might be taken (Error: {error_text}). Retrying...")
-                         username = self.ai_handler.generate_username()
-                         await self.safe_type(self.selectors['username_input'], username)
-                         await self.page.dispatch_event(self.selectors['username_input'], 'blur')
-                         await self.page.wait_for_timeout(1000)
-                         continue
+                     # Force re-trigger of validation by clearing and re-filling
+                     await self.page.fill(self.selectors['username_input'], "")
+                     await self.page.wait_for_timeout(500)
+                     
+                     username = self.ai_handler.generate_username()
+                     await self.page.fill(self.selectors['username_input'], username)
+                     await self.page.dispatch_event(self.selectors['username_input'], 'input')
+                     await self.page.dispatch_event(self.selectors['username_input'], 'change')
+                     await self.page.wait_for_timeout(1500)
+                     continue
                 break
 
             # Submit
@@ -323,7 +326,7 @@ class IBBot(BaseBot):
             input_sel = "#contenteditablediv"
             hidden_input = "#msg_content"
             
-            self.logger.info(f"Typing message to contenteditable: '{text}'")
+            self.logger.info(f"[{self.username}] Typing message to {input_sel}: '{text}'")
             
             # Focus and clear
             await self.page.click(input_sel)

@@ -19,7 +19,7 @@ class SiteTwoBot(BaseBot):
     async def entry_point(self):
         """Legacy guest_entry logic."""
         url = self.site_config['url']
-        self.logger.info(f"Navigating to {url}...")
+        self.logger.info(f"Navigating to {url} with username: {self.username}...")
         await self.page.goto(url)
         
         Dashboard.status("Entering Site 2...")
@@ -100,7 +100,7 @@ class SiteTwoBot(BaseBot):
     async def perform_broadcast(self):
         """Send flirty AI-generated broadcast to main room (attraction)."""
         msg = await self.ai_handler.generate_lobby_message()
-        self.logger.info(f"Sending AI Broadcast: {msg}")
+        self.logger.info(f"[{self.username}] Sending AI Broadcast: {msg}")
         
         # Switch to #allindiachat.com
         try:
@@ -116,7 +116,11 @@ class SiteTwoBot(BaseBot):
         if await target_input.count() > 0:
             # Ensure it's not hidden by some weird CSS before trying
             await self._type_naturally(target_input, msg)
-            await target_input.press("Enter")
+            try:
+                await target_input.press("Enter", timeout=5000)
+            except:
+                self.logger.warning("Locator.press Enter failed. Falling back to JS-Enter.")
+                await self.js_press_enter(".kiwi-ircinput-editor")
             self.logger.info("Broadcast sent.")
             return True
         return False
@@ -240,8 +244,9 @@ class SiteTwoBot(BaseBot):
     async def send_message(self, text):
         try:
             pm_input = self.page.locator(".kiwi-ircinput-editor").first
-            if await pm_input.is_visible():
+            if await pm_input.count() > 0:
                 # Use natural typing instead of instant fill
+                self.logger.info(f"[{self.username}] Sending response: {text}")
                 await self._type_naturally(pm_input, text)
                 await pm_input.press("Enter")
                 return True

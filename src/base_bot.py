@@ -47,7 +47,17 @@ class BaseBot(ABC):
         )
         
         self.page = await self.context.new_page()
-        self.page.set_default_timeout(5000) # Prevents 30s hangs
+        # Set a longer default timeout to handle 10 parallel instances
+        self.page.set_default_timeout(15000) 
+
+        # Resource Saver: Block images, media, and fonts to save CPU/Bandwidth
+        async def block_media(route):
+            if route.request.resource_type in ["image", "media", "font"]:
+                await route.abort()
+            else:
+                await route.continue_()
+        
+        await self.page.route("**/*", block_media)
         
         # Global Popup Handler: Close any new pages/tabs immediately
         self.context.on("page", self._handle_popup)
@@ -84,12 +94,37 @@ class BaseBot(ABC):
             await self.playwright.stop()
 
     # --- Helper Methods ---
-    async def _check_exists(self, selector, timeout=1000):
+    async def _check_exists(self, selector, timeout=2000):
         """Checks if a selector exists without throwing error."""
         try:
             if not selector: return False
             # Wait briefly
             await self.page.wait_for_selector(selector, state='attached', timeout=timeout)
+            return True
+        except:
+            return False
+
+    async def js_click(self, selector):
+        """Force a click via JS to bypass overlays and actionability checks."""
+        try:
+            await self.page.evaluate(f"document.querySelector('{selector}').click()")
+            return True
+        except:
+            return False
+
+    async def js_press_enter(self, selector):
+        """Force an Enter keypress via JS events."""
+        try:
+            await self.page.evaluate(f"""
+                (sel) => {{
+                    const el = document.querySelector(sel);
+                    if (!el) return;
+                    const ev = new KeyboardEvent('keydown', {{
+                        key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true
+                    }});
+                    el.dispatchEvent(ev);
+                }}
+            """, selector)
             return True
         except:
             return False

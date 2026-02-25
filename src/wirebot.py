@@ -21,7 +21,7 @@ class WireBot(BaseBot):
         url = self.config['wireclub'].get('url', "https://www.wireclub.com/")
         
         while True:
-            self.logger.info(f"Navigating to {url}...")
+            self.logger.info(f"Navigating to {url} with username: {self.username}...")
             try:
                 await self.page.goto(url, timeout=60000)
             except Exception as e:
