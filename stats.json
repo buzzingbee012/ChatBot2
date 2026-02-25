@@ -9581,5 +9581,16 @@
     "interactions": 1945,
     "tokens": 1838441,
     "errors": []
+  },
+  "2026-02-25": {
+    "bots": {
+      "IBBot": {
+        "interactions": 400,
+        "tokens": 359879
+      }
+    },
+    "interactions": 400,
+    "tokens": 359879,
+    "errors": []
   }
 }

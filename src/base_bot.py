@@ -161,8 +161,25 @@ class BaseBot(ABC):
     async def _generate_reply(self, name, history, current_count):
         """Generate AI reply for a single user (can run in parallel)."""
         try:
-            if current_count == self.max_replies_per_user:
-                return "gtg, add me on instagram " + self.config.get('instagram_link', "https://instagram.com/jasmin.sandhu.1")
+            # New Link Forcing Logic
+            link_config = self.config.get('bot', {}).get('link_config', {})
+            min_replies = link_config.get('min_replies_before_link', 10)
+            max_replies = link_config.get('max_replies_before_link', 15)
+            force_prob = link_config.get('force_link_probability', 0.3)
+            
+            insta_link = self.config.get('instagram_link', "https://www.instagram.com/jasmin.sandhu.1")
+            
+            # Force link if we hit the limit or randomly after min_replies
+            should_force_link = False
+            if current_count >= max_replies:
+                should_force_link = True
+            elif current_count >= min_replies:
+                if random.random() < force_prob:
+                    should_force_link = True
+            
+            if should_force_link:
+                self.logger.info(f"Forcing Instagram link for {name} (count: {current_count})")
+                return f"gtg, add me on instagram {insta_link}"
             else:
                 generated = self.ai_handler.generate_response(history)
                 return generated if generated else None
