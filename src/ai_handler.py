@@ -229,3 +229,41 @@ class AIHandler:
         except Exception as e:
             self.logger.error(f"Error generating username: {e}")
             return fallback
+
+    async def generate_lobby_message(self):
+        """Generates a short, flirty, and unique lobby message."""
+        if not self.client:
+            return "Hey everyone, how's it going?"
+
+        prompt = (
+            "Generate a single, short (under 30 characters) chat message for a chat room lobby. "
+            "Persona: A young, flirty, and 'sexy' Indian female. Use a bit of modern Indian slang or emojis. "
+            "The goal is to sound attractive and real to get guys to PM you. "
+            "Keep it tasteful but suggestive. "
+            "Return only the message text, no quotes."
+        )
+
+        try:
+            if self.provider in ['gemini', 'google']:
+                response = self.client.models.generate_content(
+                    model=self.model,
+                    contents=prompt,
+                    config=genai.types.GenerateContentConfig(
+                        response_mime_type='application/json',
+                        response_schema=ChatResponse
+                    )
+                )
+                import json
+                parsed = ChatResponse.model_validate_json(response.text)
+                return parsed.message.strip()
+            else:
+                messages = [{"role": "system", "content": "You are a flirty Indian female in a chat room."}, {"role": "user", "content": prompt}]
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=25
+                )
+                return response.choices[0].message.content.strip().replace('"', '')
+        except Exception as e:
+            self.logger.error(f"Error generating lobby message: {e}")
+            return "Hey guys, anyone bored? 😉"

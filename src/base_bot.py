@@ -145,7 +145,7 @@ class BaseBot(ABC):
                 # 1. Broadcast (Every 2-3 mins)
                 # We add some randomness to avoid exact detection
                 current_time = time.time()
-                if current_time - last_broadcast_time > (self.config['bot'].get('broadcast_interval', 180)):
+                if current_time - last_broadcast_time > (self.config['bot'].get('broadcast_interval', 300)):
                     last_broadcast_time = current_time # Reset timer regardless of success
                     await self.perform_broadcast()
                 
@@ -188,25 +188,23 @@ class BaseBot(ABC):
             return None
 
     async def process_pms(self):
-        """Check for PMs and reply using optimized single-pass logic."""
+        """Check for PMs and reply using Parallel Thinking (batch generation)."""
         try:
-            # Step 1: Get list of unread conversations/users
+            # Step 1: Discover all unreads
             unreads = await self.get_unread_chats()
-            
             if not unreads:
                 return
             
-            # Step 2: Prioritize unreads based on reply count
+            # Step 2: Prioritize existing chatters
             unreads.sort(key=lambda x: self.user_reply_counts.get(x['name'], 0), reverse=True)
             
-            # Step 3: Process each unread user in a single pass
-            # This avoids the overhead of opening the same chat twice.
+            # Step 3: Scrape Phase (Gather all context)
+            chat_data = []
             for chat in unreads:
                 name = chat['name']
                 
                 # Check Global Limits
                 if self.total_messages_sent >= self.max_session_messages:
-                    self.logger.warning("Session message limit reached.")
                     break
                 
                 # Check Per-User Limit
@@ -214,45 +212,64 @@ class BaseBot(ABC):
                 if current_count >= self.max_replies_per_user:
                     continue
                 
-                # 3a. Open chat
+                # Open, Read, and Store
+                if not await self.open_chat(chat):
+                    continue
+                    
+                if not await self.wait_for_chat_load(name):
+                    await self.return_to_lobby()
+                    continue
+                
+                history = await self.get_chat_history()
+                if history:
+                    chat_data.append({
+                        'name': name,
+                        'chat': chat,
+                        'history': history,
+                        'current_count': current_count
+                    })
+                
+                # Fast exit back to lobby
+                await self.return_to_lobby()
+            
+            if not chat_data:
+                return
+            
+            # Step 4: Parallel Thinking Phase (Generate all AI responses at once)
+            self.logger.info(f"Generating {len(chat_data)} responses in parallel...")
+            tasks = [
+                self._generate_reply(data['name'], data['history'], data['current_count'])
+                for data in chat_data
+            ]
+            replies = await asyncio.gather(*tasks)
+            
+            # Step 5: Send Phase (Execute replies sequentially with realistic typing)
+            for data, reply_text in zip(chat_data, replies):
+                if not reply_text:
+                    continue
+                
+                name = data['name']
+                chat = data['chat']
+                
+                # Re-open chat
                 if not await self.open_chat(chat):
                     continue
                 
+                # Rapid verification (since we just checked it)
                 if not await self.wait_for_chat_load(name):
-                    self.logger.warning(f"Failed to verify chat context for {name}")
+                    await self.return_to_lobby()
                     continue
                 
-                # 3b. Read history
-                history = await self.get_chat_history()
-                if not history:
-                    self.logger.warning(f"Could not read history for {name}")
-                    continue
-
-                # 3c. Generate AI response (FAST sequential execution)
-                # Gemini-2.5-flash-lite is fast enough to justify staying in the UI.
-                reply_text = await self._generate_reply(name, history, current_count)
-                
-                if not reply_text:
-                    self.logger.warning(f"AI generation failed for {name}")
-                    continue
-
-                # 3d. Send message IMMEDIATELY
+                # Type and Send
                 if await self.send_message(reply_text):
-                    self.user_reply_counts[name] = current_count + 1
+                    self.user_reply_counts[name] = data['current_count'] + 1
                     self.total_messages_sent += 1
                     
                     # Track Stats
                     tokens = getattr(self.ai_handler, 'last_token_count', 0)
                     self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
-                    
-                    # Log interaction
-                    last_user_msg = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "N/A")
-                    self.logger.info(f"Replied to {name}: AI: \"{reply_text}\" (Count: {self.user_reply_counts[name]})")
                 
-                # 3e. Brief pause to ensure UI updates before next user
-                await asyncio.sleep(0.5)
-                
-                # 3f. Return to lobby (Standard behavior to see next unreads)
+                # Immediate exit/transition
                 await self.return_to_lobby()
                 
         except Exception as e:

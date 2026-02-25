@@ -92,29 +92,8 @@ class WireBot(BaseBot):
         pass
 
     async def perform_broadcast(self):
-        """Sends a broadcast message to the main room."""
-        try:
-            # Ensure we are in the room
-            if "private_chat_lobby" not in self.page.url:
-                 await self.page.goto(self.selectors['room_url'])
-                 await self.page.wait_for_load_state('networkidle')
-            
-            msg = self.ai.get_next_message()
-            self.logger.info(f"Broadcasting: {msg}")
-            
-            input_sel = self.selectors.get('room_input')
-            send_sel = self.selectors.get('room_send')
-            
-            if await self._check_exists(input_sel):
-                await self.safe_type(input_sel, msg)
-                await self.safe_click(send_sel)
-                self.stats_tracker.increment_today(bot_name=self.logger.name)
-                return True
-            else:
-                self.logger.warning("Broadcast input not found.")
-                
-        except Exception as e:
-            self.logger.error(f"Error performing broadcast: {e}")
+        """Broadcast disabled for WireBot."""
+        return False
 
     async def get_unread_chats(self):
         """Returns a list of unread chat identifiers (e.g. element IDs)."""

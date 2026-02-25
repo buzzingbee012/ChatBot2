@@ -223,7 +223,7 @@ class IBBot(BaseBot):
 
             msg_history_content = ""
 
-            for i in range(5): # 2.5 seconds max
+            for i in range(10): # 1 second max (10 × 0.1s)
                 # Check for the name in likely header elements
                 msg_history_content = "" # Reset for this iteration
                 for sel in selectors:
@@ -245,11 +245,10 @@ class IBBot(BaseBot):
                     return True
 
                 # FAST FALLBACK: If chat history is loaded, proceed immediately
-                if len(msg_history_content) > 10:
-                    self.logger.warning(f"Context Verification: Name '{name}' not found, but chat appears loaded. Proceeding.")
+                if len(msg_history_content) > 5:
                     return True
 
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.1) # Faster polling
 
             # Debug: Log what we found to help fix it
             debug_info = []

@@ -89,23 +89,22 @@ class SiteTwoBot(BaseBot):
         except: pass 
 
     async def perform_broadcast(self):
-        """Send broadcast to main room."""
-        self.logger.info("Sending Broadcast Message...")
-        Dashboard.outgoing("Broadcast: hello guys")
+        """Send flirty AI-generated broadcast to main room (attraction)."""
+        msg = await self.ai_handler.generate_lobby_message()
+        self.logger.info(f"Sending AI Broadcast: {msg}")
         
         # Switch to #allindiachat.com
         try:
             channel_tab = self.page.locator(".kiwi-statebrowser-channel[data-name='#allindiachat.com'], div[role='tab']:has-text('#allindiachat.com')").first
             if await channel_tab.count() > 0:
                 await channel_tab.click()
-                await self.page.wait_for_timeout(500)
+                await asyncio.sleep(0.5)
         except: pass
 
         # Send
         target_input = self.page.locator(".kiwi-ircinput-editor").first
         if await target_input.is_visible():
-            await target_input.click()
-            await target_input.fill("Hello")
+            await self._type_naturally(target_input, msg)
             await target_input.press("Enter")
             self.logger.info("Broadcast sent.")
             return True
@@ -155,7 +154,7 @@ class SiteTwoBot(BaseBot):
             # Check 1: Active Tab Data Attribute (Most reliable in Kiwi)
             active_tab = self.page.locator(".kiwi-statebrowser-channel.kiwi-statebrowser-channel--active")
             
-            for i in range(10): # Optimized: 2 seconds max (10 × 0.2s)
+            for i in range(10): # Optimized: 1 second max (10 × 0.1s)
                 # Try getting data-name from active tab
                 if await active_tab.count() > 0:
                     active_name = await active_tab.get_attribute("data-name")
@@ -167,15 +166,10 @@ class SiteTwoBot(BaseBot):
                 if await header.is_visible():
                      h_text = await header.inner_text()
                      if name.lower() in h_text.lower():
-                         return True
+                          return True
 
-                await asyncio.sleep(0.2)  # Reduced from 0.5s for faster verification
+                await asyncio.sleep(0.1)  # Faster polling
             
-            # Debug log what we see
-            curr_active = "None"
-            if await active_tab.count() > 0:
-                curr_active = await active_tab.get_attribute("data-name")
-            self.logger.warning(f"Context Verification Failed. Expected: {name}, Current Active Tab: {curr_active}")
             return False
         except Exception as e:
             self.logger.error(f"Wait load error: {e}")
@@ -187,7 +181,7 @@ class SiteTwoBot(BaseBot):
         try:
             history_elements = self.page.locator(".kiwi-messagelist-message")
             count = await history_elements.count()
-            start_idx = max(0, count - 20)
+            start_idx = max(0, count - 15) # Reduced from 20 for speed
             for i in range(start_idx, count):
                 msg_el = history_elements.nth(i)
                 body_el = msg_el.locator(".kiwi-messagelist-body")
@@ -212,15 +206,12 @@ class SiteTwoBot(BaseBot):
         for i, char in enumerate(text):
             await locator.type(char)
             
-            # Optimized typing speed: 30-70ms per character (mimics ~15-30 chars/second)
-            base_delay = random.uniform(0.03, 0.07)
+            # Optimized typing speed: 20-50ms per character (slightly faster but still human)
+            base_delay = random.uniform(0.02, 0.05)
             
             # Add occasional pauses after punctuation (thinking/reading)
             if char in '.!?,;':
-                base_delay += random.uniform(0.15, 0.3)
-            # Small pause after spaces (more natural)
-            elif char == ' ':
-                base_delay += random.uniform(0.02, 0.04)
+                base_delay += random.uniform(0.1, 0.2)
             
             await asyncio.sleep(base_delay)
 
@@ -236,8 +227,12 @@ class SiteTwoBot(BaseBot):
         return False
 
     async def return_to_lobby(self):
-        """Return to main room."""
+        """Return to lobby only if needed. In SiteTwo (Kiwi), we can often stay in PMs."""
+        # For now, we still return to lobby to see the unread markers on the left
+        # But we make it much faster.
         try:
              main_tab = self.page.locator(".kiwi-statebrowser-channel[data-name='#allindiachat.com']").first
-             if await main_tab.count() > 0: await main_tab.click()
+             if await main_tab.count() > 0: 
+                 await main_tab.click()
+                 await asyncio.sleep(0.1) # Minimum wait
         except: pass
