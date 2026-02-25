@@ -246,7 +246,6 @@ class SiteTwoBot(BaseBot):
             pm_input = self.page.locator(".kiwi-ircinput-editor").first
             if await pm_input.count() > 0:
                 # Use natural typing instead of instant fill
-                self.logger.info(f"[{self.username}] Sending response: {text}")
                 await self._type_naturally(pm_input, text)
                 await pm_input.press("Enter")
                 return True

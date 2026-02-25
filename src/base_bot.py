@@ -297,6 +297,13 @@ class BaseBot(ABC):
                     continue
                 
                 # Type and Send
+                last_user_msg = "Unknown"
+                for h in reversed(data['history']):
+                    if h['role'] == 'user':
+                        last_user_msg = h['content']
+                        break
+                
+                self.logger.info(f"[{self.username}] Chatter: '{last_user_msg}' -> AI: '{reply_text}'")
                 if await self.send_message(reply_text):
                     self.user_reply_counts[name] = data['current_count'] + 1
                     self.total_messages_sent += 1

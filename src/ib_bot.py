@@ -326,8 +326,6 @@ class IBBot(BaseBot):
             input_sel = "#contenteditablediv"
             hidden_input = "#msg_content"
             
-            self.logger.info(f"[{self.username}] Typing message to {input_sel}: '{text}'")
-            
             # Focus and clear
             await self.page.click(input_sel)
             await self.page.evaluate(f"document.querySelector('{input_sel}').innerText = ''")
