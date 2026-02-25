@@ -236,11 +236,10 @@ class AIHandler:
             return "Hey everyone, how's it going?"
 
         prompt = (
-            "Generate a single, short (under 30 characters) chat message for a chat room lobby. "
-            "Persona: A young, flirty, and 'sexy' Indian female. Use a bit of modern Indian slang or emojis. "
-            "The goal is to sound attractive and real to get guys to PM you. "
-            "Keep it tasteful but suggestive. "
-            "Return only the message text, no quotes."
+            "Generate an ultra-short (MAX 25 characters) lobby message for an Indian female. "
+            "Use Hinglish (e.g., 'Bored hoon, koi h?', 'Hi, baat karega?'). "
+            "Sound flirty, cute, and real. Use 1 emoji. "
+            "Return only the text, no quotes."
         )
 
         try:

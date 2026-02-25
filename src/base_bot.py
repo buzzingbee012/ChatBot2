@@ -142,10 +142,11 @@ class BaseBot(ABC):
                 # 0. Maintenance
                 await self.handle_ads_and_popups()
                 
-                # 1. Broadcast (Every 2-3 mins)
-                # We add some randomness to avoid exact detection
+                # 1. Broadcast (Every 5 mins with Jitter)
                 current_time = time.time()
-                if current_time - last_broadcast_time > (self.config['bot'].get('broadcast_interval', 300)):
+                import random
+                jitter = random.randint(-30, 30)
+                if current_time - last_broadcast_time > (self.config['bot'].get('broadcast_interval', 300) + jitter):
                     last_broadcast_time = current_time # Reset timer regardless of success
                     await self.perform_broadcast()
                 

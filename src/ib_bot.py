@@ -329,8 +329,8 @@ class IBBot(BaseBot):
             await self.page.click(input_sel)
             await self.page.evaluate(f"document.querySelector('{input_sel}').innerText = ''")
             
-            # Type visibly (Instant)
-            await self.page.type(input_sel, text, delay=0)
+            # Type visibly (Instant) - Increased timeout for high-load scaling
+            await self.page.type(input_sel, text, delay=0, timeout=15000)
             
             # Small delay for sync to hidden input
             await self.page.wait_for_timeout(200)

@@ -63,25 +63,27 @@ class SiteTwoBot(BaseBot):
             return False
 
     async def handle_ads_and_popups(self):
-        """Checks for and closes Google Vignettes/Overlays."""
-        # Extracted existing logic
+        """Aggressive overlay and ad removal for Kiwi IRC."""
         try:
-            if await self.page.locator("#dismiss-button").count() > 0:
-                 await self.page.click("#dismiss-button")
-                 return
+             # 1. Nuke persistent ad iframes/containers and Kiwi modals
+             await self.page.evaluate("""
+                 () => {
+                     const selectors = [
+                         'iframe[id^="aswift"]', 'ins.adsbygoogle', '#google_vignette',
+                         '.kiwi-confirm-button', '.modal-close', '.button-close',
+                         '.kiwi-error-modal', '.kiwi-reconnect-button', '.kiwi-welcome'
+                     ];
+                     selectors.forEach(s => {
+                         document.querySelectorAll(s).forEach(el => el.remove());
+                     });
+                 }
+             """)
 
-            for frame in self.page.frames:
-                 if "google" in frame.name or "vignette" in frame.name or "google" in frame.url:
-                     try:
-                         close_btns = frame.locator("div[aria-label='Close ad'], svg[aria-label='Close ad'], #dismiss-button")
-                         if await close_btns.count() > 0:
-                             if await close_btns.first.is_visible():
-                                 await close_btns.first.click()
-                                 return
-                     except: pass
-            
-            # Close rogue pages
-            if len(self.context.pages) > 1:
+             # 2. Key-press Escape as fallback
+             await self.page.keyboard.press("Escape")
+             
+             # 3. Close rogue pages
+             if len(self.context.pages) > 1:
                 for p in self.context.pages[1:]:
                      try:
                          if "allindiachat" not in p.url: await p.close()
@@ -97,7 +99,8 @@ class SiteTwoBot(BaseBot):
         try:
             channel_tab = self.page.locator(".kiwi-statebrowser-channel[data-name='#allindiachat.com'], div[role='tab']:has-text('#allindiachat.com')").first
             if await channel_tab.count() > 0:
-                await channel_tab.click()
+                # Use force=True to bypass invisible overlays
+                await channel_tab.click(force=True, timeout=5000)
                 await asyncio.sleep(0.5)
         except: pass
 
