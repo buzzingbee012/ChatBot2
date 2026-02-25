@@ -12,6 +12,7 @@ permissions:
 jobs:
   run-bot:
     runs-on: ubuntu-22.04
+    container: mcr.microsoft.com/playwright:v1.41.0-jammy
     
     steps:
     - name: Checkout code
@@ -25,8 +26,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        playwright install chromium
-        playwright install-deps
 
     - name: Run Bot
       env:
