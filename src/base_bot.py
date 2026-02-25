@@ -188,7 +188,7 @@ class BaseBot(ABC):
             return None
 
     async def process_pms(self):
-        """Check for PMs and reply with parallel AI generation."""
+        """Check for PMs and reply using optimized single-pass logic."""
         try:
             # Step 1: Get list of unread conversations/users
             unreads = await self.get_unread_chats()
@@ -197,25 +197,24 @@ class BaseBot(ABC):
                 return
             
             # Step 2: Prioritize unreads based on reply count
-            # We want to finish conversations that are closer to the max_replies_per_user limit first.
-            # New users (0 replies) should be processed last.
             unreads.sort(key=lambda x: self.user_reply_counts.get(x['name'], 0), reverse=True)
             
-            # Step 3: Collect all chat histories (must be sequential - UI limitation)
-            chat_data = []
+            # Step 3: Process each unread user in a single pass
+            # This avoids the overhead of opening the same chat twice.
             for chat in unreads:
                 name = chat['name']
                 
                 # Check Global Limits
                 if self.total_messages_sent >= self.max_session_messages:
+                    self.logger.warning("Session message limit reached.")
                     break
                 
                 # Check Per-User Limit
                 current_count = self.user_reply_counts.get(name, 0)
-                if current_count > self.max_replies_per_user:
+                if current_count >= self.max_replies_per_user:
                     continue
                 
-                # Open chat and verify context
+                # 3a. Open chat
                 if not await self.open_chat(chat):
                     continue
                 
@@ -223,50 +222,21 @@ class BaseBot(ABC):
                     self.logger.warning(f"Failed to verify chat context for {name}")
                     continue
                 
-                # Get chat history
+                # 3b. Read history
                 history = await self.get_chat_history()
-                
-                chat_data.append({
-                    'name': name,
-                    'chat': chat,
-                    'history': history,
-                    'current_count': current_count
-                })
-                
-                # Return to lobby for next chat
-                await self.return_to_lobby()
-            
-            if not chat_data:
-                return
-            
-            # Step 4: Generate ALL AI responses in parallel (FAST!)
-            self.logger.info(f"Generating {len(chat_data)} AI responses in parallel...")
-            tasks = [
-                self._generate_reply(data['name'], data['history'], data['current_count'])
-                for data in chat_data
-            ]
-            responses = await asyncio.gather(*tasks)
-            
-            # Step 5: Send messages (must be sequential - UI limitation)
-            for data, reply_text in zip(chat_data, responses):
-                name = data['name']
-                current_count = data['current_count']
-                history = data['history']
-                chat = data['chat']
+                if not history:
+                    self.logger.warning(f"Could not read history for {name}")
+                    continue
+
+                # 3c. Generate AI response (FAST sequential execution)
+                # Gemini-2.5-flash-lite is fast enough to justify staying in the UI.
+                reply_text = await self._generate_reply(name, history, current_count)
                 
                 if not reply_text:
-                    self.logger.warning(f"Skipping reply to {name} - AI generation failed/empty.")
+                    self.logger.warning(f"AI generation failed for {name}")
                     continue
-                
-                # Open chat again
-                if not await self.open_chat(chat):
-                    continue
-                
-                if not await self.wait_for_chat_load(name):
-                    self.logger.warning(f"Failed to verify chat context for {name} during send")
-                    continue
-                
-                # Send the pre-generated reply
+
+                # 3d. Send message IMMEDIATELY
                 if await self.send_message(reply_text):
                     self.user_reply_counts[name] = current_count + 1
                     self.total_messages_sent += 1
@@ -275,11 +245,14 @@ class BaseBot(ABC):
                     tokens = getattr(self.ai_handler, 'last_token_count', 0)
                     self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
                     
-                    # Get last user message for clean logging
+                    # Log interaction
                     last_user_msg = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "N/A")
-                    self.logger.info(f"Replied to {name}: User: \"{last_user_msg}\" | AI: \"{reply_text}\"")
+                    self.logger.info(f"Replied to {name}: AI: \"{reply_text}\" (Count: {self.user_reply_counts[name]})")
                 
-                # Return to lobby for next send
+                # 3e. Brief pause to ensure UI updates before next user
+                await asyncio.sleep(0.5)
+                
+                # 3f. Return to lobby (Standard behavior to see next unreads)
                 await self.return_to_lobby()
                 
         except Exception as e:

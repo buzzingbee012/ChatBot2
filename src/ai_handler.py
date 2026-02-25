@@ -176,14 +176,14 @@ class AIHandler:
         import random
         import string
         letter = random.choice(string.ascii_uppercase)
-        regions = ["North Indian", "South Indian", "Punjabi", "Bengali", "Gujarati", "Modern Indian"]
+        regions = ["North Indian", "South Indian", "Punjabi", "Bengali", "Gujarati", "Modern Indian", "Mumbai", "Delhi", "Haryanvi", "Himachali"]
         region = random.choice(regions)
         
         prompt = (
             f"Generate a single {region} female chat name starting with the letter '{letter}'. "
             "Not actual name but should reflect an Indian female. Don't go for obvious names like Priya or Anjali. "
             f"AVOID these recently used names: {recent_names_str}. "
-            "Return only the name, no punctuation, only letters. The name should be common and easy to read."
+            "Return only the name, no punctuation, only letters. The name should be short and common."
         )
         
         try:
@@ -217,8 +217,8 @@ class AIHandler:
                 if clean_name:
                     # Update history
                     recent_names.append(clean_name)
-                    if len(recent_names) > 10:
-                        recent_names = recent_names[-10:]
+                    if len(recent_names) > 30:
+                        recent_names = recent_names[-30:]
                     try:
                         with open(recent_names_file, 'w') as f:
                             json.dump(recent_names, f)

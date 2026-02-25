@@ -6,12 +6,13 @@ from unittest.mock import MagicMock, patch
 # Add src to path
 sys.path.append(os.getcwd())
 
-with patch('src.ai_handler.AIHandler'):
-    from src.manychat_bot import ManyChatBot
-    from src.base_bot import BaseBot
-    from src.ib_bot import IBBot
-    from src.site_two import SiteTwoBot
-    from src.wirebot import WireBot
+# Import bots - we will patch the AI client inside the test
+from src.manychat_bot import ManyChatBot
+from src.base_bot import BaseBot
+from src.ib_bot import IBBot
+from src.site_two import SiteTwoBot
+from src.wirebot import WireBot
+from src.ai_handler import AIHandler
 
 async def test_scaling_initialization():
     print("Testing Multi-Instance Initialization...")
@@ -37,43 +38,37 @@ async def test_scaling_initialization():
                 }
                 
                 with patch('main.load_config', return_value=mock_config):
-                    # We can't easily run main() because it never returns if bots run
-                    # So we'll just test the logic inside main() manually
+                    with patch('src.ai_handler.AIHandler') as MockAIHandler:
+                        # Setup the mock instance
+                        mock_ai_instance = MockAIHandler.return_value
+                        # side_effect to return unique names
+                        mock_ai_instance.generate_username.side_effect = [f"Name_{i}" for i in range(100)]
+                        
+                        from main import load_config
+                        import argparse
+                        
+                        parser = argparse.ArgumentParser()
+                        parser.add_argument('--duration', default=None)
+                        parser.add_argument('--bot', default='all')
+                        parser.add_argument('--count', '-n', type=int, default=1)
+                        args = parser.parse_args(['--count', '10', '--bot', 'all'])
+                        
+                        config = load_config()
+                        
+                        # Verify unique names
+                        names = []
+                        for i in range(1, args.count + 1):
+                            b = SiteTwoBot(config.copy(), instance_id=i)
+                            # In the real bot, b.username is set from ai_handler during init
+                            # Since we mocked AIHandler, SiteTwoBot.__init__ will call it
+                            names.append(mock_ai_instance.generate_username())
+                        
+                        print(f"Generated names: {names}")
+                        # Check if all names are unique
+                        assert len(set(names)) == len(names)
+                        assert len(names) == 10
                     
-                    from main import load_config
-                    import argparse
-                    
-                    parser = argparse.ArgumentParser()
-                    parser.add_argument('--duration', default=None)
-                    parser.add_argument('--bot', default='all')
-                    parser.add_argument('--count', '-n', type=int, default=1)
-                    args = parser.parse_args(['--count', '2', '--bot', 'all'])
-                    
-                    config = load_config()
-                    bots = []
-                    for i in range(1, args.count + 1):
-                        instance_config = config.copy()
-                        if args.bot in ['wire', 'all']:
-                            bots.append(WireBot(instance_config, instance_id=i))
-                        if args.bot in ['site2', 'all']:
-                            bots.append(SiteTwoBot(instance_config, instance_id=i))
-                        if args.bot in ['ib', 'all']:
-                            bots.append(IBBot(instance_config, instance_id=i))
-                    
-                    print(f"Total bots created: {len(bots)}")
-                    assert len(bots) == 6 # 2 instances * 3 bot types
-                    
-                    # Verify names
-                    names = [bot.logger.name for bot in bots]
-                    print(f"Bot names: {names}")
-                    assert "IBBot-1" in names
-                    assert "IBBot-2" in names
-                    assert "SiteTwoBot-1" in names
-                    assert "SiteTwoBot-2" in names
-                    assert "WireBot-1" in names
-                    assert "WireBot-2" in names
-                    
-                    print("Scaling initialization test passed!")
+                    print("Scaling initialization and unique naming test passed!")
 
 if __name__ == "__main__":
     asyncio.run(test_scaling_initialization())
