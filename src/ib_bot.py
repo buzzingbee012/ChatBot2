@@ -5,8 +5,8 @@ from .base_bot import BaseBot
 from .utils import Dashboard
 
 class IBBot(BaseBot):
-    def __init__(self, config):
-        super().__init__(config, bot_name="IBBot")
+    def __init__(self, config, instance_id=1):
+        super().__init__(config, bot_name=f"IBBot-{instance_id}")
         self.selectors = config.get('selectors', {})
         self.allowed_domain = config['bot'].get('allowed_domain', 'chatib.us')
 

@@ -4,9 +4,14 @@ from .base_bot import BaseBot
 from .utils import Dashboard
 
 class SiteTwoBot(BaseBot):
-    def __init__(self, config):
-        super().__init__(config, bot_name="SiteTwoBot")
-        self.username = config['guest_profile']['username'] + "_f"  # Add _f suffix for SiteTwo
+    def __init__(self, config, instance_id=1):
+        super().__init__(config, bot_name=f"SiteTwoBot-{instance_id}")
+        self.username = self.ai_handler.generate_username()
+        if self.username:
+            self.username += "_f"
+        else:
+             self.username = config['guest_profile']['username'] + "_f"
+             
         # Site specific config
         self.site_config = config['site_two']
         self.max_replies_per_user = self.site_config.get('max_replies', 20)

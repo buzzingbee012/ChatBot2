@@ -54,28 +54,25 @@ import argparse
 async def main():
     parser = argparse.ArgumentParser(description='Run the Chat Bot.')
     parser.add_argument('--duration', type=int, help='Duration in seconds to run the bot', default=None)
-    parser.add_argument('--bot', type=str, help='Run specific bot: wire, site2, or all', default='all')
+    parser.add_argument('--bot', type=str, help='Run specific bot: wire, site2, ib, or all', default='all')
+    parser.add_argument('--count', '-n', type=int, help='Number of instances per bot type', default=1)
     args = parser.parse_args()
 
     config = load_config()
-    
-    # Randomize Username
-    ai = AIHandler(config)
-    new_username = ai.generate_username()
-    if new_username:
-        print(f"DEBUG: Randomizing username to: {new_username}")
-        config['guest_profile']['username'] = new_username
-    
     bots = []
     
-    if args.bot in ['wire', 'all']:
-        bots.append(WireBot(config))
-    
-    if args.bot in ['site2', 'all']:
-        bots.append(SiteTwoBot(config))
-    
-    if args.bot in ['ib', 'all']:
-        bots.append(IBBot(config))
+    for i in range(1, args.count + 1):
+        # Create a specific config for this instance (to allow name overrides if needed)
+        instance_config = config.copy()
+        
+        if args.bot in ['wire', 'all']:
+            bots.append(WireBot(instance_config, instance_id=i))
+        
+        if args.bot in ['site2', 'all']:
+            bots.append(SiteTwoBot(instance_config, instance_id=i))
+        
+        if args.bot in ['ib', 'all']:
+            bots.append(IBBot(instance_config, instance_id=i))
     
     if not bots:
         print("No bots selected to run.")

@@ -3,8 +3,8 @@ from .base_bot import BaseBot
 from .utils import Dashboard
 
 class WireBot(BaseBot):
-    def __init__(self, config):
-        super().__init__(config, bot_name="WireBot")
+    def __init__(self, config, instance_id=1):
+        super().__init__(config, bot_name=f"WireBot-{instance_id}")
         self.ai = self.ai_handler # Alias for compatibility
         wc_config = config.get('wireclub', {})
         self.max_replies_per_user = wc_config.get('max_replies', self.max_replies_per_user)

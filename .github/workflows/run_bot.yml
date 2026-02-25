@@ -37,7 +37,7 @@ jobs:
         SITE_TWO_USERNAME: ${{ secrets.SITE_TWO_USERNAME }}
         FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         HEADLESS: "true"
-      run: python main.py --duration 3600
+      run: python main.py --duration 3600 --count 10
       
     - name: Commit and Push Stats
       run: |
