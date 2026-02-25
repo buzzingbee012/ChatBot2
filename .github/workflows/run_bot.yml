@@ -12,7 +12,7 @@ permissions:
 jobs:
   run-bot:
     runs-on: ubuntu-22.04
-    container: mcr.microsoft.com/playwright:v1.41.0-jammy
+    container: mcr.microsoft.com/playwright/python:v1.41.0-jammy
     
     steps:
     - name: Checkout code
@@ -25,7 +25,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip3 install -r requirements.txt
 
     - name: Run Bot
       env:
