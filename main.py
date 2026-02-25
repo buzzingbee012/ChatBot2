@@ -55,32 +55,54 @@ async def main():
     parser = argparse.ArgumentParser(description='Run the Chat Bot.')
     parser.add_argument('--duration', type=int, help='Duration in seconds to run the bot', default=None)
     parser.add_argument('--bot', type=str, help='Run specific bot: wire, site2, ib, or all', default='all')
-    parser.add_argument('--count', '-n', type=int, help='Number of instances per bot type', default=1)
+    parser.add_argument('--count', '-n', type=int, help='Global Number of instances per bot type (default 1)', default=None)
+    parser.add_argument('--ib-count', type=int, help='Specific count for IBBot', default=None)
+    parser.add_argument('--site2-count', type=int, help='Specific count for SiteTwoBot', default=None)
+    parser.add_argument('--wire-count', type=int, help='Specific count for WireBot', default=None)
     args = parser.parse_args()
 
     config = load_config()
     bots = []
     
-    for i in range(1, args.count + 1):
-        # Create a specific config for this instance (to allow name overrides if needed)
-        instance_config = config.copy()
+    # Determine counts
+    ib_count = args.ib_count if args.ib_count is not None else (args.count if args.count is not None else (1 if args.bot in ['ib', 'all'] else 0))
+    s2_count = args.site2_count if args.site2_count is not None else (args.count if args.count is not None else (1 if args.bot in ['site2', 'all'] else 0))
+    wire_count = args.wire_count if args.wire_count is not None else (args.count if args.count is not None else (1 if args.bot in ['wire', 'all'] else 0))
+
+    if args.bot != 'all':
+        if args.bot != 'ib': ib_count = 0
+        if args.bot != 'site2': s2_count = 0
+        if args.bot != 'wire': wire_count = 0
+
+    # Initialize IBBots
+    for i in range(1, ib_count + 1):
+        bots.append(IBBot(config.copy(), instance_id=i))
         
-        if args.bot in ['wire', 'all']:
-            bots.append(WireBot(instance_config, instance_id=i))
+    # Initialize SiteTwoBots
+    for i in range(1, s2_count + 1):
+        bots.append(SiteTwoBot(config.copy(), instance_id=i))
         
-        if args.bot in ['site2', 'all']:
-            bots.append(SiteTwoBot(instance_config, instance_id=i))
-        
-        if args.bot in ['ib', 'all']:
-            bots.append(IBBot(instance_config, instance_id=i))
+    # Initialize WireBots
+    for i in range(1, wire_count + 1):
+        bots.append(WireBot(config.copy(), instance_id=i))
     
     if not bots:
         print("No bots selected to run.")
         return
 
     try:
-        # Run all selected bots in parallel
-        await asyncio.gather(*(bot.start(duration=args.duration) for bot in bots))
+        # Run all selected bots in parallel, but stagger their start to avoid name collisions
+        # and simultaneous login attempts which can be flagged
+        async def start_staggered(bot, delay):
+            await asyncio.sleep(delay)
+            return await bot.start(duration=args.duration)
+
+        tasks = []
+        for idx, bot in enumerate(bots):
+            # 5 second staggered start
+            tasks.append(start_staggered(bot, idx * 5))
+            
+        await asyncio.gather(*tasks)
             
     except KeyboardInterrupt:
         print("Stopping bots...")
