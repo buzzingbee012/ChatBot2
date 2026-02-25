@@ -329,8 +329,15 @@ class IBBot(BaseBot):
             await self.page.click(input_sel)
             await self.page.evaluate(f"document.querySelector('{input_sel}').innerText = ''")
             
-            # Type visibly (Instant) - Increased timeout for high-load scaling
-            await self.page.type(input_sel, text, delay=0, timeout=15000)
+            # Type naturally like a human
+            for char in text:
+                # 30-70ms per char is very realistic
+                char_delay = random.uniform(0.03, 0.07)
+                if char in '.,!?':
+                    char_delay += random.uniform(0.2, 0.4)
+                
+                await self.page.type(input_sel, char, delay=0, timeout=5000)
+                await asyncio.sleep(char_delay)
             
             # Small delay for sync to hidden input
             await self.page.wait_for_timeout(200)

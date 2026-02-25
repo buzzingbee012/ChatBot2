@@ -49,14 +49,18 @@ class SiteTwoBot(BaseBot):
                 await self.page.wait_for_timeout(200)
                 await nick_input.press("Backspace")
             
-            await start_btn.click()
+            await start_btn.click(force=True)
             self.logger.info("Clicked Start.")
             
-            chat_loaded = self.page.locator(".kiwi-controlinput-input, .kiwi-statebrowser-channels, .kiwi-header-name")
-            await chat_loaded.first.wait_for(state="visible", timeout=20000)
+            # Wait for any element that signals we are in the chat
+            for i in range(20): # 20 second max
+                if await self.page.locator(".kiwi-controlinput-input, .kiwi-statebrowser-channels, .kiwi-header-name").first.is_visible():
+                    self.logger.info("Successfully entered chat!")
+                    return True
+                await asyncio.sleep(1)
             
-            self.logger.info("Successfully entered chat!")
-            return True
+            self.logger.error("Timeout waiting for chat interface to appear.")
+            return False
 
         except Exception as e:
             self.logger.error(f"Entry Failed: {e}")
@@ -76,6 +80,9 @@ class SiteTwoBot(BaseBot):
                      selectors.forEach(s => {
                          document.querySelectorAll(s).forEach(el => el.remove());
                      });
+                     // Force pointer events back on to the body
+                     document.body.style.pointerEvents = 'auto';
+                     document.documentElement.style.pointerEvents = 'auto';
                  }
              """)
 
@@ -106,7 +113,8 @@ class SiteTwoBot(BaseBot):
 
         # Send
         target_input = self.page.locator(".kiwi-ircinput-editor").first
-        if await target_input.is_visible():
+        if await target_input.count() > 0:
+            # Ensure it's not hidden by some weird CSS before trying
             await self._type_naturally(target_input, msg)
             await target_input.press("Enter")
             self.logger.info("Broadcast sent.")
@@ -147,7 +155,8 @@ class SiteTwoBot(BaseBot):
     async def open_chat(self, chat_obj):
         """Clicks the tab."""
         try:
-            await chat_obj['element'].click()
+            # Use force=True to bypass invisible overlays
+            await chat_obj['element'].click(force=True)
             return True
         except: return False
 
@@ -203,20 +212,30 @@ class SiteTwoBot(BaseBot):
         Type text character by character at natural human speed.
         Simulates realistic typing patterns with variable delays.
         """
-        await locator.click()
-        await locator.fill("")  # Clear any existing text
-        
-        for i, char in enumerate(text):
-            await locator.type(char)
+        try:
+            # Focusing is often safer than clicking when overlays are present
+            await locator.focus()
+            # Clear existing text via evaluate to be sure
+            await locator.evaluate("el => el.innerText = ''")
             
-            # Optimized typing speed: 20-50ms per character (slightly faster but still human)
-            base_delay = random.uniform(0.02, 0.05)
-            
-            # Add occasional pauses after punctuation (thinking/reading)
-            if char in '.!?,;':
-                base_delay += random.uniform(0.1, 0.2)
-            
-            await asyncio.sleep(base_delay)
+            for i, char in enumerate(text):
+                # 30-70ms per character is the human "sweet spot"
+                base_delay = random.uniform(0.03, 0.07)
+                
+                if char in '.!?,;':
+                    base_delay += random.uniform(0.2, 0.4)
+                
+                await locator.type(char)
+                await asyncio.sleep(base_delay)
+            return True
+        except Exception as e:
+            self.logger.warning(f"Typing simulation failed: {e}. Falling back to direct evaluate.")
+            try:
+                # Direct JS injection as absolute fallback
+                await locator.evaluate(f"(el, t) => {{ el.innerText = t; el.dispatchEvent(new Event('input', {{ bubbles: true }})); }}", text)
+                return True
+            except:
+                return False
 
     async def send_message(self, text):
         try:
