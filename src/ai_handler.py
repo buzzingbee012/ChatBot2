@@ -42,7 +42,7 @@ class AIHandler:
             self.model = config.get('llm', {}).get('model', 'claude-3-haiku-20240307')
         elif self.provider == 'google' and self.api_key:
             self.client = genai.Client(api_key=self.api_key)
-            self.model = config.get('llm', {}).get('model', 'gemini-2.0-flash-lite')
+            self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
         elif self.api_key:
             # Default to OpenAI-compatible client (OpenAI, Groq/Llama)
             self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
@@ -78,18 +78,20 @@ class AIHandler:
                     generated_text = response.content[0].text.strip()
 
                 elif self.provider == 'google':
-                    conversation = f"{self.system_prompt}{avoid_prompt}\n\n"
+                    contents = []
                     if isinstance(chat_history, list):
                         for msg in chat_history:
                             role = msg.get('role', 'user')
                             content = msg.get('content', '')
-                            conversation += f"{'User' if role == 'user' else 'Assistant'}: {content}\n"
-                    conversation += "Assistant:"
+                            # Map roles to Gemini expectations (user/model)
+                            gemini_role = 'user' if role == 'user' else 'model'
+                            contents.append({'role': gemini_role, 'parts': [{'text': content}]})
                     
                     response = self.client.models.generate_content(
                         model=self.model,
-                        contents=conversation,
+                        contents=contents,
                         config=genai.types.GenerateContentConfig(
+                            system_instruction=self.system_prompt + avoid_prompt,
                             response_mime_type='application/json',
                             response_schema=ChatResponse
                         )
@@ -172,6 +174,7 @@ class AIHandler:
                     model=self.model,
                     contents=prompt,
                     config=genai.types.GenerateContentConfig(
+                        system_instruction="You are a helpful assistant for naming.",
                         response_mime_type='application/json',
                         response_schema=NameResponse
                     )
@@ -222,6 +225,7 @@ class AIHandler:
                     model=self.model,
                     contents=prompt,
                     config=genai.types.GenerateContentConfig(
+                        system_instruction="You are a flirty Indian female in a chat room.",
                         response_mime_type='application/json',
                         response_schema=ChatResponse
                     )
