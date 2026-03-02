@@ -8,6 +8,10 @@ from src.wirebot import WireBot
 from src.ib_bot import IBBot
 from src.ai_handler import AIHandler
 import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
 
 def load_config(path="config.yaml"):
     try:

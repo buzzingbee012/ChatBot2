@@ -22,9 +22,11 @@ class AIHandler:
         # Prioritize Environment Variables
         env_key = os.getenv("GEMINI_API_KEY") if self.provider in ['gemini', 'google'] else \
                   os.getenv("ANTHROPIC_API_KEY") if self.provider == 'anthropic' else \
+                  os.getenv("GROQ_API_KEY") if self.provider == 'openai' and 'groq' in (config.get('llm', {}).get('base_url', '').lower()) else \
                   os.getenv("OPENAI_API_KEY")
         
         self.api_key = env_key or config.get('llm', {}).get('api_key')
+        self.base_url = config.get('llm', {}).get('base_url')
         
         if not self.api_key or "PASTE_YOUR" in self.api_key:
             self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var or update config.")
@@ -44,8 +46,8 @@ class AIHandler:
             else:
                  self.logger.error("Gemini API Key missing. AI features will be disabled.")
         else:
-            self.client = OpenAI(api_key=self.api_key)
-            self.model = config.get('ai', {}).get('model', 'gpt-4o')
+            self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
+            self.model = config.get('llm', {}).get('model') or config.get('ai', {}).get('model', 'gpt-4o')
             
         self.system_prompt = config.get('llm', {}).get('system_prompt') or config.get('ai', {}).get('system_prompt', "You represent a user in a chat room.")
         self.last_token_count = 0
