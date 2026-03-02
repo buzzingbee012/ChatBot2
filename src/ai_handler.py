@@ -42,7 +42,7 @@ class AIHandler:
             self.model = config.get('llm', {}).get('model', 'claude-3-haiku-20240307')
         elif self.provider == 'google' and self.api_key:
             self.client = genai.Client(api_key=self.api_key)
-            self.model = config.get('llm', {}).get('model', 'gemini-1.5-flash')
+            self.model = config.get('llm', {}).get('model', 'gemini-2.0-flash-lite')
         elif self.api_key:
             # Default to OpenAI-compatible client (OpenAI, Groq/Llama)
             self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
