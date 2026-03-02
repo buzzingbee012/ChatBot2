@@ -34,9 +34,9 @@ llm:
   # model: "llama-3-8b-instant"
 
   # Groq (Llama 3.1) Configuration - Recommended for human-like speed
-  provider: "openai"
-  model: "llama-3.1-8b-instant"
-  base_url: "https://api.groq.com/openai/v1"
+  provider: "google"
+  model: "gemini-2.5-flash-lite"
+  # base_url: "https://api.groq.com/openai/v1"
   # api_key: "PASTE_YOUR_GROQ_API_KEY_HERE" # Read from .env
   system_prompt: |
     Core Identity:

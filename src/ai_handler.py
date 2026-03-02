@@ -19,50 +19,47 @@ class AIHandler:
         self.config = config
         self.provider = config.get('llm', {}).get('provider', 'openai')
         
-        # Prioritize Environment Variables
-        env_key = os.getenv("GROQ_API_KEY") if self.provider in ['llama', 'openai'] else \
-                  os.getenv("ANTHROPIC_API_KEY") if self.provider == 'anthropic' else \
-                  os.getenv("OPENAI_API_KEY")
+        # API Key management
+        if self.provider == 'google':
+            self.api_key = os.getenv("GOOGLE_API_KEY") or config.get('llm', {}).get('api_key')
+        elif self.provider == 'anthropic':
+            self.api_key = os.getenv("ANTHROPIC_API_KEY") or config.get('llm', {}).get('api_key')
+        elif self.provider == 'llama':
+            # Support Groq via OpenAI client if base_url is provided
+            self.api_key = os.getenv("GROQ_API_KEY") or config.get('llm', {}).get('api_key')
+        else:
+            self.api_key = os.getenv("OPENAI_API_KEY") or config.get('llm', {}).get('api_key')
         
-        self.api_key = env_key or config.get('llm', {}).get('api_key')
         self.base_url = config.get('llm', {}).get('base_url')
         
         if not self.api_key or "PASTE_YOUR" in self.api_key:
-            self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set GROQ_API_KEY env var or update config.")
-            self.api_key = None # Treat as missing
+            self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set the correct env var or update config.")
+            self.api_key = None
         
         self.client = None
-        if self.provider == 'anthropic':
+        if self.provider == 'anthropic' and self.api_key:
             self.client = Anthropic(api_key=self.api_key)
             self.model = config.get('llm', {}).get('model', 'claude-3-haiku-20240307')
-        elif self.provider in ['llama', 'google']:
-            self.model = config.get('llm', {}).get('model', 'llama-3.1-8b-instant')
-            self.model = config.get('llm', {}).get('model', 'llama-3.1-8b-instant')
-            if self.api_key:
-                masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
-                masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
-                self.client = genai.Client(api_key=self.api_key)
-            else:
-                 self.logger.error("Llama/Groq API Key missing. AI features will be disabled.")
-        else:
+        elif self.provider == 'google' and self.api_key:
+            self.client = genai.Client(api_key=self.api_key)
+            self.model = config.get('llm', {}).get('model', 'gemini-1.5-flash')
+        elif self.api_key:
+            # Default to OpenAI-compatible client (OpenAI, Groq/Llama)
             self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
             self.model = config.get('llm', {}).get('model') or config.get('ai', {}).get('model', 'gpt-4o')
+        else:
+            self.logger.error(f"API Key missing for {self.provider}. AI features will be disabled.")
             
         self.system_prompt = config.get('llm', {}).get('system_prompt') or config.get('ai', {}).get('system_prompt', "You represent a user in a chat room.")
         self.last_token_count = 0
         self.last_error = None
 
     def generate_response(self, chat_history):
-        """
-        Generates a response based on the chat history.
-        chat_history: list of dicts [{'role': 'user', 'content': '...'}, ...]
-        """
         if not self.client:
             self.logger.error("AI Client not initialized.")
             return None
 
         try:
-            # Extract previous assistant messages to avoid repetitions
             previous_responses = []
             if isinstance(chat_history, list):
                 previous_responses = [m.get('content', '') for m in chat_history if m.get('role') == 'assistant' and m.get('content')]
@@ -70,7 +67,7 @@ class AIHandler:
             avoid_list_str = "\n".join([f"- {r}" for r in previous_responses[-10:]])
             avoid_prompt = f"\n\nSTRICT REPETITION AVOIDANCE:\nDo NOT repeat any of these previous messages you sent to this user:\n{avoid_list_str}\n\nGenerate a fresh, unique response." if previous_responses else ""
 
-            for attempt in range(3): # Try up to 3 times to get a unique response
+            for attempt in range(3):
                 if self.provider == 'anthropic':
                     response = self.client.messages.create(
                         model=self.model,
@@ -80,7 +77,7 @@ class AIHandler:
                     )
                     generated_text = response.content[0].text.strip()
 
-                elif self.provider in ['llama', 'google']:
+                elif self.provider == 'google':
                     conversation = f"{self.system_prompt}{avoid_prompt}\n\n"
                     if isinstance(chat_history, list):
                         for msg in chat_history:
@@ -97,16 +94,11 @@ class AIHandler:
                             response_schema=ChatResponse
                         )
                     )
-                    
-                    tokens_used = getattr(response.usage_metadata, 'total_token_count', 0) if hasattr(response, 'usage_metadata') else 0
-                    self.last_token_count = tokens_used
-                    
-                    import json
                     parsed = ChatResponse.model_validate_json(response.text)
                     generated_text = parsed.message
                     
                 else:
-                    # OpenAI Fallback
+                    # OpenAI / Llama (Groq)
                     messages = [{"role": "system", "content": self.system_prompt + avoid_prompt}]
                     messages.extend(chat_history)
                     
@@ -117,42 +109,32 @@ class AIHandler:
                     )
                     generated_text = response.choices[0].message.content.strip()
 
-                # Check for exact duplication
                 if generated_text not in previous_responses:
                     return generated_text
                 
                 self.logger.warning(f"AI repeated a message. Retrying ({attempt+1}/3)...")
             
-            # If all retries fail, return the last one anyway or None
             return generated_text
                 
         except Exception as e:
-            error_msg = str(e)
-            logging.error(f"AI Generation Error ({self.provider}): {e}")
-            
-            # Return None - bot will skip sending message entirely
+            self.logger.error(f"AI Generation Error ({self.provider}): {e}")
             return None
 
     def get_next_message(self, context=None):
-        """Generates a generic broadcast message."""
         if not self.client:
             return "Hello everyone! How is it going?"
         
-        # Simple prompt for broadcast
         history = [{"role": "user", "content": "Generate a short, friendly greeting for a chat room. Keep it under 50 characters."}]
         return self.generate_response(history) or "Hello everyone!"
 
     def generate_username(self):
-        """Generates a random desi female name and appends _32f."""
         import random
         import string
+        import json
         
-        # Robust Fallback if AI is down
         def get_fallback():
-             # Simple syllable-based generator
              vowels = "aeiou"
              consonants = "bcdfghjklmnpqrstvwxyz"
-             # Generate 2-3 syllables
              name = ""
              for _ in range(random.randint(2,3)):
                  name += random.choice(consonants) + random.choice(vowels)
@@ -162,7 +144,6 @@ class AIHandler:
         if not self.client:
             return fallback
 
-        # Load recent names to avoid repeats
         recent_names_file = "recent_names.json"
         recent_names = []
         if os.path.exists(recent_names_file):
@@ -173,9 +154,6 @@ class AIHandler:
             
         recent_names_str = ", ".join(recent_names) if recent_names else "None yet"
         
-        # Randomize by picking a random letter and region to force variety
-        import random
-        import string
         letter = random.choice(string.ascii_uppercase)
         regions = ["North Indian", "South Indian", "Punjabi", "Bengali", "Gujarati", "Modern Indian", "Mumbai", "Delhi", "Haryanvi", "Himachali"]
         region = random.choice(regions)
@@ -189,7 +167,7 @@ class AIHandler:
         
         try:
             generated_name = None
-            if self.provider in ['llama', 'openai']:
+            if self.provider == 'google':
                 response = self.client.models.generate_content(
                     model=self.model,
                     contents=prompt,
@@ -198,11 +176,9 @@ class AIHandler:
                         response_schema=NameResponse
                     )
                 )
-                import json
                 parsed = NameResponse.model_validate_json(response.text)
                 generated_name = parsed.name.strip().lower()
             else:
-                # Fallback for other providers if needed
                 messages = [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": prompt}]
                 response = self.client.chat.completions.create(
                     model=self.model,
@@ -212,11 +188,9 @@ class AIHandler:
                 generated_name = response.choices[0].message.content.strip().lower()
 
             if generated_name:
-                # Ensure only letters and numbers
                 import re
                 clean_name = re.sub(r'[^a-zA-Z0-9]', '', generated_name)
                 if clean_name:
-                    # Update history
                     recent_names.append(clean_name)
                     if len(recent_names) > 30:
                         recent_names = recent_names[-30:]
@@ -232,7 +206,6 @@ class AIHandler:
             return fallback
 
     async def generate_lobby_message(self):
-        """Generates a short, flirty, and unique lobby message."""
         if not self.client:
             return "Hey everyone, how's it going?"
 
@@ -244,7 +217,7 @@ class AIHandler:
         )
 
         try:
-            if self.provider in ['llama', 'openai']:
+            if self.provider == 'google':
                 response = self.client.models.generate_content(
                     model=self.model,
                     contents=prompt,
@@ -253,7 +226,6 @@ class AIHandler:
                         response_schema=ChatResponse
                     )
                 )
-                import json
                 parsed = ChatResponse.model_validate_json(response.text)
                 return parsed.message.strip()
             else:
