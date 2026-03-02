@@ -33,7 +33,7 @@ def load_config(path="config.yaml"):
         # Environment Variable Override (for GitHub Secrets / CI)
         # Prioritized over files
         env_map = {
-            'GEMINI_API_KEY': ('ai', 'api_key'),
+            'GROQ_API_KEY': ('ai', 'api_key'),
             'WIRECLUB_EMAIL': ('wireclub', 'email'),
             'WIRECLUB_PASSWORD': ('wireclub', 'password'),
             'WIRECLUB_USERNAME': ('wireclub', 'username'),

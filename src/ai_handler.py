@@ -20,31 +20,30 @@ class AIHandler:
         self.provider = config.get('llm', {}).get('provider', 'openai')
         
         # Prioritize Environment Variables
-        env_key = os.getenv("GEMINI_API_KEY") if self.provider in ['gemini', 'google'] else \
+        env_key = os.getenv("GROQ_API_KEY") if self.provider in ['llama', 'openai'] else \
                   os.getenv("ANTHROPIC_API_KEY") if self.provider == 'anthropic' else \
-                  os.getenv("GROQ_API_KEY") if self.provider == 'openai' and 'groq' in (config.get('llm', {}).get('base_url', '').lower()) else \
                   os.getenv("OPENAI_API_KEY")
         
         self.api_key = env_key or config.get('llm', {}).get('api_key')
         self.base_url = config.get('llm', {}).get('base_url')
         
         if not self.api_key or "PASTE_YOUR" in self.api_key:
-            self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set GEMINI_API_KEY env var or update config.")
+            self.logger.warning(f"No valid API Key found for provider {self.provider}. Please set GROQ_API_KEY env var or update config.")
             self.api_key = None # Treat as missing
         
         self.client = None
         if self.provider == 'anthropic':
             self.client = Anthropic(api_key=self.api_key)
             self.model = config.get('llm', {}).get('model', 'claude-3-haiku-20240307')
-        elif self.provider in ['gemini', 'google']:
-            self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
-            self.model = config.get('llm', {}).get('model', 'gemini-2.5-flash-lite')
+        elif self.provider in ['llama', 'google']:
+            self.model = config.get('llm', {}).get('model', 'llama-3.1-8b-instant')
+            self.model = config.get('llm', {}).get('model', 'llama-3.1-8b-instant')
             if self.api_key:
                 masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
                 masked_key = self.api_key[:5] + "..." + self.api_key[-5:] if len(self.api_key) > 10 else "***"
                 self.client = genai.Client(api_key=self.api_key)
             else:
-                 self.logger.error("Gemini API Key missing. AI features will be disabled.")
+                 self.logger.error("Llama/Groq API Key missing. AI features will be disabled.")
         else:
             self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
             self.model = config.get('llm', {}).get('model') or config.get('ai', {}).get('model', 'gpt-4o')
@@ -81,7 +80,7 @@ class AIHandler:
                     )
                     generated_text = response.content[0].text.strip()
 
-                elif self.provider in ['gemini', 'google']:
+                elif self.provider in ['llama', 'google']:
                     conversation = f"{self.system_prompt}{avoid_prompt}\n\n"
                     if isinstance(chat_history, list):
                         for msg in chat_history:
@@ -190,7 +189,7 @@ class AIHandler:
         
         try:
             generated_name = None
-            if self.provider in ['gemini', 'google']:
+            if self.provider in ['llama', 'openai']:
                 response = self.client.models.generate_content(
                     model=self.model,
                     contents=prompt,
@@ -245,7 +244,7 @@ class AIHandler:
         )
 
         try:
-            if self.provider in ['gemini', 'google']:
+            if self.provider in ['llama', 'openai']:
                 response = self.client.models.generate_content(
                     model=self.model,
                     contents=prompt,

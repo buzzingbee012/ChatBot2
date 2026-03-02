@@ -1,6 +1,6 @@
 # AI ChatBot Monitor
 
-A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like sites, powered by Gemini AI.
+A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like sites, powered by Llama AI.
 
 ## 1. Setup
 1.  **Install Dependencies**:
@@ -13,7 +13,7 @@ A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like
     *   This project separates code from secrets.
     *   Copy `config.secrets.example.yaml` to `config.secrets.yaml`.
     *   **Edit `config.secrets.yaml`** and enter your:
-        *   Gemini API Key
+        *   Groq API Key (Llama)
         *   Wireclub Credentials
         *   Firebase Credentials path (if using Firebase)
 
@@ -23,7 +23,7 @@ A dual-monitor automated chatbot that interacts on Wireclub and Generic IRC-like
 
 4.  **GitHub Secrets / Environment Variables (CI/CD)**:
     *   If deploying to a cloud environment (like GitHub Actions, Render, Heroku), you can set these Environment Variables instead of using `config.secrets.yaml`:
-        *   `GEMINI_API_KEY`
+        *   `GROQ_API_KEY`
         *   `WIRECLUB_EMAIL`
         *   `WIRECLUB_PASSWORD`
         *   `WIRECLUB_USERNAME`
@@ -38,7 +38,7 @@ python main.py
 
 ## 3. Features
 *   **Per-Bot Stats**: View detailed stats in `templates/stats.html`.
-*   **Auto-Reply**: Uses Gemini AI to reply intelligently.
+*   **Auto-Reply**: Uses Llama AI to reply intelligently.
 *   **Context Aware**: Parses chat HTML to distinguish user vs assistant messages.
 *   **Robust**: Auto-recovers from login failures and CAPTCHAs.
 

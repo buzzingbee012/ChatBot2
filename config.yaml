@@ -27,11 +27,11 @@ ai:
     Tell them they have to add you, otherwise you won't be able to see the messages.
 
 llm:
-  #provider: "anthropic" # Options: anthropic, openai, gemini
+  #provider: "anthropic" # Options: anthropic, openai, llama
   #model: "claude-3-haiku-20240307"
-  # Gemini Configuration
-  # provider: "gemini"
-  # model: "gemini-2.1-flash-lite"
+  # Llama Configuration
+  # provider: "llama"
+  # model: "llama-3-8b-instant"
 
   # Groq (Llama 3.1) Configuration - Recommended for human-like speed
   provider: "openai"

@@ -6,7 +6,7 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python main.py --duration 3600"
     envVars:
-      - key: GEMINI_API_KEY
+      - key: GROQ_API_KEY
         sync: false
       - key: HEADLESS
         value: "true"
