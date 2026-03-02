@@ -203,7 +203,7 @@ class BaseBot(ABC):
             max_replies = link_config.get('max_replies_before_link', 15)
             force_prob = link_config.get('force_link_probability', 0.3)
             
-            insta_link = self.config.get('instagram_link', "https://www.instagram.com/jasmin.sandhu.1")
+            insta_link = self.config.get('instagram_link', "https://www.instagram.com/jas.sandhu.012")
             
             # Force link if we hit the limit or randomly after min_replies
             should_force_link = False

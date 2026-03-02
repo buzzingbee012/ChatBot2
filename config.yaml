@@ -125,10 +125,10 @@ llm:
 bot:
   max_session_messages: 2000
   max_daily_messages: 2000  # Maximum messages per day across all users
-  max_replies_per_user: 15 # Consistent limit for all bots
+  max_replies_per_user: 10 # Consistent limit for all bots
   link_config:
-    min_replies_before_link: 8
-    max_replies_before_link: 15
+    min_replies_before_link: 5
+    max_replies_before_link: 10
     force_link_probability: 0.3 # Chance to force link after min_replies
   headless: true # Recommended false for guest entry to verify dropdowns
   delay_min: 2
