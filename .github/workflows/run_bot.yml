@@ -1,10 +1,8 @@
 name: Run Bot Daily
 
 on:
-  schedule:
-    # 11 AM EST (16:00 UTC) and 1 PM EST (18:00 UTC)
-    - cron: '0 19 * * *'
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch: # Allows manual and API trigger
+
 
 permissions:
   contents: write
@@ -24,14 +22,14 @@ jobs:
 
     - name: Run Bot
       env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         WIRECLUB_EMAIL: ${{ secrets.WIRECLUB_EMAIL }}
         WIRECLUB_PASSWORD: ${{ secrets.WIRECLUB_PASSWORD }}
         WIRECLUB_USERNAME: ${{ secrets.WIRECLUB_USERNAME }}
         SITE_TWO_USERNAME: ${{ secrets.SITE_TWO_USERNAME }}
         FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         HEADLESS: "true"
-      run: python3 main.py --duration 3600 --site2-count 4 --ib-count 2 --wire-count 1
+      run: python3 main.py --duration 1800 --site2-count 4 --ib-count 2 --wire-count 1
       
     - name: Commit and Push Stats
       run: |

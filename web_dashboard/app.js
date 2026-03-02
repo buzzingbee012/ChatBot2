@@ -135,3 +135,118 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
         activityChart.update();
     });
 }
+
+// GitHub Action Controls
+const elGhToken = document.getElementById('gh-token');
+const elGhRepo = document.getElementById('gh-repo');
+const elBtnStart = document.getElementById('btn-start');
+const elBtnStop = document.getElementById('btn-stop');
+const elControlStatus = document.getElementById('control-status');
+
+// Load saved credentials
+if (localStorage.getItem('gh-token')) elGhToken.value = localStorage.getItem('gh-token');
+if (localStorage.getItem('gh-repo')) elGhRepo.value = localStorage.getItem('gh-repo');
+
+function setStatus(msg, color = 'var(--text-secondary)') {
+    elControlStatus.innerText = msg;
+    elControlStatus.style.color = color;
+}
+
+async function triggerGitHubAction() {
+    const token = elGhToken.value;
+    const repo = elGhRepo.value;
+
+    if (!token || !repo) {
+        alert("Please enter GitHub Token and Repository!");
+        return;
+    }
+
+    // Save to local storage
+    localStorage.setItem('gh-token', token);
+    localStorage.setItem('gh-repo', repo);
+
+    elBtnStart.disabled = true;
+    setStatus("Triggering...", "var(--accent)");
+
+    try {
+        const response = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/run_bot.yml/dispatches`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ref: 'main' })
+        });
+
+        if (response.status === 204) {
+            setStatus("Bot Start Secretly Requested!", "#3fb950");
+            setTimeout(() => setStatus("Ready"), 5000);
+        } else {
+            const errData = await response.json();
+            setStatus(`Error: ${errData.message || response.statusText}`, "#f85149");
+        }
+    } catch (e) {
+        setStatus(`Network Error: ${e.message}`, "#f85149");
+    } finally {
+        elBtnStart.disabled = false;
+    }
+}
+
+async function stopGitHubAction() {
+    const token = elGhToken.value;
+    const repo = elGhRepo.value;
+
+    if (!token || !repo) {
+        alert("Please enter GitHub Token and Repository!");
+        return;
+    }
+
+    elBtnStop.disabled = true;
+    setStatus("Finding active runs...", "var(--accent)");
+
+    try {
+        // 1. Find the latest in_progress run
+        const listResponse = await fetch(`https://api.github.com/repos/${repo}/actions/runs?status=in_progress`, {
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+
+        const data = await listResponse.json();
+        const runs = data.workflow_runs || [];
+
+        // Filter for our run_bot.yml workflow (or just use the first match)
+        const runToCancel = runs.find(r => r.name.includes("Bot") || r.path.includes("run_bot.yml"));
+
+        if (!runToCancel) {
+            setStatus("No active runs found to stop.", "#f85149");
+            setTimeout(() => setStatus("Ready"), 3000);
+            return;
+        }
+
+        setStatus(`Stopping run ${runToCancel.id}...`, "#f85149");
+
+        // 2. Cancel the run
+        const cancelResponse = await fetch(`https://api.github.com/repos/${repo}/actions/runs/${runToCancel.id}/cancel`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+
+        if (cancelResponse.status === 202) {
+            setStatus("Bot Stop Requested successfully!", "#3fb950");
+            setTimeout(() => setStatus("Ready"), 5000);
+        } else {
+            setStatus("Failed to stop bot.", "#f85149");
+        }
+    } catch (e) {
+        setStatus(`Error: ${e.message}`, "#f85149");
+    } finally {
+        elBtnStop.disabled = false;
+    }
+}
+

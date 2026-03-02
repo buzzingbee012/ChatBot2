@@ -55,6 +55,81 @@ def load_config(path="config.yaml"):
 
 import argparse
 
+class BotManager:
+    def __init__(self, config):
+        self.config = config
+        self.bots = []
+        self._stop_event = asyncio.Event()
+        self.running_task = None
+
+    async def initialize_bots(self, bot_type='all', count=None, ib_count=None, s2_count=None, wire_count=None):
+        self.bots = []
+        
+        # Determine counts
+        final_ib_count = ib_count if ib_count is not None else (count if count is not None else (1 if bot_type in ['ib', 'all'] else 0))
+        final_s2_count = s2_count if s2_count is not None else (count if count is not None else (1 if bot_type in ['site2', 'all'] else 0))
+        final_wire_count = wire_count if wire_count is not None else (count if count is not None else (1 if bot_type in ['wire', 'all'] else 0))
+
+        if bot_type != 'all':
+            if bot_type != 'ib': final_ib_count = 0
+            if bot_type != 'site2': final_s2_count = 0
+            if bot_type != 'wire': final_wire_count = 0
+
+        # Initialize IBBots
+        for i in range(1, final_ib_count + 1):
+            self.bots.append(IBBot(self.config.copy(), instance_id=i))
+            
+        # Initialize SiteTwoBots
+        for i in range(1, final_s2_count + 1):
+            self.bots.append(SiteTwoBot(self.config.copy(), instance_id=i))
+            
+        # Initialize WireBots
+        for i in range(1, final_wire_count + 1):
+            self.bots.append(WireBot(self.config.copy(), instance_id=i))
+            
+        return len(self.bots)
+
+    async def start(self, duration=None):
+        if not self.bots:
+            print("No bots initialized.")
+            return
+
+        self._stop_event.clear()
+        
+        async def start_staggered(bot, delay):
+            try:
+                await asyncio.sleep(delay)
+                if self._stop_event.is_set():
+                    return
+                await bot.start(duration=duration)
+            except Exception as e:
+                print(f"Error in bot {bot}: {e}")
+
+        tasks = []
+        for idx, bot in enumerate(self.bots):
+            tasks.append(asyncio.create_task(start_staggered(bot, idx * 5)))
+            
+        self.running_task = asyncio.gather(*tasks)
+        try:
+            await self.running_task
+        except asyncio.CancelledError:
+            print("Bot manager task cancelled.")
+        finally:
+            await self.stop()
+
+    async def stop(self):
+        self._stop_event.set()
+        if self.running_task and not self.running_task.done():
+            self.running_task.cancel()
+        
+        stop_tasks = []
+        for bot in self.bots:
+            stop_tasks.append(bot.stop())
+        
+        if stop_tasks:
+            await asyncio.gather(*stop_tasks, return_exceptions=True)
+        self.bots = []
+
 async def main():
     parser = argparse.ArgumentParser(description='Run the Chat Bot.')
     parser.add_argument('--duration', type=int, help='Duration in seconds to run the bot', default=None)
@@ -66,53 +141,26 @@ async def main():
     args = parser.parse_args()
 
     config = load_config()
-    bots = []
+    manager = BotManager(config)
     
-    # Determine counts
-    ib_count = args.ib_count if args.ib_count is not None else (args.count if args.count is not None else (1 if args.bot in ['ib', 'all'] else 0))
-    s2_count = args.site2_count if args.site2_count is not None else (args.count if args.count is not None else (1 if args.bot in ['site2', 'all'] else 0))
-    wire_count = args.wire_count if args.wire_count is not None else (args.count if args.count is not None else (1 if args.bot in ['wire', 'all'] else 0))
+    bot_count = await manager.initialize_bots(
+        bot_type=args.bot,
+        count=args.count,
+        ib_count=args.ib_count,
+        s2_count=args.site2_count,
+        wire_count=args.wire_count
+    )
 
-    if args.bot != 'all':
-        if args.bot != 'ib': ib_count = 0
-        if args.bot != 'site2': s2_count = 0
-        if args.bot != 'wire': wire_count = 0
-
-    # Initialize IBBots
-    for i in range(1, ib_count + 1):
-        bots.append(IBBot(config.copy(), instance_id=i))
-        
-    # Initialize SiteTwoBots
-    for i in range(1, s2_count + 1):
-        bots.append(SiteTwoBot(config.copy(), instance_id=i))
-        
-    # Initialize WireBots
-    for i in range(1, wire_count + 1):
-        bots.append(WireBot(config.copy(), instance_id=i))
-    
-    if not bots:
+    if bot_count == 0:
         print("No bots selected to run.")
         return
 
     try:
-        # Run all selected bots in parallel, but stagger their start to avoid name collisions
-        # and simultaneous login attempts which can be flagged
-        async def start_staggered(bot, delay):
-            await asyncio.sleep(delay)
-            return await bot.start(duration=args.duration)
-
-        tasks = []
-        for idx, bot in enumerate(bots):
-            # 5 second staggered start
-            tasks.append(start_staggered(bot, idx * 5))
-            
-        await asyncio.gather(*tasks)
-            
+        await manager.start(duration=args.duration)
     except KeyboardInterrupt:
         print("Stopping bots...")
-    finally:
-        for bot in bots:
-            await bot.stop()
+        await manager.stop()
 
 if __name__ == "__main__":
     asyncio.run(main())
+

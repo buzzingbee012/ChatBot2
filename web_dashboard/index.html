@@ -16,8 +16,31 @@
 <body>
     <header>
         <h1><span class="status-dot pulse"></span>Web Automator Dashboard</h1>
-        <p style="color: var(--text-secondary); margin-top: 10px;">Real-time Performance Metrics</p>
+        <p style="color: var(--text-secondary); margin-top: 10px;">Real-time Performance Metrics & Control</p>
     </header>
+
+    <!-- Bot Control Panel -->
+    <div class="card" style="margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="card-title">Bot Remote Control</div>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">GitHub PAT (token)</label>
+                    <input type="password" id="gh-token" placeholder="ghp_..." style="width: 100%; padding: 10px; border-radius: 6px; border: var(--card-border); background: var(--bg-color); color: var(--text-primary); box-sizing: border-box;">
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">Repository (owner/repo)</label>
+                    <input type="text" id="gh-repo" placeholder="user/repo" style="width: 100%; padding: 10px; border-radius: 6px; border: var(--card-border); background: var(--bg-color); color: var(--text-primary); box-sizing: border-box;">
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 5px;">
+                <button id="btn-start" class="btn btn-primary" onclick="triggerGitHubAction()" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #238636; color: white; cursor: pointer; font-weight: 600;">Start Bot</button>
+                <button id="btn-stop" class="btn btn-danger" onclick="stopGitHubAction()" style="flex: 1; padding: 12px; border-radius: 6px; border: none; background: #da3633; color: white; cursor: pointer; font-weight: 600;">Stop Bot</button>
+            </div>
+            <div id="control-status" style="font-size: 0.85rem; text-align: center; color: var(--text-secondary);">Ready</div>
+        </div>
+    </div>
+
 
     <div class="stats-grid">
         <div class="card">
