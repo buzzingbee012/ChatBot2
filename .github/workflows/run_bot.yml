@@ -29,6 +29,8 @@ jobs:
         WIRECLUB_USERNAME: ${{ secrets.WIRECLUB_USERNAME }}
         SITE_TWO_USERNAME: ${{ secrets.SITE_TWO_USERNAME }}
         FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         HEADLESS: "true"
       run: python3 main.py --duration 3600 --site2-count 4 --ib-count 2 --wire-count 1
       
