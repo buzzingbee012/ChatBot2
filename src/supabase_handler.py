@@ -68,8 +68,13 @@ class SupabaseHandler:
                 'bot_name': bot_name,
                 'history': history
             }
-            # Use upsert to overwrite continuously without unique constraint errors
-            self.client.table('exhausted_chats').upsert(payload).execute()
-            self.logger.info(f"Chat history saved for exhausted user: {user_name}")
+            # Bulletproof save method to avoid upsert primary key conflicts
+            response = self.client.table('exhausted_chats').select('user_name').eq('user_name', user_name).execute()
+            if response.data:
+                self.client.table('exhausted_chats').update({'history': history}).eq('user_name', user_name).execute()
+            else:
+                self.client.table('exhausted_chats').insert(payload).execute()
+                
+            self.logger.info(f"Chat history saved for user: {user_name}")
         except Exception as e:
             self.logger.error(f"Failed to save chat history to Supabase: {e}")
