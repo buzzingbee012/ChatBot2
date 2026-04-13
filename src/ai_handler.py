@@ -184,10 +184,11 @@ class AIHandler:
             return False
             
         evaluation_prompt = (
-            "Review the following conversation history. Evaluate if the user (human chatter) is a high-quality conversationalist. "
-            "A high-quality user uses full sentences, asks interesting questions, builds rapport, and is not overly vulgar or lazy. "
-            "A low-quality user sends single words (hi, wyd, hey), demands pictures immediately, or is extremely boring. "
-            "Return true if they are high-quality and deserve the Instagram link, and false if they are boring."
+            "Review the following conversation history. Evaluate if the human chatter is generally decent to converse with. "
+            "Return true if they are capable of writing more than one word occasionally, asking questions, "
+            "and not being immediately and exclusively vulgar. Return true if there is ANY semblance of a normal conversation. "
+            "Only return false if they are exclusively spamming single words ('hi', 'ok', 'yes') every single time or are extreme creeps. "
+            "When in doubt, default to true."
         )
         
         try:

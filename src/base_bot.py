@@ -211,6 +211,7 @@ class BaseBot(ABC):
                 should_force_link = True
             elif current_count >= min_replies:
                 is_high_quality = self.ai_handler.evaluate_chatter(history)
+                self.logger.info(f"Evaluation for {name} at count {current_count}: {is_high_quality}")
                 if is_high_quality:
                     self.logger.info(f"AI evaluated {name} as high quality. Forcing link.")
                     should_force_link = True
@@ -305,16 +306,19 @@ class BaseBot(ABC):
                         last_user_msg = h['content']
                         break
                 
-                self.logger.info(f"[{self.username}] Chatter: '{last_user_msg}' -> AI: '{reply_text}'")
+                # Check for username attribute to handle missing safely
+                bot_username = getattr(self, 'username', self.logger.name)
+                self.logger.info(f"[{bot_username} | {name} | Msg {data['current_count']+1}] User: '{last_user_msg}' -> AI: '{reply_text}'")
+                
                 if await self.send_message(reply_text):
                     self.user_reply_counts[name] = data['current_count'] + 1
                     self.total_messages_sent += 1
                     
-                    # Log history if we hit max replies OR if we just sent the instagram link (successful conversion)
-                    if self.user_reply_counts[name] == self.max_replies_per_user or "instagram" in reply_text.lower():
-                        if hasattr(self.stats_tracker, 'supabase_handler') and self.stats_tracker.supabase_handler:
-                            full_history = data['history'] + [{'role': 'assistant', 'content': reply_text}]
-                            self.stats_tracker.supabase_handler.save_chat_history(name, self.logger.name, full_history)                    
+                    # Unconditionally log history for all chatters
+                    if hasattr(self.stats_tracker, 'supabase_handler') and self.stats_tracker.supabase_handler:
+                        full_history = data['history'] + [{'role': 'assistant', 'content': reply_text}]
+                        self.stats_tracker.supabase_handler.save_chat_history(name, self.logger.name, full_history)
+                    
                     # Track Stats
                     tokens = getattr(self.ai_handler, 'last_token_count', 0)
                     self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
