@@ -25,6 +25,9 @@ class ManyChatBot:
         
         self.mc_handler = ManyChatHandler(self.api_token)
         
+        from .supabase_handler import SupabaseHandler
+        self.supabase_handler = SupabaseHandler(config)
+
         # Initialize AI with ManyChat specific prompt if provided
         ai_config = config.copy()
         if self.system_prompt:
@@ -113,6 +116,12 @@ class ManyChatBot:
             # Increment and save count
             self.subscriber_counts[str(subscriber_id)] = current_count + 1
             self._save_stats()
+            
+            # Save history to Supabase unconditionally
+            if hasattr(self, 'supabase_handler') and self.supabase_handler.enabled:
+                history.append({"role": "assistant", "content": reply_text})
+                self.supabase_handler.save_chat_history(str(subscriber_id), "ManyChatBot", history)
+                
             return True
         else:
             self.logger.error(f"Failed to send message to {subscriber_id} via ManyChat API.")
