@@ -319,7 +319,7 @@ class AIHandler:
         prompt = (
             "Generate an ultra-short (MAX 40 characters) lobby message that sparks a sophisticated conversation. "
             "Example: 'Need book recommendations, anyone read anything good lately?' or 'Working late on an IT project, who wants to distract me?' "
-            "Sound confident and smart. Use 1 emoji. "
+            "Sound confident and smart. No emoji. "
             "Return only the text, no quotes."
         )
 
