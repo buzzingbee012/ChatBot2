@@ -1,14 +1,4 @@
-// Web Dashboard Configuration
-// Get this from: Firebase Console -> Project Settings -> General -> Your apps -> Web (</>)
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyDSnvuUjN6cwMFzj0Lw2W-EuQMJu5DEGbY",
-    authDomain: "chatbot-943de.firebaseapp.com",
-    databaseURL: "https://chatbot-943de-default-rtdb.firebaseio.com",
-    projectId: "chatbot-943de",
-    storageBucket: "chatbot-943de.firebasestorage.app",
-    messagingSenderId: "102723735446",
-    appId: "1:102723735446:web:04cf8690e9396dfb6117b7",
-    measurementId: "G-L8WCV2NN9H"
-};
+// Supabase Configuration
+// Replace these with your project's URL and Anon Key
+const supabaseUrl = 'https://jjjkoidyindpwcmvbpbp.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqamtvaWR5aW5kcHdjbXZicGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNTI4NTUsImV4cCI6MjA5MTYyODg1NX0.ce29s1luJALVUIM5Bf6zFdPbO755a7oCbzrZiHsm4cY';

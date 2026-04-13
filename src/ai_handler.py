@@ -9,6 +9,14 @@ class ChatResponse(BaseModel):
     """Structured response model for chat completions"""
     message: str
 
+class ChatterEvaluation(BaseModel):
+    """Structured response model for evaluating chat quality"""
+    is_high_quality: bool
+
+class ChatterEvaluation(BaseModel):
+    """Structured response model for evaluating chat quality"""
+    is_high_quality: bool
+
 class NameResponse(BaseModel):
     """Structured response model for name generation"""
     name: str
@@ -122,6 +130,102 @@ class AIHandler:
             self.logger.error(f"AI Generation Error ({self.provider}): {e}")
             return None
 
+    def evaluate_chatter(self, chat_history):
+        """Uses the LLM to judge if the chat history is sophisticated enough to give out the Instagram link."""
+        if not self.client:
+            return False
+            
+        evaluation_prompt = (
+            "Review the following conversation history. Evaluate if the user (human chatter) is a high-quality conversationalist. "
+            "A high-quality user uses full sentences, asks interesting questions, builds rapport, and is not overly vulgar or lazy. "
+            "A low-quality user sends single words (hi, wyd, hey), demands pictures immediately, or is extremely boring. "
+            "Return true if they are high-quality and deserve the Instagram link, and false if they are boring."
+        )
+        
+        try:
+            if self.provider == 'google':
+                contents = [{'role': 'user', 'parts': [{'text': evaluation_prompt + "\n\nHistory:\n" + str(chat_history)}]}]
+                response = self.client.models.generate_content(
+                    model=self.model,
+                    contents=contents,
+                    config=genai.types.GenerateContentConfig(
+                        system_instruction="You are a conversation quality evaluator.",
+                        response_mime_type='application/json',
+                        response_schema=ChatterEvaluation
+                    )
+                )
+                parsed = ChatterEvaluation.model_validate_json(response.text)
+                return parsed.is_high_quality
+            else:
+                messages = [
+                    {"role": "system", "content": "You are a conversation quality evaluator. Return a JSON with a single boolean key 'is_high_quality'."},
+                    {"role": "user", "content": evaluation_prompt + "\n\nHistory:\n" + str(chat_history)}
+                ]
+                
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=10,
+                    response_format={ "type": "json_object" }
+                )
+                import json
+                try:
+                    result = json.loads(response.choices[0].message.content)
+                    return result.get('is_high_quality', False)
+                except Exception:
+                    return False
+        except Exception as e:
+            self.logger.error(f"AI Evaluation Error: {e}")
+            return False
+
+    def evaluate_chatter(self, chat_history):
+        """Uses the LLM to judge if the chat history is sophisticated enough to give out the Instagram link."""
+        if not self.client:
+            return False
+            
+        evaluation_prompt = (
+            "Review the following conversation history. Evaluate if the user (human chatter) is a high-quality conversationalist. "
+            "A high-quality user uses full sentences, asks interesting questions, builds rapport, and is not overly vulgar or lazy. "
+            "A low-quality user sends single words (hi, wyd, hey), demands pictures immediately, or is extremely boring. "
+            "Return true if they are high-quality and deserve the Instagram link, and false if they are boring."
+        )
+        
+        try:
+            if self.provider == 'google':
+                contents = [{'role': 'user', 'parts': [{'text': evaluation_prompt + "\n\nHistory:\n" + str(chat_history)}]}]
+                response = self.client.models.generate_content(
+                    model=self.model,
+                    contents=contents,
+                    config=genai.types.GenerateContentConfig(
+                        system_instruction="You are a conversation quality evaluator.",
+                        response_mime_type='application/json',
+                        response_schema=ChatterEvaluation
+                    )
+                )
+                parsed = ChatterEvaluation.model_validate_json(response.text)
+                return parsed.is_high_quality
+            else:
+                messages = [
+                    {"role": "system", "content": "You are a conversation quality evaluator. Return a JSON with a single boolean key 'is_high_quality'."},
+                    {"role": "user", "content": evaluation_prompt + "\n\nHistory:\n" + str(chat_history)}
+                ]
+                
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    max_tokens=10,
+                    response_format={ "type": "json_object" }
+                )
+                import json
+                try:
+                    result = json.loads(response.choices[0].message.content)
+                    return result.get('is_high_quality', False)
+                except Exception:
+                    return False
+        except Exception as e:
+            self.logger.error(f"AI Evaluation Error: {e}")
+            return False
+
     def get_next_message(self, context=None):
         if not self.client:
             return "Hello everyone! How is it going?"
@@ -213,9 +317,9 @@ class AIHandler:
             return "Hey everyone, how's it going?"
 
         prompt = (
-            "Generate an ultra-short (MAX 25 characters) lobby message for an Indian female. "
-            "Use Hinglish (e.g., 'Bored hoon, koi h?', 'Hi, baat karega?'). "
-            "Sound flirty, cute, and real. Use 1 emoji. "
+            "Generate an ultra-short (MAX 40 characters) lobby message that sparks a sophisticated conversation. "
+            "Example: 'Need book recommendations, anyone read anything good lately?' or 'Working late on an IT project, who wants to distract me?' "
+            "Sound confident and smart. Use 1 emoji. "
             "Return only the text, no quotes."
         )
 

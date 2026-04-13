@@ -20,6 +20,12 @@ with patch('src.ai_handler.AIHandler'):
 class MockAI:
     def generate_response(self, history):
         return "Normal chat message"
+        
+    def evaluate_chatter(self, history):
+        # We will mock high quality chatter based on the test case
+        # For our test, if history is 3 messages or more, it's high quality
+        if not history: return False
+        return len(history) >= 2  # So on 3rd message it forces link
 
 async def test_base_bot_logic():
     print("Testing BaseBot Link Logic...")
@@ -27,8 +33,7 @@ async def test_base_bot_logic():
         'bot': {
             'link_config': {
                 'min_replies_before_link': 2,
-                'max_replies_before_link': 5,
-                'force_link_probability': 1.0  # Force it always for test
+                'max_replies_before_link': 5
             }
         },
         'instagram_link': "https://test.insta/link"
@@ -54,19 +59,20 @@ async def test_base_bot_logic():
     bot = TestBot(config)
     bot.ai_handler = MockAI()
     
-    # Test case 1: Below min messages
+    # Test case 1: Below min messages (count = 1)
+    # Passed history [] with length 0
     res1 = await bot._generate_reply("User1", [], 1)
     print(f"Reply at 1 msg: {res1}")
     assert "instagram" not in res1.lower()
     
-    # Test case 2: At min messages (forced by 1.0 prob)
-    res2 = await bot._generate_reply("User1", [], 2)
+    # Test case 2: At min messages but low quality (mocked logic: len(history) < 2 -> false)
+    res2 = await bot._generate_reply("User1", [{"role":"user", "content":"hi"}], 2)
     print(f"Reply at 2 msgs: {res2}")
-    assert "instagram" in res2.lower()
+    assert "instagram" not in res2.lower()
     
-    # Test case 3: At max messages
-    res3 = await bot._generate_reply("User1", [], 5)
-    print(f"Reply at 5 msgs: {res3}")
+    # Test case 3: At min messages and high quality (mocked logic: len(history) >= 2 -> true)
+    res3 = await bot._generate_reply("User1", [{"role":"user", "content":"hi"}, {"role":"user", "content":"wyd"}], 3)
+    print(f"Reply at 3 msgs (high qual): {res3}")
     assert "instagram" in res3.lower()
     
     print("BaseBot logic test passed!")
@@ -80,8 +86,7 @@ async def test_manychat_bot_logic():
         'bot': {
             'link_config': {
                 'min_replies_before_link': 2,
-                'max_replies_before_link': 5,
-                'force_link_probability': 1.0
+                'max_replies_before_link': 5
             }
         },
         'manychat': {'api_token': 'test', 'prompt': 'test'},
@@ -92,6 +97,7 @@ async def test_manychat_bot_logic():
     bot.ai_handler = MockAI()
     bot.mc_handler = MagicMock()
     bot.mc_handler.send_message.return_value = True
+    bot.mc_handler.get_conversation_history.return_value = []
     
     # Initial message (count 0 -> 1)
     await bot.handle_message("SUB123", "hi")
@@ -100,14 +106,15 @@ async def test_manychat_bot_logic():
     
     # Second message (count 1 -> 2)
     # At start of this call, count is 1. min_replies is 2. 
-    # So it won't force link yet.
+    bot.mc_handler.get_conversation_history.return_value = [{"role":"user", "content":"hi"}]
     await bot.handle_message("SUB123", "hi")
     print(f"Count after 2 msgs: {bot.subscriber_counts['SUB123']}")
     assert bot.subscriber_counts['SUB123'] == 2
 
     # Third message (count 2 -> 3)
     # At start of this call, count is 2. min_replies is 2.
-    # Should force link now.
+    # LLM returns True (len(history) >= 2)
+    bot.mc_handler.get_conversation_history.return_value = [{"role":"user", "content":"hi"}, {"role":"user", "content":"wyd"}]
     await bot.handle_message("SUB123", "hi")
     last_call = bot.mc_handler.send_message.call_args[0][1]
     print(f"Reply at 3 msgs: {last_call}")

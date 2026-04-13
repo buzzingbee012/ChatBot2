@@ -205,12 +205,14 @@ class BaseBot(ABC):
             
             insta_link = self.config.get('instagram_link', "https://www.instagram.com/jas.sandhu.012")
             
-            # Force link if we hit the limit or randomly after min_replies
+            # Force link if we hit the limit, or evaluate if over min limit
             should_force_link = False
             if current_count >= max_replies:
                 should_force_link = True
             elif current_count >= min_replies:
-                if random.random() < force_prob:
+                is_high_quality = self.ai_handler.evaluate_chatter(history)
+                if is_high_quality:
+                    self.logger.info(f"AI evaluated {name} as high quality. Forcing link.")
                     should_force_link = True
             
             if should_force_link:
@@ -307,6 +309,12 @@ class BaseBot(ABC):
                 if await self.send_message(reply_text):
                     self.user_reply_counts[name] = data['current_count'] + 1
                     self.total_messages_sent += 1
+                    
+                    if self.user_reply_counts[name] == self.max_replies_per_user:
+                        if hasattr(self.stats_tracker, 'supabase_handler') and self.stats_tracker.supabase_handler:
+                            full_history = data['history'] + [{'role': 'assistant', 'content': reply_text}]
+                            self.stats_tracker.supabase_handler.save_chat_history(name, self.logger.name, full_history)
+
                     
                     # Track Stats
                     tokens = getattr(self.ai_handler, 'last_token_count', 0)

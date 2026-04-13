@@ -1,10 +1,10 @@
-// Initialize Firebase
-if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API_KEY") {
-    console.error("Firebase Config missing! Please update config.js");
+// Initialize Supabase
+if (typeof supabaseUrl === 'undefined' || supabaseUrl === "YOUR_SUPABASE_URL") {
+    console.error("Supabase Config missing! Please update config.js");
     document.getElementById('log-container').innerHTML = '<div class="log-entry" style="color: #ff7b72;">Error: Config not set. Please update config.js</div>';
 } else {
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+    // Create Supabase Client
+    window.supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
     // Elements
     const elTodayInteractions = document.getElementById('today-interactions');
@@ -14,6 +14,7 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
     const elTodayErrors = document.getElementById('today-errors');
     const elLogContainer = document.getElementById('log-container');
     const elHistoryTableBody = document.getElementById('history-table-body');
+    const elExhaustedTableBody = document.getElementById('exhausted-table-body');
 
     // Chart
     const ctx = document.getElementById('activityChart').getContext('2d');
@@ -49,91 +50,169 @@ if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === "YOUR_API
         }
     });
 
-    // Listen to Stats
-    console.log("Listening for stats...");
-    db.ref('stats').on('value', (snapshot) => {
-        const data = snapshot.val();
-        if (!data) return;
+    async function fetchStats() {
+        console.log("Fetching stats from Supabase...");
+        const { data: appData, error } = await supabaseClient
+            .from('app_data')
+            .select('value')
+            .eq('key', 'stats')
+            .single();
 
-        console.log("Data received:", data);
+        if (error) {
+            console.error("Error fetching stats:", error);
+            return;
+        }
 
-        // Process Data
-        const dates = Object.keys(data).sort(); // Sort dates
-        const today = new Date().toISOString().split('T')[0];
+        if (appData && appData.value) {
+            const data = appData.value;
+            console.log("Data received:", data);
 
-        let total = 0;
-        let totalTokens = 0;
-        const chartLabels = [];
-        const chartData = [];
-        let todayStats = { interactions: 0, tokens: 0, errors: [] };
+            // Process Data
+            const dates = Object.keys(data).sort(); // Sort dates
+            const today = new Date().toISOString().split('T')[0];
 
-        dates.forEach(date => {
-            let stats = data[date];
+            let total = 0;
+            let totalTokens = 0;
+            const chartLabels = [];
+            const chartData = [];
+            let todayStats = { interactions: 0, tokens: 0, errors: [] };
 
-            // Handle legacy format (int)
-            let interactions = 0;
-            let tokens = 0;
-            let errors = [];
+            dates.forEach(date => {
+                let stats = data[date];
 
-            if (typeof stats === 'number') {
-                interactions = stats;
+                // Handle legacy format (int)
+                let interactions = 0;
+                let tokens = 0;
+                let errors = [];
+
+                if (typeof stats === 'number') {
+                    interactions = stats;
+                } else {
+                    interactions = stats.interactions || 0;
+                    tokens = stats.tokens || 0;
+                    errors = stats.errors || [];
+                }
+
+                total += interactions;
+                totalTokens += tokens;
+                chartLabels.push(date);
+                chartData.push(interactions);
+
+                if (date === today) {
+                    todayStats = { interactions, tokens, errors };
+                }
+            });
+
+            // Populate History Table (Reverse Chronological)
+            const reversedDates = [...dates].reverse();
+            elHistoryTableBody.innerHTML = reversedDates.map(date => {
+                let stats = data[date];
+                let interactions = (typeof stats === 'number') ? stats : (stats.interactions || 0);
+                let tokens = (typeof stats === 'number') ? 0 : (stats.tokens || 0);
+
+                return `
+                    <tr style="border-bottom: 1px solid rgba(240, 246, 252, 0.05);">
+                        <td style="padding: 15px;">${date}</td>
+                        <td style="padding: 15px; font-weight: 500;">${interactions}</td>
+                        <td style="padding: 15px; color: var(--text-secondary);">${tokens}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            // Update UI
+            elTodayInteractions.innerText = todayStats.interactions;
+            elTodayTokens.innerText = todayStats.tokens;
+            elTotalInteractions.innerText = total;
+            elTotalTokens.innerText = totalTokens;
+            elTodayErrors.innerText = todayStats.errors.length;
+
+            // Update Logs
+            if (todayStats.errors.length > 0) {
+                elLogContainer.innerHTML = todayStats.errors.map(e => `
+                    <div class="log-entry">
+                        <span style="color: #ff7b72;">${e.time}</span>
+                        <span>${e.message}</span>
+                    </div>
+                `).join('');
             } else {
-                interactions = stats.interactions || 0;
-                tokens = stats.tokens || 0;
-                errors = stats.errors || [];
+                elLogContainer.innerHTML = '<div class="log-entry" style="justify-content: center; color: var(--text-secondary);">No errors today. System healthy.</div>';
             }
 
-            total += interactions;
-            totalTokens += tokens;
-            chartLabels.push(date);
-            chartData.push(interactions);
+            // Update Chart
+            activityChart.data.labels = chartLabels;
+            activityChart.data.datasets[0].data = chartData;
+            activityChart.update();
+        }
+    }
 
-            if (date === today) {
-                todayStats = { interactions, tokens, errors };
-            }
-        });
+    // Modal Logic
+    const chatModal = document.getElementById("chatModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalChatContent = document.getElementById("modalChatContent");
 
-        // Populate History Table (Reverse Chronological)
-        // We use the already processed `dates` array but reverse it only for display
-        const reversedDates = [...dates].reverse();
-        elHistoryTableBody.innerHTML = reversedDates.map(date => {
-            let stats = data[date];
-            let interactions = (typeof stats === 'number') ? stats : (stats.interactions || 0);
-            let tokens = (typeof stats === 'number') ? 0 : (stats.tokens || 0);
+    closeModal.onclick = function () { chatModal.style.display = "none"; }
+    window.onclick = function (event) { if (event.target == chatModal) chatModal.style.display = "none"; }
 
+    window.openChatModal = function (userName, historyJson) {
+        modalTitle.innerText = `Chat History for ${userName}`;
+
+        let historyArr = [];
+        try {
+            historyArr = JSON.parse(decodeURIComponent(historyJson));
+        } catch (e) { console.error(e); }
+
+        modalChatContent.innerHTML = historyArr.map(msg => {
+            let bgColor = msg.role === 'assistant' ? 'rgba(88, 166, 255, 0.1)' : 'rgba(255,255,255,0.05)';
+            let bColor = msg.role === 'assistant' ? '#58a6ff' : 'var(--card-border)';
             return `
-                <tr style="border-bottom: 1px solid rgba(240, 246, 252, 0.05);">
-                    <td style="padding: 15px;">${date}</td>
-                    <td style="padding: 15px; font-weight: 500;">${interactions}</td>
-                    <td style="padding: 15px; color: var(--text-secondary);">${tokens}</td>
-                </tr>
+                <div style="margin-bottom: 10px; background: ${bgColor}; padding: 10px; border-radius: 8px; border: 1px solid ${bColor}">
+                    <strong style="color: var(--text-secondary);">${msg.role.toUpperCase()}</strong>
+                    <div style="margin-top: 5px;">${msg.content}</div>
+                </div>
             `;
         }).join('');
 
-        // Update UI
-        elTodayInteractions.innerText = todayStats.interactions;
-        elTodayTokens.innerText = todayStats.tokens;
-        elTotalInteractions.innerText = total;
-        elTotalTokens.innerText = totalTokens;
-        elTodayErrors.innerText = todayStats.errors.length;
+        chatModal.style.display = "block";
+    }
 
-        // Update Logs
-        if (todayStats.errors.length > 0) {
-            elLogContainer.innerHTML = todayStats.errors.map(e => `
-                <div class="log-entry">
-                    <span style="color: #ff7b72;">${e.time}</span>
-                    <span>${e.message}</span>
-                </div>
-            `).join('');
-        } else {
-            elLogContainer.innerHTML = '<div class="log-entry" style="justify-content: center; color: var(--text-secondary);">No errors today. System healthy.</div>';
+    async function fetchExhaustedChats() {
+        const { data, error } = await supabaseClient
+            .from('exhausted_chats')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(50);
+
+        if (error) {
+            console.error("Error fetching exhausted chats:", error);
+            return;
         }
 
-        // Update Chart
-        activityChart.data.labels = chartLabels;
-        activityChart.data.datasets[0].data = chartData;
-        activityChart.update();
-    });
+        if (data) {
+            elExhaustedTableBody.innerHTML = data.map(chat => {
+                let dateStr = new Date(chat.created_at).toLocaleString();
+                let encodedHistory = encodeURIComponent(JSON.stringify(chat.history || []));
+                return `
+                    <tr style="border-bottom: 1px solid rgba(240, 246, 252, 0.05);">
+                        <td style="padding: 15px;">${dateStr}</td>
+                        <td style="padding: 15px;">${chat.user_name}</td>
+                        <td style="padding: 15px;">${chat.bot_name}</td>
+                        <td style="padding: 15px;">
+                            <button onclick="openChatModal('${chat.user_name}', '${encodedHistory}')" style="background:#58a6ff; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">View</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+    }
+
+    // Initial Fetch & Refresh Interval
+    fetchStats();
+    fetchExhaustedChats();
+    setInterval(() => {
+        fetchStats();
+        fetchExhaustedChats();
+    }, 10000); // 10 seconds polling (simulates realtime for simple dashboard)
 }
 
 // GitHub Action Controls
@@ -151,10 +230,7 @@ async function triggerGitHubAction() {
     setStatus("Triggering...", "var(--accent)");
 
     try {
-        const response = await fetch('/api/trigger', {
-            method: 'POST'
-        });
-
+        const response = await fetch('/api/trigger', { method: 'POST' });
         if (response.status === 204 || response.status === 200) {
             setStatus("Bot Start Requested!", "#3fb950");
             setTimeout(() => setStatus("Ready"), 5000);
@@ -174,10 +250,7 @@ async function stopGitHubAction() {
     setStatus("Stopping...", "var(--accent)");
 
     try {
-        const response = await fetch('/api/stop', {
-            method: 'POST'
-        });
-
+        const response = await fetch('/api/stop', { method: 'POST' });
         if (response.ok) {
             const data = await response.json();
             setStatus(data.message || "Bot Stop Requested!", "#3fb950");
@@ -192,5 +265,3 @@ async function stopGitHubAction() {
         elBtnStop.disabled = false;
     }
 }
-
-

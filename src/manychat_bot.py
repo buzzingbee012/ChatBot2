@@ -67,31 +67,31 @@ class ManyChatBot:
         link_config = self.config.get('bot', {}).get('link_config', {})
         min_replies = link_config.get('min_replies_before_link', 10)
         max_replies = link_config.get('max_replies_before_link', 15)
-        force_prob = link_config.get('force_link_probability', 0.3)
         insta_link = self.config.get('instagram_link', "https://www.instagram.com/jasmin.sandhu.1")
+
+        # 2. Get History early to allow evaluation
+        if not history:
+            history = self.mc_handler.get_conversation_history(subscriber_id)
+            if not history and current_message:
+                history = [{"role": "user", "content": current_message}]
+                
+        if not history:
+            self.logger.warning(f"No history found for subscriber {subscriber_id}. Skipping.")
+            return False
 
         should_force_link = False
         if current_count >= max_replies:
             should_force_link = True
         elif current_count >= min_replies:
-            if random.random() < force_prob:
+            is_high_quality = self.ai_handler.evaluate_chatter(history)
+            if is_high_quality:
+                self.logger.info(f"AI evaluated {subscriber_id} as high quality. Forcing link.")
                 should_force_link = True
 
         if should_force_link:
             reply_text = f"gtg, add me on instagram {insta_link}"
             self.logger.info(f"Forcing Instagram link for subscriber {subscriber_id} (count: {current_count})")
         else:
-            # 2. Get History (if not provided)
-            if not history:
-                # Fallback to fetching or using current message as single-item history
-                history = self.mc_handler.get_conversation_history(subscriber_id)
-                if not history and current_message:
-                    history = [{"role": "user", "content": current_message}]
-            
-            if not history:
-                self.logger.warning(f"No history found for subscriber {subscriber_id}. Skipping.")
-                return False
-
             # 3. Generate Response
             reply_text = self.ai_handler.generate_response(history)
         

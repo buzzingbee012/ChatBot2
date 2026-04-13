@@ -4,28 +4,28 @@ from datetime import datetime
 from pathlib import Path
 
 import yaml
-from .firebase_handler import FirebaseHandler
+from .supabase_handler import SupabaseHandler
 
 class StatsTracker:
     def __init__(self, stats_file="stats.json"):
         self.stats_file = stats_file
         self.stats = self._load_stats()
-        self.firebase_handler = None
+        self.supabase_handler = None
         
         try:
             with open("config.yaml", "r") as f:
                 config = yaml.safe_load(f)
-                self.firebase_handler = FirebaseHandler(config)
+                self.supabase_handler = SupabaseHandler(config)
                 
-            # Sync with Firebase on startup
-            if self.firebase_handler and self.firebase_handler.enabled:
-                remote_stats = self.firebase_handler.get_stats()
+            # Sync with Supabase on startup
+            if self.supabase_handler and self.supabase_handler.enabled:
+                remote_stats = self.supabase_handler.get_stats()
                 if remote_stats:
                     self._merge_stats(remote_stats)
                     self._save_stats()
                     
         except Exception as e:
-            print(f"StatsTracker: Failed to load config/firebase: {e}")
+            print(f"StatsTracker: Failed to load config/supabase: {e}")
             
     def _merge_stats(self, remote_stats):
         """Merge remote stats into local stats."""
@@ -141,9 +141,9 @@ class StatsTracker:
         
         self._save_stats()
         
-        # Sync to Firebase
-        if self.firebase_handler:
-            self.firebase_handler.update_stats(self.stats)
+        # Sync to Supabase
+        if self.supabase_handler:
+            self.supabase_handler.update_stats(self.stats)
     
     def get_stats(self):
         """Return all statistics sorted by date."""
