@@ -162,13 +162,21 @@ if (typeof supabaseUrl === 'undefined' || supabaseUrl === "YOUR_SUPABASE_URL") {
             historyArr = JSON.parse(decodeURIComponent(historyJson));
         } catch (e) { console.error(e); }
 
-        modalChatContent.innerHTML = historyArr.map(msg => {
-            let bgColor = msg.role === 'assistant' ? 'rgba(88, 166, 255, 0.1)' : 'rgba(255,255,255,0.05)';
-            let bColor = msg.role === 'assistant' ? '#58a6ff' : 'var(--card-border)';
+        modalChatContent.innerHTML = historyArr.map((msg, index) => {
+            let isBot = msg.role === 'assistant';
+            let label = isBot ? 'Jas' : userName;
+
+            // Check if previous message was same sender to group them visually
+            let prevMsg = index > 0 ? historyArr[index - 1] : null;
+            let showLabel = !prevMsg || prevMsg.role !== msg.role;
+            let margin = showLabel ? '12px' : '2px';
+
             return `
-                <div style="margin-bottom: 10px; background: ${bgColor}; padding: 10px; border-radius: 8px; border: 1px solid ${bColor}">
-                    <strong style="color: var(--text-secondary);">${msg.role.toUpperCase()}</strong>
-                    <div style="margin-top: 5px;">${msg.content}</div>
+                <div style="margin-bottom: ${margin}; display: flex; flex-direction: column; align-items: ${isBot ? 'flex-end' : 'flex-start'};">
+                    ${showLabel ? `<div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 2px; padding: 0 4px;">${label}</div>` : ''}
+                    <div style="background: ${isBot ? 'rgba(88, 166, 255, 0.15)' : 'rgba(255,255,255,0.05)'}; padding: 6px 12px; border-radius: ${isBot ? '12px 2px 12px 12px' : '2px 12px 12px 12px'}; max-width: 85%; border: 1px solid ${isBot ? 'rgba(88, 166, 255, 0.3)' : 'rgba(255,255,255,0.1)'}; font-size: 0.95rem; line-height: 1.4;">
+                        ${msg.content}
+                    </div>
                 </div>
             `;
         }).join('');
