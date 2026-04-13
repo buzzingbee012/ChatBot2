@@ -17,3 +17,4 @@ stats.json
 conversation_logs.txt
 # Config
 # config.yaml is safe to commit (structure only)
+.env
