@@ -310,12 +310,11 @@ class BaseBot(ABC):
                     self.user_reply_counts[name] = data['current_count'] + 1
                     self.total_messages_sent += 1
                     
-                    if self.user_reply_counts[name] == self.max_replies_per_user:
+                    # Log history if we hit max replies OR if we just sent the instagram link (successful conversion)
+                    if self.user_reply_counts[name] == self.max_replies_per_user or "instagram" in reply_text.lower():
                         if hasattr(self.stats_tracker, 'supabase_handler') and self.stats_tracker.supabase_handler:
                             full_history = data['history'] + [{'role': 'assistant', 'content': reply_text}]
-                            self.stats_tracker.supabase_handler.save_chat_history(name, self.logger.name, full_history)
-
-                    
+                            self.stats_tracker.supabase_handler.save_chat_history(name, self.logger.name, full_history)                    
                     # Track Stats
                     tokens = getattr(self.ai_handler, 'last_token_count', 0)
                     self.stats_tracker.increment_today(tokens=tokens, bot_name=self.logger.name)
